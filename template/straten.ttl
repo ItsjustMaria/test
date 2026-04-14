@@ -1,0 +1,1951 @@
+@prefix memorix: <http://memorix.io/ontology#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-17f2-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achtersteven/40>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achtersteven"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0fd9-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alexander-boersstraat/108>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alexander Boersstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1a9d-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/almstraat/120>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Almstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1eba-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amazonenstraat/125>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amazonenstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d5f86302-cd5c-473c-b19d-2a2891847454>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstellandlaan/8892>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstellandlaan (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-15a4-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amelandstraat/128>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amelandstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1c44-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abcouderpad/21>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abcouderpad"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7e18-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abidjanweg/6362>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abidjanweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0d1e-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achtergracht/38>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achtergracht"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-19a1-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelweg/5982>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/52664ecf-79a6-446a-bb40-d73fc07aec30>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aertjanssenstraat/8888>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aertjanssenstraat (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/70d488f6-5bab-4bd6-801d-e11489f1767d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achter-t-vosje/8882>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achter 't Vosje (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-15e6-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adingerdorphof/50>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adingerdorphof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0fdd-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achterweg/5717>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achterweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc795d0d-2d40-5eb5-e053-b784100a6d0b>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achterdek/36>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achterdek"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b67f5f35-9d68-4537-8eac-90703adf921c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/agadirweg/9258>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Agadirweg"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1801-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amandelstraat/124>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amandelstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/a061c51b-10e7-40cb-82eb-a90e3397377a>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/a-eversplein/6369>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "A. Eversplein"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-102f-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aalsmeerweg/10>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aalsmeerweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/570e789f-0842-4570-bfe1-fd18725709c2>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abcoudepad/8880>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abcoudepad (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1a3e-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsteldijk (Amstelveen)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0dd8-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/admiraal-de-ruijterweg/51>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Admiraal De Ruijterweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-204d-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/admiraal-helfrichstraat/52>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Admiraal Helfrichstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/84cb6a16-a059-427e-a251-3736053be054>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aansprekersgang/7633>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aansprekersgang"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f24-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abe-lenstralaan/23>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abe Lenstralaan"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc795d0d-2dd1-5eb5-e053-b784100a6d0b>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achtkantenstovengang/41>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achtkantenstovengang"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0d94-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amaliastraat/123>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amaliastraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0dbc-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelplein/143>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1ba6-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abraham-kuyperlaan/9194>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abraham Kuyperlaan"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-147b-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/anatole-francesingel/152>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Anatole Francesingel"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/8e49a1cb-1e9c-45e2-8e70-6117cc027f0f>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achterhoekstraat/5795>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achterhoekstraat"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-13f2-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/ambonstraat/127>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Ambonstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1a08-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/am-de-jongstraat/122>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "A.M. de Jongstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/85be78fb-c596-43a4-9c8d-bfaf4da88993>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achtergracht/8883>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achtergracht (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-171c-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adrichemstraat/66>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adrichemstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/19a461f4-31fc-4b63-99be-b7b5f720ace5>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/andrieshofje/5914>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Andrieshofje"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/432cae8b-53a8-40eb-85db-67e9e627eef3>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aart-van-der-leeuwstraat/8878>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aart van der Leeuwstraat (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-12b6-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abcouderstraatweg/22>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abcouderstraatweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/fde38856-8856-4fe1-bf63-072a84715adf>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aardbeziengang/7808>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aardbeziëngang"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b33e5671-aa5e-4a46-88dc-7736ff409583>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achteromdwarsstraat/8886>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achteromdwarsstraat (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/2be0e12e-962b-489a-affc-e1d5d1e6f24a>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelbestpad/6375>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelbestpad"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1835-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/anderlechtlaan/155>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Anderlechtlaan"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1118-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsterdamseweg (Amstelveen)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-143e-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achter-oosteinde/35>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achter Oosteinde"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0ffc-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alexanderkade/110>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alexanderkade"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-176b-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aagtdorperpad/5>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aagtdorperpad"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1537-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albert-camuslaan/92>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albert Camuslaan"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-194f-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abcoudermeer"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1138-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abraham-staalmanplein/28>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abraham Staalmanplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-190b-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsterdammerpolder"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc795d0d-2e09-5eb5-e053-b784100a6d0b>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/allenstraat/118>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Allenstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1535-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alfred-doblinstraat/114>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alfred Döblinstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-178b-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aandewind/12>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aandewind"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/7cd5b65b-d9e2-4d32-bdc1-f9ddce2a8abf>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achteromstraat/8887>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achteromstraat (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1978-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Admiralenbuurt"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f34-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adolphine-eduardine-kokplantsoen/56>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adolphine Eduardine Kokplantsoen"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b4190b45-268d-4162-8144-7921f931a533>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alex-la-gumapad/9458>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alex La Gumapad"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/4896659e-fa33-4531-94f2-0f970b69a31a>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelbeststraat/6376>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelbeststraat"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1371-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/afrikanerplein/71>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Afrikanerplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0e5c-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelveen"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7e64-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/andries-copierstraat/5277>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Andries Copierstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-204a-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albertus-magnushof/99>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albertus Magnushof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1fb7-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/accumulatorweg/33>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Accumulatorweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-13ff-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alberdingk-thijmstraat/91>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alberdingk Thijmstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d426fce8-1ef2-77bb-e053-b784100a08a0>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alexandrine-tinnehof/113>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alexandrine Tinnehof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1b54-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albatrospad/90>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albatrospad"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0d91-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amsteldijk/137>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsteldijk"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1121-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aldebaranplein/103>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aldebaranplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f85-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alhambralaan/5278>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alhambralaan"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0f9f-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amerikahaven"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1aee-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/afroditekade/72>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Afroditekade"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1ba3-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/akersingel/81>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Akersingel"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0f7b-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsterdam"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-11b4-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albrecht-durerstraat/101>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albrecht Dürerstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1e37-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aldengoor/106>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aldengoor"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7efb-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aj-koejemansstraat/76>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "A.J. Koejemansstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/25972fef-c27f-4a83-bd5b-9a3f59dfccd9>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abtswoudepad/6364>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abtswoudepad"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/2da5ecee-b6a9-41e4-a3be-d22b637f0fe6>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aetsveldselaan/8889>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aetsveldselaan (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/3b09ea8c-0fb2-403a-8380-79c20842c153>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/ambachtstraat/8891>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Ambachtstraat (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/64617bd5-0fb0-4daa-acd6-83da52f6b929>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aaron-douglasstraat/9385>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aaron Douglasstraat"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-202d-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abram-dudok-van-heelstraat/30>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abram Dudok van Heelstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0d76-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albert-cuypstraat/93>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albert Cuypstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0caa-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstel/135>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstel"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7de8-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/accason/5288>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Accason"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-17c4-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/andijkstraat/157>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Andijkstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1e86-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aarschotpad/15>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aarschotpad"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1205-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aart-van-der-leeuwstraat/17>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aart van der Leeuwstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/184ec54d-993f-4f91-86ea-7f7408752c11>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aetsveld-Zuid (Weesp)"@en;
+        skos:scopeNote     "Bron:\nhttps://kadastralekaart.com/buurten/aetsveld-noord-BU0363SE03?srsltid=AfmBOooN0av38PTDm63B7IeWB8cA6xTS7OZUg9-5Urr4bH5TPZCsC2l5";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-18de-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aambeeldstraat/11>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aambeeldstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d4334af0-8dd8-39cf-e053-b784100a6fb6>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/andrej-sacharovstraat/5276>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Andrej Sacharovstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/177ba252-36ed-46ed-af2f-a5189a6adfe7>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adam-en-evas-gang/8170>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adam en Eva'sgang"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/e7e95b47-5469-4302-a806-6e220b9f0f1d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amcpad/6374>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "AMCpad"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+[ a                  memorix:OrderedList;
+  memorix:listItems  ( <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/52cc4aa5-3a0d-4cbc-8fce-ac845126f78a> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bb4c00fb-438e-41e8-83d7-a90e6490c968> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d29e79be-0402-35d5-e053-b784100ac595> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc795d0d-2e80-5eb5-e053-b784100a6d0b> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-176b-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f21-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f06-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f40-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1725-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-12e1-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/1d06b287-2d21-4afc-ae18-941af263236b> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc59a61c-04d4-4d1e-a723-8a8f535eee6c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1245-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-102f-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-18de-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-178b-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/84cb6a16-a059-427e-a251-3736053be054> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1ed6-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/fde38856-8856-4fe1-bf63-072a84715adf> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1cfb-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/64617bd5-0fb0-4daa-acd6-83da52f6b929> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1e86-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d4c2c4b3-8f33-4c2b-a538-28841ed28fef> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d29e79be-04bf-35d5-e053-b784100ac595> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1205-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/432cae8b-53a8-40eb-85db-67e9e627eef3> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1c08-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1fb2-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/570e789f-0842-4570-bfe1-fd18725709c2> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-194f-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1c44-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-12b6-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7e73-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f24-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d4c654e6-6e84-4121-aaf8-748b05a61aa8> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7e18-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7ea4-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1ba6-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-2014-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7e56-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/f5cf9497-30b1-4cc0-91ae-c5b7d0576f6a> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1138-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-12e7-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-202d-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1802-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/25972fef-c27f-4a83-bd5b-9a3f59dfccd9> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7de8-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7e19-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1fb7-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-16e8-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/1c18e40f-f7fd-4411-8201-1664fd5b866c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc795d0d-2d40-5eb5-e053-b784100a6d0b> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1a5a-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0d1e-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/85be78fb-c596-43a4-9c8d-bfaf4da88993> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/61ef9bce-d0ca-42ff-8a76-2557c3008e36> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/8e49a1cb-1e9c-45e2-8e70-6117cc027f0f> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1d83-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1c0e-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b33e5671-aa5e-4a46-88dc-7736ff409583> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/7cd5b65b-d9e2-4d32-bdc1-f9ddce2a8abf> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/66035d2d-72c4-440c-a390-06e1655a8825> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-143e-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-184f-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-17f2-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/70d488f6-5bab-4bd6-801d-e11489f1767d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0fdd-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc795d0d-2dd1-5eb5-e053-b784100a6d0b> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1506-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc90f4c6-aa36-36bb-e053-b784100a1540> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/177ba252-36ed-46ed-af2f-a5189a6adfe7> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7eb5-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1f04-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1097-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1e91-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1fc8-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1afd-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-15e6-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0dd8-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-204d-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1978-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0f4f-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/6da92dcd-57a9-4082-8bb4-57b347941ea8> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc795d0d-2ee1-5eb5-e053-b784100a6d0b> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1977-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-191e-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f34-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d426fce8-181a-77bb-e053-b784100a08a0> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-154a-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1a5f-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-177c-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1a0f-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-169f-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1819-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-14e5-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/f858a935-67b7-491d-aa8d-96e70389f906> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d426fce8-356c-77bb-e053-b784100a08a0> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1eca-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-171c-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f60-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d426fce8-1774-77bb-e053-b784100a08a0> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/52664ecf-79a6-446a-bb40-d73fc07aec30> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1f39-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/94cb39af-7fc7-4e74-aed9-487bd8549939> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1be2-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/2da5ecee-b6a9-41e4-a3be-d22b637f0fe6> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/8bc61031-1e1d-4834-8bde-7e792979d8f5> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/184ec54d-993f-4f91-86ea-7f7408752c11> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/a061c51b-10e7-40cb-82eb-a90e3397377a> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0f83-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1ca6-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1371-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1aee-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b67f5f35-9d68-4537-8eac-90703adf921c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-18f7-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1e12-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0e74-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/e325e8ad-349d-400b-bbaa-cb4b2c6e33b3> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7efb-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1641-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-13d3-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1bd2-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1241-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1ba3-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1b95-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-15db-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1130-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/9c59ac89-b0fe-4613-9894-69685c9783e9> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7ee4-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-104b-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-13a6-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-10f5-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/4a211a01-3f64-4675-be46-e6f62e93cf03> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-12dd-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1f94-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1b54-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-13ff-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1537-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0d76-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0f54-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1d48-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/8b25803d-1042-4f54-844c-61fd319444c1> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0e30-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1e65-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-204a-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-136a-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/8f59cdda-d22e-4d16-afcc-82dc00a4f88f> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1c28-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-11b4-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1e6b-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f84-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1121-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1727-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1708-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1e37-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1243-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0fd9-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-141d-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0ffc-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0ffd-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-13f8-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d426fce8-1ef2-77bb-e053-b784100a08a0> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b4190b45-268d-4162-8144-7921f931a533> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1535-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/7c5465ae-6600-41d5-bf6d-f1a183ab1983> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1f08-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f85-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/1ffc0b9f-27b8-4870-90dc-80fd85b5edc2> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/10a29d59-fdca-4ff4-8695-2e39db214cc9> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-16da-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-155c-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/e66bed4e-bf3b-424e-94e0-8bb62142b011> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc795d0d-2e09-5eb5-e053-b784100a6d0b> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1873-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1a9d-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1982-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/2bf64c77-cbb2-47fe-9c1f-01c0bfb07511> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0d94-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1801-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1eba-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/3b09ea8c-0fb2-403a-8380-79c20842c153> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-106d-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-13f2-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/e7e95b47-5469-4302-a806-6e220b9f0f1d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1a08-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-15a4-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1452-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0f9f-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1dbd-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1ecf-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/4b8ee055-4736-4749-b5f4-025d2cd0ec9c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d426fce8-25ca-77bb-e053-b784100a08a0> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0caa-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/2be0e12e-962b-489a-affc-e1d5d1e6f24a> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/4896659e-fa33-4531-94f2-0f970b69a31a> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d426fce8-266b-77bb-e053-b784100a08a0> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0d91-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1a3e-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-192c-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0e5e-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-192e-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1b1a-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/58ee7218-8c2b-4485-900c-6cf95175fdc3> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-118e-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-15b3-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-12bb-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1040-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/f891ec5a-9f63-4a5d-a2c4-2a3645a76706> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1044-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d5f86302-cd5c-473c-b19d-2a2891847454> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1556-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0dbc-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1d57-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0c9c-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1d9e-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0e5c-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-19a4-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0dda-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc90f4c6-ac5c-36bb-e053-b784100a1540> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0d12-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/c9347ded-94a4-5ecf-e053-b784100af984> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-19a1-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1b33-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1df9-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0f7b-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-190b-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1132-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/03000047-ba98-482a-8c3d-573878194c25> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/3a19f6bc-f94b-4446-bbbb-6830896e08ab> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0e5d-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/e557c10e-8c34-7dcb-e053-b784100a971b> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1118-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-15bb-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/9acfe18f-e87e-4d6e-893f-cc0b3684b241> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1b4d-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1122-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-147b-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-16bf-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-146c-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/c9347ded-946e-5ecf-e053-b784100af984> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1835-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-2068-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-17c4-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1627-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-15fc-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1d1b-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0e23-65bc-e053-b784100acc2c> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d4334af0-8dd8-39cf-e053-b784100a6fb6> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7e64-5dc6-e053-894acd0a4d7d> <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/19a461f4-31fc-4b63-99be-b7b5f720ace5> )
+] .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7e19-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/accraweg/32>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Accraweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1e91-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adele-opzoomerstraat/48>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adèle Opzoomerstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d426fce8-1774-77bb-e053-b784100a08a0>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/ad-windighof/42>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Ad Windighof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1b95-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/akersluis/82>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Akersluis"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1fb2-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abberdaan/19>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abberdaan"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1d57-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelstationsplein/5986>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelstationsplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/c9347ded-94a4-5ecf-e053-b784100af984>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelvlietstraat/5274>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelvlietstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1d1b-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/andreasplein/161>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Andreasplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/10a29d59-fdca-4ff4-8695-2e39db214cc9>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alkmaardergang/6896>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alkmaardergang"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1e12-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/agatha-christiesingel/74>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Agatha Christiesingel"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1f04-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adam-van-germezhof/44>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adam van Germezhof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-12e7-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abraham-van-der-hartstraat/29>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abraham van der Hartstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1be2-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aetsveldsche Polder"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-2068-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/andersensingel/156>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Andersensingel"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1a5f-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adriaan-kluitstraat/59>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adriaan Kluitstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0c9c-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelstraat/144>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0e5e-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsteldijk-Noord (Amstelveen)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1c28-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alblasstraat/100>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alblasstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1708-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aldendriel/105>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aldendriel"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc795d0d-2e80-5eb5-e053-b784100a6d0b>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aaf-bouberstraat/4>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aaf Bouberstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1452-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amerbos/129>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amerbos"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7eb5-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adam-smithplein/43>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adam Smithplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f21-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aah-struijckenkade/6>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "A.A.H. Struijckenkade"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1b1a-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amsteldorp/5980>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsteldorp"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7e73-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abebe-bikilalaan/24>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abebe Bikilalaan"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1097-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adelaarsweg/47>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adelaarsweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-18f7-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/agamemnonstraat/73>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Agamemnonstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/1d06b287-2d21-4afc-ae18-941af263236b>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aalsmeerdergang/6709>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aalsmeerdergang"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/03000047-ba98-482a-8c3d-573878194c25>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amsterdam-rijnkanaalkade/6377>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsterdam Rijnkanaalkade"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-154a-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adriaan-dorsmanstraat/58>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adriaan Dorsmanstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1130-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/akerwateringstraat/84>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Akerwateringstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d426fce8-181a-77bb-e053-b784100a08a0>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adriaan-ditvoorsthof/57>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adriaan Ditvoorsthof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-15b3-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelhoekstraat/139>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelhoekstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1641-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aj-krophollerstraat/77>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "A.J. Krophollerstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1afd-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/bos-en-lommerplantsoen/564>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adindastraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-15bb-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amundsenweg/149>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amundsenweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/1c18e40f-f7fd-4411-8201-1664fd5b866c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achter-batavierstraat/6044>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achter Batavierstraat"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0d12-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelveld/146>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelveld"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-184f-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/oetgensachterpad/5755>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achterpad"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f06-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aakhof/5286>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aakhof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-2014-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abraham-kuyperplein/27>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abraham Kuyperplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-15db-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/p-hans-frankfurthersingel/3435>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Akersluisweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1bd2-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Akerpolder"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/9c59ac89-b0fe-4613-9894-69685c9783e9>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/akerweg/6339>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Akerweg"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/f5cf9497-30b1-4cc0-91ae-c5b7d0576f6a>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abrahamsofferandesgang/7634>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abrahams-Offerandesgang"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7e56-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abraham-kuyperlaan/26>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abraham Kuyperstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-192e-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsteldijk-Zuid (Amstelveen)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/e325e8ad-349d-400b-bbaa-cb4b2c6e33b3>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/agibastraat/9442>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Agibastraat"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/8b25803d-1042-4f54-844c-61fd319444c1>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albert-molhof/6371>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albert Molhof"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-12dd-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albardagracht/88>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albardagracht"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-12bb-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelkade/140>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelkade"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-192c-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsteldijk-Noord"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/f891ec5a-9f63-4a5d-a2c4-2a3645a76706>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelkerkstraat/5984>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelkerkstraat"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1d9e-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelstroomlaan/5273>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelstroomlaan"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-16da-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alkmaarstraat/116>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alkmaarstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-13f8-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alexanderstraat/112>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alexanderstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0f4f-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/admiralengracht/53>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Admiralengracht"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1977-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/admterrein/5983>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "ADM-terrein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1556-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelpark/142>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelpark"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d29e79be-0402-35d5-e053-b784100ac595>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aa-de-lannoywillemsstraat/3>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "A.A. de Lannoy-Willemsstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-104b-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/akkerstraat/85>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Akkerstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-106d-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/ambonplein/126>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Ambonplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1a5a-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achtergouwtje-zunderdorp/37>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achtergouwtje Zunderdorp"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0f54-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albert-hahnplantsoen/94>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albert Hahnplantsoen"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1122-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/ananasplein/151>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Ananasplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1727-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aldebaranstraat/104>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aldebaranstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc795d0d-2ee1-5eb5-e053-b784100a6d0b>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/admiraliteitstraat/54>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Admiraliteitstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1819-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adriaan-van-oordthof/63>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adriaan van Oordthof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-155c-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/allard-piersonstraat/117>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Allard Piersonstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1725-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aakstraat/7>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aakstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f40-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aakpad/5287>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aakpad"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/94cb39af-7fc7-4e74-aed9-487bd8549939>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aetsveld-Noord (Weesp)"@en;
+        skos:scopeNote     "Bron; \nhttps://kadastralekaart.com/buurten/aetsveld-noord-BU0363SE03?srsltid=AfmBOooN0av38PTDm63B7IeWB8cA6xTS7OZUg9-5Urr4bH5TPZCsC2l5";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f84-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alcantarastraat/5275>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alcantarastraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1f94-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albardakade/89>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albardakade"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1982-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alpert-van-metzhof/121>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alpert van Metzhof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-118e-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/maarten-jansz-kosterstraat/2802>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelgrachtje"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7f60-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adrienne-solserhof/6368>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adriënne Solserhof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1f08-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/algolstraat/115>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Algolstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-16bf-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Ancoltuin"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-169f-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adriaan-van-der-horststraat/62>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adriaan van der Horststraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/1ffc0b9f-27b8-4870-90dc-80fd85b5edc2>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alida-van-den-bosstraat/6372>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alida van den Bosstraat"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1802-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abrikozenstraat/31>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abrikozenstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+[ a                      memorix:Pagination;
+  memorix:numberOfPages  "32"^^xsd:int;
+  memorix:page           "1"^^xsd:int;
+  memorix:perPage        "250"^^xsd:int;
+  memorix:total          "7981"^^xsd:int
+] .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1241-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/akerpolderstraat/80>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Akerpolderstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/66035d2d-72c4-440c-a390-06e1655a8825>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achterom/8885>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achterom (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/4a211a01-3f64-4675-be46-e6f62e93cf03>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alan-turingplein/9200>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alan Turingplein"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-191e-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adolf-van-nassaustraat/55>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adolf van Nassaustraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d426fce8-356c-77bb-e053-b784100a08a0>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "AdriÃ«nne Solserhof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1c08-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abbenesstraat/18>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abbenesstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0e23-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/andreas-schelfhoutstraat/160>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Andreas Schelfhoutstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-177c-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adriaan-loosjesstraat/60>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adriaan Loosjesstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1e65-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albert-schultenshof/97>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albert Schultenshof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/8bc61031-1e1d-4834-8bde-7e792979d8f5>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aetsveldseweg/8890>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aetsveldseweg (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/2bf64c77-cbb2-47fe-9c1f-01c0bfb07511>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amaliapark/6373>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amaliapark"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1c0e-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achterlaan Zunderdorp"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d4c2c4b3-8f33-4c2b-a538-28841ed28fef>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aartje-de-voseiland/8879>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aartje de Voseiland (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1873-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alma-tademastraat/119>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alma Tademastraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1ecf-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amoebastraat/133>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amoebastraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1e6b-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albrecht-rodenbachhof/102>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albrecht Rodenbachhof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d426fce8-266b-77bb-e053-b784100a08a0>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelboulevard/136>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelboulevard"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1040-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelkanaal"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc90f4c6-aa36-36bb-e053-b784100a1540>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adamello/46>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adamello"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1132-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsterdam-Rijnkanaal"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-14e5-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adriaan-van-swietenhof/64>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adriaan van Swietenhof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/61ef9bce-d0ca-42ff-8a76-2557c3008e36>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achterherengracht/8884>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achterherengracht (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/f858a935-67b7-491d-aa8d-96e70389f906>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adriana-haanenstraat/6367>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adriana Haanenstraat"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7ee4-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/akkerdistelstraat/6370>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Akkerdistelstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/3a19f6bc-f94b-4446-bbbb-6830896e08ab>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amsterdamsche-hofje/7037>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsterdamsche hofje"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/4b8ee055-4736-4749-b5f4-025d2cd0ec9c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/a-moenstraat/5285>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "A. Moenstraat"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1ca6-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Afrikahaven"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1a0f-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adriaan-van-bergenstraat/61>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adriaan van Bergenstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-10f5-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/akoleienstraat/87>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Akoleienstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-141d-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alexander-dumaslaan/109>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alexander Dumaslaan"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0ffd-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alexanderplein/111>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alexanderplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/58ee7218-8c2b-4485-900c-6cf95175fdc3>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelgracht/5981>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelgracht"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1d83-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achterlaan-zunderdorp/39>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achterlaan"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/9acfe18f-e87e-4d6e-893f-cc0b3684b241>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/am-van-schurmanhof/9330>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "A.M. van Schurmanhof"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0e5d-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsterdamse Bos"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc90f4c6-ac5c-36bb-e053-b784100a1540>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelveenseweg (Amstelveen)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1cfb-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aaron-coplandstraat/14>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aaron Coplandstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-146c-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/anderiesenhof/154>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Anderiesenhof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1b33-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelzijde"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-19a4-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelveense Poel (Amstelveen)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/7c5465ae-6600-41d5-bf6d-f1a183ab1983>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/alfred-tepepad/9217>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Alfred Tepepad"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0dda-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amstelveenseweg/145>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelveenseweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1d48-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albert-luthulistraat/95>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albert Luthulistraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/c9347ded-946e-5ecf-e053-b784100af984>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/anderiesenstraat/9463>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Anderiesenstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1eca-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adrianus-van-waertweg/65>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adrianus van Waertweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1245-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aalsmeerplein/9>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aalsmeerplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bc59a61c-04d4-4d1e-a723-8a8f535eee6c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aalsmeerhof/8877>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aalsmeerhof (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d29e79be-04bf-35d5-e053-b784100ac595>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aart-kleinhof/16>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aart Kleinhof"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0f83-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Afgesloten IJ"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/8f59cdda-d22e-4d16-afcc-82dc00a4f88f>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albert-wittenbergplein/9303>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albert Wittenbergplein"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1243-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aletta-jacobslaan/107>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aletta Jacobslaan"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-16e8-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/achillesstraat/34>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Achillesstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d4c654e6-6e84-4121-aaf8-748b05a61aa8>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abe-lenstrastraat/8881>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abe Lenstrastraat (Weesp)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1f39-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aert-van-nesstraat/67>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aert van Nesstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/6da92dcd-57a9-4082-8bb4-57b347941ea8>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/admiraliteitsgang/7810>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Admiraliteitsgang"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/e557c10e-8c34-7dcb-e053-b784100a971b>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amsterdamseweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1506-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/adama-van-scheltemaplein/45>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adama van Scheltemaplein"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-13a6-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/akkerwindeweg/86>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Akkerwindeweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-15fc-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/andreas-bonnstraat/159>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Andreas Bonnstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/52cc4aa5-3a0d-4cbc-8fce-ac845126f78a>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/1e-glanshof/5283>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "1e Glanshof"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1df9-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstelzijde (Amstelveen)"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/bb4c00fb-438e-41e8-83d7-a90e6490c968>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/2e-glanshof/5284>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "2e Glanshof"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1dbd-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amerikahavenweg/132>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amerikahavenweg"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1044-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/vrijheidslaan/4847>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Amstellaan"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-136a-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albert-verweystraat/98>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albert Verweystraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1627-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/andoornstraat/158>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Andoornstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/e66bed4e-bf3b-424e-94e0-8bb62142b011>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/allen-ginsbergstraat/9405>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Allen Ginsbergstraat"@en;
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0e30-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/albert-neuhuysstraat/96>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Albert Neuhuysstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/ff447be7-7ea4-5dc6-e053-894acd0a4d7d>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/abraham-de-haanstraat/25>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Abraham de Haanstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-0e74-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/agatha-dekenstraat/75>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Agatha Dekenstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1ed6-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aardbeistraat/13>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aardbeistraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1fc8-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Adenhaven"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-12e1-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/aalbersestraat/8>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Aalbersestraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-1b4d-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/analoogstraat/150>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Analoogstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/b9cddfa8-13d3-65bc-e053-b784100acc2c>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/akbarstraat/78>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Akbarstraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/d426fce8-25ca-77bb-e053-b784100a08a0>
+        a                  skos:Concept;
+        skos:exactMatch    <https://adamlink.nl/geo/street/amperestraat/134>;
+        skos:inScheme      <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41>;
+        skos:prefLabel     "Ampèrestraat"@en;
+        skos:scopeNote     "";
+        skos:topConceptOf  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/a4863c0c-d9e5-3902-831a-d0960e381a41> .
+

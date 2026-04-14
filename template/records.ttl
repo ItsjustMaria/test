@@ -1,0 +1,130 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix memorix: <http://memorix.io/ontology#> .
+@prefix schema:  <http://schema.org/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/Acquisition>
+        a                    memorix:Recordtype;
+        dcterms:description  "Record type for Acquisition";
+        dcterms:title        "Acquisition"@en , "Aanwinst"@nl;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/4fdca0be-756a-4364-83d6-2a28484006d7> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/Series>
+        a                    memorix:Recordtype;
+        memorix:hasInformationComponent
+                [ a       memorix:TreePathComponent , memorix:DepotLocationComponent ];
+        dcterms:description  "Series: a description of a grouped set of archival items, for example organized by theme, task, or date";
+        dcterms:title        "Series"@en , "Groep"@nl;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/8c431205-f36a-4e96-96da-13280dec1d5a> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/55331068-87ff-429c-9ae9-dd15fb3a3609> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/3b194aa4-4068-4dde-b418-563dfb341df7> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/df7c0a9e-4eb3-4326-81f9-011cab21267b> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/7a8ddbd6-4949-4186-852f-8af431f8089c> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/e6260d5b-172c-4d7c-8f5b-2ed7ddd7cd23> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f45ec9f7-cd68-406c-905e-dd147cd29286> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/e0c025d0-7e27-4e3d-9837-ca915ad93c1b> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f81d82ac-f684-42d0-9343-0833b9af6970> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/ee9b2b20-af33-451d-b890-cbb87a39198b> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/4e662d09-b9f9-4732-8112-0359c888675f> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/966785f8-d455-4f24-a1ba-8e644e864de9> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f9af0e06-123a-4d43-a234-afb624df0303> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/7319b914-4cb5-44ba-8773-895bd4749e71> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/2eabd398-774b-4e55-9b78-88f46aa3c1a5> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/0de52d60-2549-4289-a357-05aa04d8626a> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/Image>
+        a                    memorix:Recordtype;
+        memorix:hasInformationComponent
+                [ a       memorix:DigitalAssetComponent ];
+        dcterms:description  "Afbeelding: door een persoon gemaakte verbeelding, zoals een foto, prent of tekening";
+        dcterms:title        "Afbeelding"@nl , "Image"@en;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/55331068-87ff-429c-9ae9-dd15fb3a3609> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f45ec9f7-cd68-406c-905e-dd147cd29286> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/29b9b2a0-e6d9-4274-a9cc-bd0ad1feb426> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/bafc79cc-d995-48b3-a3cd-4aca3f6f6c9d> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/48e2b4f5-7776-4475-995d-7a11e3f4183e> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes#total>
+        a                     schema:ItemList;
+        schema:numberOfItems  "16"^^xsd:int .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/LoanReport>
+        a                    memorix:Recordtype;
+        dcterms:description  "Stadsarchief recordtype voor bruiklenen";
+        dcterms:title        "Loan report"@en , "Bruikleenrapport"@nl;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/daf8f906-b0ff-443c-acf1-305d22ca6dc9> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/Selection>
+        a                    memorix:Recordtype;
+        memorix:hasInformationComponent
+                [ a       memorix:DigitalAssetComponent ];
+        dcterms:description  "Selectie uit een Contactsheet";
+        dcterms:title        "Selectie"@nl , "Selection"@en;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/29b9b2a0-e6d9-4274-a9cc-bd0ad1feb426> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/Deed>
+        a                    memorix:Recordtype;
+        memorix:hasInformationComponent
+                [ a       memorix:DigitalAssetComponent ];
+        dcterms:description  "Deed: a record of an event, such as a change of residence or birth";
+        dcterms:title        "Akte"@nl , "Deed"@en;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/b56cf0f3-49a5-43c4-b7bd-aec1fef46e5b> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f45ec9f7-cd68-406c-905e-dd147cd29286> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/File>
+        a                    memorix:Recordtype;
+        memorix:hasInformationComponent
+                [ a       memorix:TreePathComponent , memorix:DigitalAssetComponent , memorix:DepotLocationComponent ];
+        memorix:typeOf       memorix:File;
+        dcterms:description  "Bestanddeel: beschrijving van een of meerdere gegevensdragers, zoals correspondentie of een kasboek";
+        dcterms:title        "File"@en , "Bestanddeel"@nl;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/f45ec9f7-cd68-406c-905e-dd147cd29286> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f9af0e06-123a-4d43-a234-afb624df0303> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/4e662d09-b9f9-4732-8112-0359c888675f> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f81d82ac-f684-42d0-9343-0833b9af6970> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/7a8ddbd6-4949-4186-852f-8af431f8089c> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/55331068-87ff-429c-9ae9-dd15fb3a3609> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/966785f8-d455-4f24-a1ba-8e644e864de9> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/df7c0a9e-4eb3-4326-81f9-011cab21267b> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/7319b914-4cb5-44ba-8773-895bd4749e71> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/0de52d60-2549-4289-a357-05aa04d8626a> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/3b194aa4-4068-4dde-b418-563dfb341df7> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/ee9b2b20-af33-451d-b890-cbb87a39198b> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/8c431205-f36a-4e96-96da-13280dec1d5a> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/2eabd398-774b-4e55-9b78-88f46aa3c1a5> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/e6260d5b-172c-4d7c-8f5b-2ed7ddd7cd23> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/e0c025d0-7e27-4e3d-9837-ca915ad93c1b> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/ConservationReport>
+        a                    memorix:Recordtype;
+        dcterms:description  "Stadsarchief recordtype voor Conserveringsrapport";
+        dcterms:title        "Conservation report"@en , "Conserveringsrapport"@nl;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/f395dfd2-81f2-43b7-aa72-c55f1e5bfdfc> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/Family>
+        a                    memorix:Recordtype;
+        dcterms:description  "Family: an established family (name) of a family that has created an archive";
+        dcterms:title        "Familie"@nl , "Family"@en;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/e99b7ce7-38eb-43f1-abdf-eb309991ca73> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/Fonds>
+        a                    memorix:Recordtype;
+        memorix:hasInformationComponent
+                [ a       memorix:HasRecordsComponent , memorix:DepotLocationComponent , memorix:TreeComponent ];
+        memorix:typeOf       memorix:Fonds;
+        dcterms:description  "Archiefblok: geheel van archief- of collectiestukken die in samenhang gemaakt of verzameld zijn, bijvoorbeeld door een organisatie of persoon";
+        dcterms:title        "Archiefblok"@nl , "Fonds"@en;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/e6260d5b-172c-4d7c-8f5b-2ed7ddd7cd23> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/e0c025d0-7e27-4e3d-9837-ca915ad93c1b> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/8c431205-f36a-4e96-96da-13280dec1d5a> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/3b194aa4-4068-4dde-b418-563dfb341df7> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/14b602bf-f092-4f35-8766-a4b6e7d9767c> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/7a8ddbd6-4949-4186-852f-8af431f8089c> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/55331068-87ff-429c-9ae9-dd15fb3a3609> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f45ec9f7-cd68-406c-905e-dd147cd29286> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/37c03103-ed87-44e5-a9d5-7a30b2686d19> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/0de52d60-2549-4289-a357-05aa04d8626a> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/2eabd398-774b-4e55-9b78-88f46aa3c1a5> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/4e662d09-b9f9-4732-8112-0359c888675f> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f81d82ac-f684-42d0-9343-0833b9af6970> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/7319b914-4cb5-44ba-8773-895bd4749e71> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/ee9b2b20-af33-451d-b890-cbb87a39198b> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/966785f8-d455-4f24-a1ba-8e644e864de9> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/4b8168e7-ceff-450d-bf89-ce8c3829b2b7> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f9af0e06-123a-4d43-a234-afb624df0303> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/DigitalDossier>
+        a                    memorix:Recordtype;
+        memorix:hasInformationComponent
+                [ a       memorix:DigitalAssetComponent ];
+        memorix:typeOf       memorix:File;
+        dcterms:description  "Digital Dossier: a set of digital files created together, such as a building file or documents of a meeting";
+        dcterms:title        "Digital Dossier"@en , "Digitaal Dossier"@nl;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/2eabd398-774b-4e55-9b78-88f46aa3c1a5> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/966785f8-d455-4f24-a1ba-8e644e864de9> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/e0c025d0-7e27-4e3d-9837-ca915ad93c1b> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/14b602bf-f092-4f35-8766-a4b6e7d9767c> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/7a8ddbd6-4949-4186-852f-8af431f8089c> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/4e662d09-b9f9-4732-8112-0359c888675f> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/7319b914-4cb5-44ba-8773-895bd4749e71> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f9af0e06-123a-4d43-a234-afb624df0303> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/0de52d60-2549-4289-a357-05aa04d8626a> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/4b8168e7-ceff-450d-bf89-ce8c3829b2b7> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/37c03103-ed87-44e5-a9d5-7a30b2686d19> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f45ec9f7-cd68-406c-905e-dd147cd29286> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/3b194aa4-4068-4dde-b418-563dfb341df7> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/e6260d5b-172c-4d7c-8f5b-2ed7ddd7cd23> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/8c431205-f36a-4e96-96da-13280dec1d5a> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/ee9b2b20-af33-451d-b890-cbb87a39198b> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/DigitalRecord>
+        a                    memorix:Recordtype;
+        memorix:hasInformationComponent
+                [ a       memorix:DigitalAssetComponent ];
+        memorix:typeOf       memorix:File;
+        dcterms:description  "Digital Record: a description of an originally digital file, such as a PDF";
+        dcterms:title        "Digitaal informatieobject"@nl , "Digital Record"@en;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/f45ec9f7-cd68-406c-905e-dd147cd29286> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/966785f8-d455-4f24-a1ba-8e644e864de9> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/2eabd398-774b-4e55-9b78-88f46aa3c1a5> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/e6260d5b-172c-4d7c-8f5b-2ed7ddd7cd23> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/e0c025d0-7e27-4e3d-9837-ca915ad93c1b> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/4e662d09-b9f9-4732-8112-0359c888675f> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/4b8168e7-ceff-450d-bf89-ce8c3829b2b7> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/37c03103-ed87-44e5-a9d5-7a30b2686d19> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/7319b914-4cb5-44ba-8773-895bd4749e71> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/0de52d60-2549-4289-a357-05aa04d8626a> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/ee9b2b20-af33-451d-b890-cbb87a39198b> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/14b602bf-f092-4f35-8766-a4b6e7d9767c> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/8c431205-f36a-4e96-96da-13280dec1d5a> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f9af0e06-123a-4d43-a234-afb624df0303> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/7a8ddbd6-4949-4186-852f-8af431f8089c> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/3b194aa4-4068-4dde-b418-563dfb341df7> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/Person>
+        a                    memorix:Recordtype;
+        dcterms:description  "Persoon: vastgestelde personen die een archief hebben gevormd en/of een archiefstuk hebben gemaakt en/of afgebeeld staan";
+        dcterms:title        "Persoon"@nl , "Person"@en;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/e99b7ce7-38eb-43f1-abdf-eb309991ca73> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/55331068-87ff-429c-9ae9-dd15fb3a3609> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/48e2b4f5-7776-4475-995d-7a11e3f4183e> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/TemporaryBook>
+        a                    memorix:Recordtype;
+        memorix:hasInformationComponent
+                [ a       memorix:DigitalAssetComponent , memorix:DepotLocationComponent ];
+        memorix:typeOf       memorix:File;
+        dcterms:description  "Stadsarchief tijdelijk recordtype voor Boek";
+        dcterms:title        "TemporaryBook"@en , "Tijdelijk Boek"@nl;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/df7c0a9e-4eb3-4326-81f9-011cab21267b> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/PersonObservation>
+        a                    memorix:Recordtype;
+        memorix:hasInformationComponent
+                [ a       memorix:DigitalAssetComponent ];
+        dcterms:description  "Person Observation: an observation of a person in a deed";
+        dcterms:title        "Person observation"@en , "Persoonsvermelding"@nl;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/b56cf0f3-49a5-43c4-b7bd-aec1fef46e5b> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/f45ec9f7-cd68-406c-905e-dd147cd29286> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/Organisation>
+        a                    memorix:Recordtype;
+        dcterms:description  "Organisation: an established entity, such as a company or a part of the municipality";
+        dcterms:title        "Organisation"@en , "Organisatie"@nl;
+        schema:isPartOf      <https://stadsarchiefamsterdam.memorix.io/resources/collections/e99b7ce7-38eb-43f1-abdf-eb309991ca73> , <https://stadsarchiefamsterdam.memorix.io/resources/collections/55331068-87ff-429c-9ae9-dd15fb3a3609> .
+
