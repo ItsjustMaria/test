@@ -26,7 +26,6 @@ upload = r'../data/upload.csv' # name your file for upload to memorix = sys.argv
 turtle = r'../templates/Deed.ttl' # name your turtle
 concepts = r'../data/straten.xlsx' # name your file for concept export
 alter = r'../data/alternatieve_straatnamen.csv'  # name your file for alternative street names
-name = '' #  Early idea, Not in use? 
 args = memorix_export, concepts, alter
 errors = []
 pattern = r'^(?P<street>.*?)(?:\s+(?P<number>\d+)(?P<add>.*))?$'
@@ -98,11 +97,9 @@ settings = saa.readJsonFile(f"{settings_file}")
 api = memorix.ApiClient(settings)
 # helper = wrapper.ApiBuildingBlocks(api)
 
-
 # memorix.get_record_type(name)
 def main():
     pass
-    # get_uuid_for_query_to_csv() ## --> los draaien?
     
 
 ########################     READ FILES    ########################    
@@ -147,29 +144,15 @@ def match_data(pattern, df_streets, **kwrgs):
         ################### MATCH INFORMATION ############################
         different_nr = df_streets[kwrgs['extr_nr']].notna() & df_streets[kwrgs['h_nr_lst']].notna() & (df_streets[kwrgs['extr_nr']] != df_streets[kwrgs['h_nr_lst']])
         different_add = df_streets[kwrgs['extr_add']].notna() & df_streets[kwrgs['add_lst']].notna() & (df_streets[kwrgs['extr_add']] != df_streets[kwrgs['add_lst']])
-        #new_street = (df_streets[kwrgs['street_lst']] != df_streets[kwrgs['extr_str']]) | (df_streets[kwrgs['street_lst']] == '')
         new_nr = (df_streets[kwrgs['h_nr_lst']] != df_streets[kwrgs['extr_nr']]) | (df_streets[kwrgs['h_nr_lst']] == '')
         new_add = (df_streets[kwrgs['add_lst']] != df_streets[kwrgs['extr_add']]) | (df_streets[kwrgs['add_lst']] == '')
 
-        ###############################LOGICA HIERBOVEN TOEPASSEN ##############################################################
-
-        # ifferent_number = mask_nr & (df_streets[kwrgs['extr_nr']] != df_streets[kwrgs['h_nr_lst']])
-        # ifferent_add = mask_add & (df_streets[kwrgs['extr_add']] != df_streets[kwrgs['add_lst']])
-        # logging.error(f'Differentiating error')
-
-        # Fill street fields ONLY if they are empty and ALL THIS WORK FOR JCK SHIT IT NEEDS TO BE A UUID
-        # df_streets[kwrgs['street_lst']] = df_streets[kwrgs['street_lst']].replace('', pd.NA).combine_first(df_streets[kwrgs['extr_str']])
-
-
-        # transfer_standard = df_streets[kwrgs['extr_str']] != different_street
-        # print(f'This is the transfer standard {transfer_standard}')
         deviates = different_nr, different_add, new_nr, new_add,  
         return deviates
 
     except:
         my_log.error(f'Data extraction and match error with {df_streets}')
         errors.append({'fn: match_data': df_streets})
-        #print(f'We have an error in {df}') ##################   ------------->>> HIER WILLEN WE DE FILENAAM EXTRACTEN
 
 def write_to_files(deviates, df_streets, df_concepts, **kwrgs):
 
@@ -185,7 +168,7 @@ def write_to_files(deviates, df_streets, df_concepts, **kwrgs):
         # Determine index based on common denominator
         
         key_streets = 'temp street'
-        key_concepts = 'straat' # = set in for loop
+        key_concepts = 'straat'
   
         # Map column from merged to basefile
         update_mapping = {
@@ -199,35 +182,9 @@ def write_to_files(deviates, df_streets, df_concepts, **kwrgs):
             value_map = df_concepts.dropna(subset=[concepts_col]).set_index('straat')[concepts_col].to_dict()
             df_streets[streets_col] = df_streets[key_streets].map(lambda x: value_map.get(x, df_streets.loc[df_streets[key_streets] == x, streets_col].values[0]))
         
-        
-        #print(f'The dataframe that\'s bugging{dfs[1]['concept_street']}')
-        #print(f'The dataframe that\'s oke???{df_streets['key_streets']}')
-        ## Replace data 'in place' based on map and index
-        #for streets_col, concepts_col in update_mapping.items():
-        #    value_map = dfs[1].dropna(subset=[concepts_col]).set_index('straat')[concepts_col].to_dict()
-        #    (df_streets[streets_col]) = (df_streets[key_streets]).map(lambda x: value_map.get(x, df_streets.loc[(df_streets[key_streets]) == x, streets_col].values[0]))
-    
     except:
         my_log.error(f'Data writing error')
         errors.append({'fn: write_to_files': {df_streets, df_concepts}})
-        #print(f'We have an error in {df}') ##################   ------------->>> HIER WILLEN WE DE FILENAAM EXTRACTEN
-
-        # mask_not_alt = df_streets[alt_str].notna()
-        # 
-        # if not mask_not_alt:
-        #   df_streets[kwrgs['street_lst']] = df_streets[kwrgs['extr_str']] # Werkt niet. Wat als hij niet gevuld is? Daar is je masker voor doos. Nee doos! Je boolean is nu False, omdat er geen data in staat
-        #print(f' This is same street {same_street}')
-
-        # Write data from temp column to db column ONLY for data that is the same as already available data
-        # df_streets.loc[same_street, kwrgs['street_lst']] = df_streets.loc[same_street, kwrgs['extr_str']]
-
-
-
-        # Create mask for different 
-        # mask_diff
-
-        # Replace stripped street in temp column 'in place' on location [row, column] of existing df_streets spreadsheet
-        # df_streets.loc[mask_str, kwrgs['street_lst']] = df_streets.loc[mask_str, kwrgs['extr_str']] if df_streets[]
 
 def merge_data(df_streets, df_concepts, df_alternatives, **kwrgs):
         
@@ -243,15 +200,10 @@ def merge_data(df_streets, df_concepts, df_alternatives, **kwrgs):
         # Add extracted number [altlabel] to the merged file
         merged['number'] = merged['adamlink'].str.extract(r'(\d+)') 
 
-        #print(merged)
-
         # Compare number in merged file with all numbers in df alternative names and store all alternative names in column_list
         def find_alternatives(row):    
             if pd.notna(row['number']):
-                # Find all rows in the alternatives dataframe with the same number
                 number_to_match = row['number']
-                #print(f"Looking for alternatives for number: {number_to_match}")
-
                 alternatives = df_alternatives[df_alternatives['number'] == number_to_match]
                 return alternatives[kwrgs['link']].tolist()  # Return all matching alternatives
             return []
@@ -264,11 +216,6 @@ def merge_data(df_streets, df_concepts, df_alternatives, **kwrgs):
     except:
         my_log.error(f'Data merging error')
         errors.append({'fn: merge_data': [df_streets, df_concepts, df_alternatives]})
-            #print(f'We have an error in {df}') ##################   ------------->>> HIER WILLEN WE DE FILENAAM EXTRACTEN
-    # Replace data in merged df_streets[columns] with data from merged df_concepts[columns]
-    # merged[kwrgs['street_lst']] = merged[concept_adamlink] 
-    # merged[df_streets[kwrgs['h_nr_lst']]] = merged[df_streets[kwrgs['h_nr_lst']]].replace('', pd.NA).combine_first(df_streets[kwrgs['extr_nr']])
-    # merged[df_streets[kwrgs['add_lst']]] = merged[df_streets[kwrgs['add_lst']]].replace('', pd.NA).combine_first(df_streets[kwrgs['extr_add']])
 
 def output_to_file_and_db(merged, df_streets, deed, **kwrgs):
     ########################### OUTPUT #################################
@@ -281,17 +228,11 @@ def output_to_file_and_db(merged, df_streets, deed, **kwrgs):
     encoding= 'utf-8',
     index= False, header= True)
 
-    df_out = merged # df[[uuid, txt_value_lst, kwrgs['street_lst'], kwrgs['h_nr_lst'], kwrgs['add_lst'], alt_nr, alt_add]]
-    # execptions_df = [[uuid,  alt_nr, alt_add]]
-    
-    # Output dfframe to a new spreadsheet 
+    df_out = merged
+
     df_out.to_csv(out_file, sep=';', 
     encoding= 'utf-8',
     index= False, header= True)
-
-########################################################## LISA SYNTAX #################################################################################
-
-
 
 for index, row in tqdm(df_streets.iterrows()):
     uuid = row['id']
