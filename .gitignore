@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ignore default dev thingies
+.idea/
+.vs/
+.vscode/
+.DS_Store
+.venv
+
+
+# app specific things
+Pipfile.lock
+settings*json
+tokens.json
+data/logs/api.log
+data/turtle/*
+data/temp/*
+data/depotbeheer/*
+*.http
+*.db
+oracle_scripts/
+
+# my_folder
+data/*
