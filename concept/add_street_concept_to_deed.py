@@ -1,0 +1,312 @@
+## Import libraries
+import sys
+import os 
+from pathlib import Path
+#dir_path = os.path.dirname(os.path.realpath(__file__))
+import simplejson as json
+from datetime import time, datetime
+from tqdm import tqdm
+# saa_nexus = Path(__file__).resolve().parents[]/ 'saa-nexus-scripts' 
+# sys.path.append(str(saa_nexus)) #r'../saa-nexus-scripts/modules')
+#root = '/opt/lampp/htdocs/saa-nexus-scripts'
+sys.path.append('../../')
+from modules import memorix
+from modules import saa
+# from modules import wrapper
+import pandas as pd
+import re
+import logging
+from rapidfuzz import fuzz
+
+## Declare script variables
+env = sys.argv[1]
+memorix_export = sys.argv[2]
+out_file = r'../data/output.csv' # name your file for output manual data verifcation = sys.argv[2]
+upload = r'../data/upload.csv' # name your file for upload to memorix = sys.argv[3]
+turtle = r'../templates/Deed.ttl' # name your turtle
+concepts = r'../data/straten.xlsx' # name your file for concept export
+alter = r'../data/alternatieve_straatnamen.csv'  # name your file for alternative street names
+name = '' #  Early idea, Not in use? 
+args = memorix_export, concepts, alter
+errors = []
+pattern = r'^(?P<street>.*?)(?:\s+(?P<number>\d+)(?P<add>.*))?$'
+
+######################## DECLARE EXPORT VARIABLES ########################
+current_datetime = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
+logfile = f'../logs/street_concepts to deed {str(current_datetime)}.log'
+print (logfile)
+
+
+############################# LOGGER SETUP ###############################
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
+    
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    handlers=[logging.FileHandler(logfile, mode='w')]
+)
+my_log = logging.getLogger()
+
+
+######################## DECLARE EXPORT VARIABLES ########################
+
+## MEMORIX EXPORT
+kwrgs = {
+    'uuid' : 'id',
+    'txt_value_lst' : 'Deed.saa:isAssociatedWithModernAddress.saa:streetTextualValue',
+    'street_lst' : 'Deed.saa:isAssociatedWithModernAddress.saa:street',
+    'h_nr_lst' : 'Deed.saa:isAssociatedWithModernAddress.saa:houseNumber',
+    'add_lst' : 'Deed.saa:isAssociatedWithModernAddress.saa:houseNumberAddition',
+    'adam_link' : 'Deed.saa:hasOrHadSubjectLocation',
+
+    ## DEVIATES FOR MANUAL CHECK OUTPUT FILE
+    'extr_str' : 'temp street',
+    'extr_nr' : 'temp number',
+    'extr_add' : 'temp add',
+    'alt_nr' : 'Deed.saa:isAssociatedWithModernAddress.saa:houseNumber',
+    'alt_add' : 'Deed.saa:isAssociatedWithModernAddress.saa:houseNumberAddition',
+
+    # CONCEPT EXPORT
+    "concept_uuid" : 'concept_uuid',
+    'concept_street' : 'straat',
+    'concept_adamlink' : 'adamlink',
+
+    # ALTERNATVIES EXPORT
+    'link' : 'straat-label-altlabel'
+    }
+
+
+# MN acc = acceptatieomgeving env = echie tst = dry-run from home
+if env == 'acc':
+    prefix = 'https://ams-migrate.memorix.io'
+    settings_file = r'../../settings.json'
+    #cwd = os.getcwd()  # Get the current working directory (cwd)
+    #files = os.listdir(cwd)  # Get all the files in that directory
+    #print("Files in %r: %s" % (cwd, files))
+#elif env == 'prod':
+#    prefix = 'https://stadsarchiefamsterdam.memorix.io'
+#    settings_file = 'settings.prod.json'
+elif env == 'tst':
+    print(f'output: {out_file}')
+else:
+    raise ValueError("Environment must be 'acc' or 'prod'")
+
+
+
+settings = saa.readJsonFile(f"{settings_file}")
+api = memorix.ApiClient(settings)
+# helper = wrapper.ApiBuildingBlocks(api)
+
+
+# memorix.get_record_type(name)
+def main():
+    pass
+    # get_uuid_for_query_to_csv() ## --> los draaien?
+    
+
+########################     READ FILES    ########################    
+df_streets = pd.read_csv(args[0],
+    
+    sep=";",             
+    dtype={ "id": str,
+           kwrgs['txt_value_lst']: str,
+           kwrgs['street_lst']: str,
+           kwrgs['h_nr_lst']: str,
+           kwrgs['add_lst']: str,
+           kwrgs['adam_link']: str
+           }
+    )
+
+read_concepts = pd.read_excel(args[1]) 
+
+df_alternatives = pd.read_csv(args[2],
+    sep=";",              
+    dtype={ kwrgs['link']: str,
+           }
+)
+
+######################## CREATE DATAFRAMES ########################
+df_concepts = pd.DataFrame({
+    kwrgs['concept_uuid'] : read_concepts['concept'],
+    kwrgs['concept_street'] : read_concepts['straat'],
+    kwrgs['concept_adamlink'] : read_concepts['adamlink']
+})
+  
+def match_data(pattern, df_streets, **kwrgs):
+
+    try:
+        #################### EXTRACT INFORMATION #########################
+        extracted = df_streets[kwrgs['txt_value_lst']].str.extract(pattern)
+
+        # Capture groups 
+        df_streets[kwrgs['extr_str']] = extracted['street'].str.strip()
+        df_streets[kwrgs['extr_nr']]  = extracted['number'].str.strip()
+        df_streets[kwrgs['extr_add']] = extracted['add'].str.strip()
+
+        ################### MATCH INFORMATION ############################
+        different_nr = df_streets[kwrgs['extr_nr']].notna() & df_streets[kwrgs['h_nr_lst']].notna() & (df_streets[kwrgs['extr_nr']] != df_streets[kwrgs['h_nr_lst']])
+        different_add = df_streets[kwrgs['extr_add']].notna() & df_streets[kwrgs['add_lst']].notna() & (df_streets[kwrgs['extr_add']] != df_streets[kwrgs['add_lst']])
+        #new_street = (df_streets[kwrgs['street_lst']] != df_streets[kwrgs['extr_str']]) | (df_streets[kwrgs['street_lst']] == '')
+        new_nr = (df_streets[kwrgs['h_nr_lst']] != df_streets[kwrgs['extr_nr']]) | (df_streets[kwrgs['h_nr_lst']] == '')
+        new_add = (df_streets[kwrgs['add_lst']] != df_streets[kwrgs['extr_add']]) | (df_streets[kwrgs['add_lst']] == '')
+
+        ###############################LOGICA HIERBOVEN TOEPASSEN ##############################################################
+
+        # ifferent_number = mask_nr & (df_streets[kwrgs['extr_nr']] != df_streets[kwrgs['h_nr_lst']])
+        # ifferent_add = mask_add & (df_streets[kwrgs['extr_add']] != df_streets[kwrgs['add_lst']])
+        # logging.error(f'Differentiating error')
+
+        # Fill street fields ONLY if they are empty and ALL THIS WORK FOR JCK SHIT IT NEEDS TO BE A UUID
+        # df_streets[kwrgs['street_lst']] = df_streets[kwrgs['street_lst']].replace('', pd.NA).combine_first(df_streets[kwrgs['extr_str']])
+
+
+        # transfer_standard = df_streets[kwrgs['extr_str']] != different_street
+        # print(f'This is the transfer standard {transfer_standard}')
+        deviates = different_nr, different_add, new_nr, new_add,  
+        return deviates
+
+    except:
+        my_log.error(f'Data extraction and match error with {df_streets}')
+        errors.append({'fn: match_data': df_streets})
+        #print(f'We have an error in {df}') ##################   ------------->>> HIER WILLEN WE DE FILENAAM EXTRACTEN
+
+def write_to_files(deviates, df_streets, df_concepts, **kwrgs):
+
+    try: 
+        ################### write deviate data ##########################
+        df_streets.loc[deviates[0], kwrgs['alt_nr']] = df_streets.loc[deviates[0], kwrgs['extr_nr']]
+        df_streets.loc[deviates[1], kwrgs['alt_add']] = df_streets.loc[deviates[1], kwrgs['extr_add']]
+        df_streets.loc[deviates[2], kwrgs['h_nr_lst']] = df_streets.loc[deviates[2], kwrgs['extr_nr']]
+        df_streets.loc[deviates[3], kwrgs['add_lst']] = df_streets.loc[deviates[3], kwrgs['extr_add']]
+
+
+        ################ RELOCATE TO BASE FILE ##########################
+        # Determine index based on common denominator
+        
+        key_streets = 'temp street'
+        key_concepts = 'straat' # = set in for loop
+  
+        # Map column from merged to basefile
+        update_mapping = {
+
+            'Deed.saa:isAssociatedWithModernAddress.saa:street' : 'concept_uuid',
+            'Deed.saa:hasOrHadSubjectLocation' : 'adamlink'
+        }
+        
+
+        for streets_col, concepts_col in update_mapping.items():
+            value_map = df_concepts.dropna(subset=[concepts_col]).set_index('straat')[concepts_col].to_dict()
+            df_streets[streets_col] = df_streets[key_streets].map(lambda x: value_map.get(x, df_streets.loc[df_streets[key_streets] == x, streets_col].values[0]))
+        
+        
+        #print(f'The dataframe that\'s bugging{dfs[1]['concept_street']}')
+        #print(f'The dataframe that\'s oke???{df_streets['key_streets']}')
+        ## Replace data 'in place' based on map and index
+        #for streets_col, concepts_col in update_mapping.items():
+        #    value_map = dfs[1].dropna(subset=[concepts_col]).set_index('straat')[concepts_col].to_dict()
+        #    (df_streets[streets_col]) = (df_streets[key_streets]).map(lambda x: value_map.get(x, df_streets.loc[(df_streets[key_streets]) == x, streets_col].values[0]))
+    
+    except:
+        my_log.error(f'Data writing error')
+        errors.append({'fn: write_to_files': {df_streets, df_concepts}})
+        #print(f'We have an error in {df}') ##################   ------------->>> HIER WILLEN WE DE FILENAAM EXTRACTEN
+
+        # mask_not_alt = df_streets[alt_str].notna()
+        # 
+        # if not mask_not_alt:
+        #   df_streets[kwrgs['street_lst']] = df_streets[kwrgs['extr_str']] # Werkt niet. Wat als hij niet gevuld is? Daar is je masker voor doos. Nee doos! Je boolean is nu False, omdat er geen data in staat
+        #print(f' This is same street {same_street}')
+
+        # Write data from temp column to db column ONLY for data that is the same as already available data
+        # df_streets.loc[same_street, kwrgs['street_lst']] = df_streets.loc[same_street, kwrgs['extr_str']]
+
+
+
+        # Create mask for different 
+        # mask_diff
+
+        # Replace stripped street in temp column 'in place' on location [row, column] of existing df_streets spreadsheet
+        # df_streets.loc[mask_str, kwrgs['street_lst']] = df_streets.loc[mask_str, kwrgs['extr_str']] if df_streets[]
+
+def merge_data(df_streets, df_concepts, df_alternatives, **kwrgs):
+        
+    try:
+        #################### CREATE MERGE FILE ############################
+        # Merge basefile with concepts
+        merged = pd.merge(df_streets, df_concepts, left_on= kwrgs['extr_str'], right_on=kwrgs['concept_street'], how='left') ####
+
+        ##################### MERGE ALTERNATIVES ##########################
+        # Extract altlabel from adamlink 
+        df_alternatives['number'] = df_alternatives[kwrgs['link']].str.extract(r'(\d+)')
+
+        # Add extracted number [altlabel] to the merged file
+        merged['number'] = merged['adamlink'].str.extract(r'(\d+)') 
+
+        #print(merged)
+
+        # Compare number in merged file with all numbers in df alternative names and store all alternative names in column_list
+        def find_alternatives(row):    
+            if pd.notna(row['number']):
+                # Find all rows in the alternatives dataframe with the same number
+                number_to_match = row['number']
+                #print(f"Looking for alternatives for number: {number_to_match}")
+
+                alternatives = df_alternatives[df_alternatives['number'] == number_to_match]
+                return alternatives[kwrgs['link']].tolist()  # Return all matching alternatives
+            return []
+
+        merged['alternative_names'] = merged.apply(find_alternatives, axis=1)
+        
+
+        return merged
+
+    except:
+        my_log.error(f'Data merging error')
+        errors.append({'fn: merge_data': [df_streets, df_concepts, df_alternatives]})
+            #print(f'We have an error in {df}') ##################   ------------->>> HIER WILLEN WE DE FILENAAM EXTRACTEN
+    # Replace data in merged df_streets[columns] with data from merged df_concepts[columns]
+    # merged[kwrgs['street_lst']] = merged[concept_adamlink] 
+    # merged[df_streets[kwrgs['h_nr_lst']]] = merged[df_streets[kwrgs['h_nr_lst']]].replace('', pd.NA).combine_first(df_streets[kwrgs['extr_nr']])
+    # merged[df_streets[kwrgs['add_lst']]] = merged[df_streets[kwrgs['add_lst']]].replace('', pd.NA).combine_first(df_streets[kwrgs['extr_add']])
+
+def output_to_file_and_db(merged, df_streets, deed, **kwrgs):
+    ########################### OUTPUT #################################
+    # Remove temp columns
+    df_streets = df_streets.drop(columns = [kwrgs['extr_str'], kwrgs['extr_nr'], kwrgs['extr_add']])
+
+
+    # Write updated record to csv
+    df_streets.to_csv(upload, sep=';', 
+    encoding= 'utf-8',
+    index= False, header= True)
+
+    df_out = merged # df[[uuid, txt_value_lst, kwrgs['street_lst'], kwrgs['h_nr_lst'], kwrgs['add_lst'], alt_nr, alt_add]]
+    # execptions_df = [[uuid,  alt_nr, alt_add]]
+    
+    # Output dfframe to a new spreadsheet 
+    df_out.to_csv(out_file, sep=';', 
+    encoding= 'utf-8',
+    index= False, header= True)
+
+########################################################## LISA SYNTAX #################################################################################
+
+
+
+for index, row in tqdm(df_streets.iterrows()):
+    uuid = row['id']
+    my_log .info(f"Uploading record deed with uuid {uuid}")
+    try:
+        response = api.update_record(uuid, upload)
+        if response.status_code != 200:
+            my_log .error(f"Reading failed for {uuid}")
+        elif response.status_code == 401:
+            my_log.error('Token issue perhaps')
+    except:
+        my_log.error(f"FAILED TRANSFORMATION {uuid}")
+
+if __name__ == '__main__':
+        deviates = match_data(pattern, df_streets, **kwrgs)
+        write_to_files(deviates, df_streets, df_concepts, **kwrgs)
+        merged = merge_data(df_streets, df_concepts, df_alternatives, **kwrgs)
+        output_to_file_and_db(merged, df_streets, **kwrgs)
