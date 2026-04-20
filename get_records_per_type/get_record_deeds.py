@@ -5,7 +5,7 @@ import os
 import simplejson as json
 from datetime import time, datetime
 from tqdm import tqdm
-sys.path.append(r'../')
+sys.path.append(r'../../')
 from modules import memorix
 from modules import saa
 # from modules import wrapper
@@ -19,7 +19,7 @@ env = sys.argv[1]
 
 ######################## DECLARE EXPORT VARIABLES ########################
 current_datetime = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
-logfile = f'logs/get concept streetnames {str(current_datetime)}.log'
+logfile = f'../logs/get concept streetnames {str(current_datetime)}.log'
 print (logfile)
 
 
@@ -38,13 +38,13 @@ my_log = logging.getLogger()
 # MN acc = acceptatieomgeving env = echie tst = dry-run from home
 if env == 'acc':
     prefix = 'https://ams-migrate.memorix.io'
-    settings_file = r'../settings.json'
+    settings_file = r'../../settings.json'
     cwd = os.getcwd()  # Get the current working directory (cwd)
     files = os.listdir(cwd)  # Get all the files in that directory
     print("Files in %r: %s" % (cwd, files))
 elif env == 'prod':
     prefix = 'https://stadsarchiefamsterdam.memorix.io'
-    settings_file = '../settings.prod.json'
+    settings_file = '../../settings.prod.json'
 elif env == 'tst':
     print(f'test output')
 else:
@@ -57,11 +57,12 @@ api = memorix.ApiClient(settings)
 vocabulair = 'a4863c0c-d9e5-3902-831a-d0960e381a41' # straten, of kies andere conceptlijst in Memorix
 
 # Bestandspaden
-turtle_file = "test.ttl"       # <-- Zet hier het pad naar jouw Turtle file
+turtle_file = "../template/file.ttl"       # <-- Zet hier het pad naar jouw Turtle file
 excel_file = "test_straten.xlsx"       # <-- Zet hier de gewenste Excel naam
 
 # response = api.list_record_types()
-response = api.get_record_type( 'PersonObservation')
+# response = api.get_record_type( 'PersonObservation')
+response = api.get_record( '73d00dde-86f4-4eb1-af4c-c375f7cb3830')
 print(response.text,  file=open(turtle_file, 'w', encoding='utf-8'))
 
 
