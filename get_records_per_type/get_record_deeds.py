@@ -62,12 +62,12 @@ excel_file = "test_straten.xlsx"       # <-- Zet hier de gewenste Excel naam
 
 # response = api.list_record_types()
 # response = api.get_record_type( 'PersonObservation')
-response = api.get_record( '73d00dde-86f4-4eb1-af4c-c375f7cb3830')
+response = api.get_record( '94a49083-be64-4258-9a49-46d0b8816cbe')
 print(response.text,  file=open(turtle_file, 'w', encoding='utf-8'))
 
 
 
-
+### changes ###
 
 
 '''if __name__ == '__main__':
