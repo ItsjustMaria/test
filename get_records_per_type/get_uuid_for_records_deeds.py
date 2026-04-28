@@ -73,7 +73,7 @@ try:
 except:
     my_log.error(f'There is sonething not oke with the connection {response.status_code}')
 
-
+#### Changes ####
 
 
 
