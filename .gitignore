@@ -25,3 +25,15 @@ oracle_scripts/
 
 # my_folder
 data/*
+logs/*
+tuts/*
+try_outs/*
+others/*
+OLD/*
+template/*
+try_outs/*
+cli_module/private/*
+cli_module/data/*
+cli_module/OLD/*
+streets_to_concepts/data/*
+concept/data/*
