@@ -57,12 +57,12 @@ api = memorix.ApiClient(settings)
 vocabulair = 'a4863c0c-d9e5-3902-831a-d0960e381a41' # straten, of kies andere conceptlijst in Memorix
 
 # Bestandspaden
-turtle_file = "../template/file.ttl"       # <-- Zet hier het pad naar jouw Turtle file
+turtle_file = "../template/deed.ttl"       # <-- Zet hier het pad naar jouw Turtle file
 excel_file = "test_straten.xlsx"       # <-- Zet hier de gewenste Excel naam
 
 # response = api.list_record_types()
 # response = api.get_record_type( 'PersonObservation')
-response = api.get_record( '94a49083-be64-4258-9a49-46d0b8816cbe')
+response = api.get_record( 'Deed')
 print(response.text,  file=open(turtle_file, 'w', encoding='utf-8'))
 
 

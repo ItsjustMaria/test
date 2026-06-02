@@ -5,7 +5,7 @@ import os
 import simplejson as json
 from datetime import time, datetime
 from tqdm import tqdm
-sys.path.append('../')
+sys.path.append('../../')
 from modules import memorix
 from modules import saa
 # from modules import wrapper
@@ -19,7 +19,7 @@ env = sys.argv[1]
 
 ######################## DECLARE EXPORT VARIABLES ########################
 current_datetime = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
-logfile = f'logs/get person observation {str(current_datetime)}.log'
+logfile = f'../logs/get person observation {str(current_datetime)}.log'
 print (logfile)
 
 
@@ -38,13 +38,13 @@ my_log = logging.getLogger()
 # MN acc = acceptatieomgeving env = echie tst = dry-run from home
 if env == 'acc':
     prefix = 'https://ams-migrate.memorix.io'
-    settings_file = r'../settings.json'
+    settings_file = r'../../settings.json'
     #cwd = os.getcwd()  # Get the current working directory (cwd)
     #files = os.listdir(cwd)  # Get all the files in that directory
     #print("Files in %r: %s" % (cwd, files))
 elif env == 'prod':
     prefix = 'https://stadsarchiefamsterdam.memorix.io'
-    settings_file = r'../settings.prod.json'
+    settings_file = r'../../settings.prod.json'
 elif env == 'tst':
     print(f'test output')
 else:
@@ -57,17 +57,17 @@ api = memorix.ApiClient(settings)
 vocabulair = 'a4863c0c-d9e5-3902-831a-d0960e381a41' # straten, of kies andere conceptlijst in Memorix
 
 # Bestandspaden
-turtle_file = "person_observation.ttl"       # <-- Zet hier het pad naar jouw Turtle file
+turtle_file = "../template/deed.ttl"       # <-- Zet hier het pad naar jouw Turtle file
 excel_file = "test_straten.xlsx"       # <-- Zet hier de gewenste Excel naam
 
 try:
     # response = api.list_record_types()
-    response = api.get_record_type( 'Persoonsvermelding')
+    response = api.get_record_type( 'Akte')
     #response = api.get_record()
     if response.status_code != 200:
         my_log(response)
     elif response.status_code == 401:
-         my_log.error('You need a refresh token')
+         my_log.error('Some kind of error I dunno')
     else: 
         print(response.text,  file=open(turtle_file, 'w', encoding='utf-8'))
 except:

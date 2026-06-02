@@ -1,16 +1,20 @@
 ## Import libraries
 import sys
+from pathlib import Path
+WORK_REPO = Path("/opt/lampp/htdocs/saa-nexus-scripts")
+sys.path.append(str(WORK_REPO))
 import os 
-#dir_path = os.path.dirname(os.path.realpath(__file__))
+import tracemalloc
+import click
 import simplejson as json
 from datetime import time, datetime
 from tqdm import tqdm
-sys.path.append(r'../../')
 from modules import memorix
 from modules import saa
-# from modules import wrapper
 import pandas as pd
 import re
+import rdflib
+from rdflib import Graph, URIRef, Literal, Namespace, RDF, BNode, XSD
 import logging
 from rapidfuzz import fuzz
 
@@ -38,13 +42,13 @@ my_log = logging.getLogger()
 # MN acc = acceptatieomgeving env = echie tst = dry-run from home
 if env == 'acc':
     prefix = 'https://ams-migrate.memorix.io'
-    settings_file = r'../../settings.json'
+    settings_file = Path(WORK_REPO, 'settings.json')
     cwd = os.getcwd()  # Get the current working directory (cwd)
     files = os.listdir(cwd)  # Get all the files in that directory
     print("Files in %r: %s" % (cwd, files))
 elif env == 'prod':
     prefix = 'https://stadsarchiefamsterdam.memorix.io'
-    settings_file = '../../settings.prod.json'
+    settings_file = Path(WORK_REPO, 'settings.prod.json') 
 elif env == 'tst':
     print(f'test output')
 else:

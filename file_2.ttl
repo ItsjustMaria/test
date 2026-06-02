@@ -1,0 +1,38 @@
+@prefix dash:         <http://datashapes.org/dash#> .
+@prefix dc:           <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms:      <http://purl.org/dc/terms/> .
+@prefix file:         <https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/File#> .
+@prefix html:         <http://www.w3.org/1999/xhtml/> .
+@prefix memorix:      <http://memorix.io/ontology#> .
+@prefix owl:          <http://www.w3.org/2002/07/owl#> .
+@prefix pnv:          <https://w3id.org/pnv#> .
+@prefix rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:         <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ric-dft:      <https://www.ica.org/standards/RiC/vocabularies/documentaryFormTypes#> .
+@prefix ric-rst:      <https://www.ica.org/standards/RiC/vocabularies/recordSetTypes#> .
+@prefix rico:         <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rt:           <https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/> .
+@prefix saa:          <https://data.archief.amsterdam/ontology#> .
+@prefix schema:       <http://schema.org/> .
+@prefix sh:           <http://www.w3.org/ns/shacl#> .
+@prefix skos:         <http://www.w3.org/2004/02/skos/core#> .
+@prefix vocabularies: <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/> .
+@prefix xsd:          <http://www.w3.org/2001/XMLSchema#> .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/records/94a49083-be64-4258-9a49-46d0b8816cbe>
+        rdf:type          memorix:Record , rt:File;
+        file:digitalBorn  false;
+        file:digitised    false;
+        file:fonds        <https://stadsarchiefamsterdam.memorix.io/resources/records/1961f43a-83a2-4b53-bbed-ba446455ba6e>;
+        file:status       "te vernietigen";
+        rico:identifier   "1";
+        rico:title        "Test" .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/records/1961f43a-83a2-4b53-bbed-ba446455ba6e>
+        rdf:type  rt:Fonds .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/records/1961f43a-83a2-4b53-bbed-ba446455ba6e/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://stadsarchiefamsterdam.memorix.io/resources/records/1961f43a-83a2-4b53-bbed-ba446455ba6e>;
+        dcterms:title      "31694, Archief van de Directies Werk, Participatie en Inkomen (WPI): op termijn vernietigbare cliëntendossiers" .
+
