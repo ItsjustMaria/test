@@ -23,9 +23,7 @@ def main(env, street_uuids):
     # ---------------------------
     # CLI args
     # ---------------------------
-    #env = sys.argv[1]  # "acc" or "prod"
-    #street_uuids = sys.argv[2] if len(sys.argv) > 2 else f"../data/streets_new_script_test.csv"
-    print(f'I am now in the streetuuid and getting this env: {env}')
+
     # ---------------------------
     # Environment
     # ---------------------------
@@ -128,7 +126,7 @@ def main(env, street_uuids):
     # First request
     response = api.perform_search(payload=json.dumps(query_payload))
     if response.status_code != 200:
-        print("API error: " + response.text)
+        print("\n\tAPI error: " + response.text)
         sys.exit(1)
 
     data = json.loads(response.text)
@@ -140,7 +138,7 @@ def main(env, street_uuids):
             uuids.append(rid)
 
     total = data.get("pagination", {}).get("total", len(uuids))
-    print(f"Fetched: {len(uuids)} / {total}")
+    print(f"\n\tFetched: {len(uuids)} / {total}" )
 
     # Continue while there's a next token
     while data.get("pagination", {}).get("next"):
@@ -159,7 +157,7 @@ def main(env, street_uuids):
                 uuids.append(rid)
 
         total = data.get("pagination", {}).get("total", total)
-        print(f"Fetched: {len(uuids)} / {total} / {next_token}")
+        print(f"\n\tFetched: {len(uuids)} / {total} / {next_token}")
 
     # ---------------------------
     # Write UUIDs to CSV

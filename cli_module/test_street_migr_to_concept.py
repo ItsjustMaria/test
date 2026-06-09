@@ -16,14 +16,13 @@ from rapidfuzz import fuzz
 from pathlib import Path
 cwd = os.getcwd()  # Get the current working directory (cwd)
 files = os.listdir(cwd)  # Get all the files in that directory
-#print("Files in %r: %s" % (cwd, files))
+print("Files in %r: %s" % (cwd, files))
 #WORK_REPO = Path(r"C:\Users\swart053\Documents\VSC\saa-nexus-scripts") # Adjust base path based on location
 HOME_REPO = Path("/opt/lampp/htdocs/test/cli_module")
 WORK_REPO = Path("/opt/lampp/htdocs/saa-nexus-scripts")
 sys.path.append(str(WORK_REPO))
 from modules import memorix
 from modules import saa
-PREFIX = 'stadsarchief'
 
 '''
    CLI script for exporting data from Memorix through various channels with help of
@@ -38,7 +37,7 @@ PREFIX = 'stadsarchief'
    
    #### !!!! Alteration options mentioned like this  
 
-   This script does in order:  \\# ADJUST THESE WHEN ALL FUNCTIONS ARE DONE CREATING!!!!!!!!! 
+   This script does in order:
 
    1) Retrieve deed turtle for definition from Memorix
    2) Retrieve total concept vocabulaire turtle from Memorix 
@@ -58,10 +57,17 @@ PREFIX = 'stadsarchief'
 # Declare global variables
 current_datetime = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
 # ctx.obj["current_datetime"] = current_datetime
-logfile = f'logs/street_migr_to_concept {str(current_datetime)}.log'
+logfile = f'../logs/get concept streetnames {str(current_datetime)}.log'
 errors = []
 #PREFIX = 'stadsarchiefamsterdam'
-#pattern = re.compile('^(?P<street>.*?)(?:\s+(?P<number>\d+)(?P<add>.*))?$')
+
+# define Namespaces
+SAA = Namespace("https://data.archief.amsterdam/ontology#")
+RICO = Namespace("https://www.ica.org/standards/RiC/ontology#")
+MEMORIX = Namespace("http://memorix.io/ontology#")
+#DEED = Namespace(f"{PREFIX}/resources/recordtypes/Deed#")
+SCHEMA = Namespace(f"http://schema.org/")
+SKOS = Namespace(f"http://www.w3.org/2004/02/skos/core#")
 
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
@@ -79,8 +85,12 @@ log = logging.getLogger()
 # Environment setup
 def setup_environment(env):
     if env == 'acc':
+        global PREFIX 
         PREFIX = 'https://ams-migrate.memorix.io'
         settings_file = Path(WORK_REPO, 'settings.json') 
+        #cwd = os.getcwd()  # Get the current working directory (cwd)
+        #files = os.listdir(cwd)  # Get all the files in that directory
+        #print("Files in %r: %s" % (cwd, files))
     elif env == 'prod':
         PREFIX = 'https://stadsarchiefamsterdam.memorix.io'
         settings_file = Path(WORK_REPO, 'settings.prod.json') 
@@ -93,16 +103,6 @@ def setup_environment(env):
     api = memorix.ApiClient(settings)
 
     return api
-
-# define Namespaces
-SAA = Namespace("https://data.archief.amsterdam/ontology#")
-RICO = Namespace("https://www.ica.org/standards/RiC/ontology#")
-MEMORIX = Namespace("http://memorix.io/ontology#")
-#DEED = Namespace(f"{PREFIX}/resources/recordtypes/Deed#")
-SCHEMA = Namespace(f"http://schema.org/")
-SKOS = Namespace(f"http://www.w3.org/2004/02/skos/core#")
-DEED = Namespace (f"{PREFIX}/resources/recordtypes/Deed#")
-RT = Namespace(f"{PREFIX}/resources/recordtypes")
 
 ################## LOG FUNCTION! DO YOU NEED IT IN CLICK???  #########
 '''# Log file setup
@@ -120,6 +120,27 @@ def log_setup(logfile):
     return log
 '''
 ################## IF NOT DELETE ABOVE FUNCTION ####################
+
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! DELETE DELETE DELETE DELETE DELETE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+## Step 1 function
+#def retrieve_record_turtle_from_memorix(api, turtle_description, record_turtle):
+#    
+#
+#    record_turtle_deleted_message = ""
+#    if record_turtle:
+#        os.remove(record_turtle)
+#        record_turtle_deleted_message = f'''There was already a record_turtle present
+#        in the 'data' folder at {record_turtle}. The records are appended in this file,
+#        so to prevent working with double data, the old file has been deleted'''
+#       # Get turtle for record to update 
+#    try:
+#        response = api.get_record_type( turtle_description)
+#        print(response.text,  file=open(record_turtle, 'w', encoding='utf-8'))
+#        return record_turtle, record_turtle_deleted_message
+#    except:
+#        log.error(f'Could not get record_type {turtle_description} from api {api} with response {response}')
+#        errors.append({'fn: retrieve_record_turtle_from_memorix': [turtle_description, record_turtle, response]})
 
 # Step 1 function
 def retrieve_concept_turtle_from_memorix(env, api, vocabulair, concept_turtle):
@@ -165,7 +186,7 @@ def retrieve_uuid_from_memorix(env, record_uuids):
 
 
 # Step 3 function
-def concept_turtle_to_list( concept_turtle, concept_list):
+def concept_turtle_to_list( concept_turtle):
     
     # Load RDF/concept_turtle 
     g = rdflib.Graph()
@@ -174,6 +195,7 @@ def concept_turtle_to_list( concept_turtle, concept_list):
     # Namespace
     SKOS = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
 
+    concept_list = []
     try: 
         for s in g.subjects(rdflib.RDF.type, SKOS.Concept):
             s_str = str(s)
@@ -186,63 +208,60 @@ def concept_turtle_to_list( concept_turtle, concept_list):
             scopeNote = next((str(sn) for sn in g.objects(s, SKOS.scopeNote)), "")
 
             concept_list.append({
-                'uuid' : uuid,
-                'concept_street' : prefLabel,
-                'adamlink' : exactMatch,
-            }) 
+                "uuid": uuid,
+                "prefLabel": prefLabel,
+                "exactMatch": exactMatch,
+                "scopeNote": scopeNote
+            })
 
-        print(f'\n\"THIS IS THE CONCEPT LIST RETRIEVED FROM MEMORIX::\"\n\n{concept_list}')
         return concept_list
-    
     except:
-        log.error(f'There was an issue reading the concept turtle : {concept_turtle},\n'
-                  f'and creating the concept_list.')
-        errors.append({'fn: concept_turtle_to_list': [concept_turtle]})
+        log.error(f'''There was an issue reading the concept turtle : {concept_turtle}
+                  and creating the concept_list {concept_list}.''')
+        errors.append({'fn: concept_turtle_to_list': [concept_turtle, concept_list]})
 
 # Step 4 function
 def read_external_data_with_panda(data):
     
-    try: 
-        df = pd.read_csv(data, 
+    df = pd.read_csv(data, 
 
-        sep=";",             
-        dtype={ "straat-label-altlabel": str
-               })
-
-        df_external_data = pd.DataFrame(df)
-    except: 
-        log.error(f'There was an issue reading the externally added data : {data},\n' +
-                  f'and creating the dataframe with it.')
-        errors.append({'fn: read_external_data_with_panda': [data]})
+    sep=";",             
+    dtype={ "straat-label-altlabel": str
+           })
+    
+    df_external_data = pd.DataFrame(df)
     
     return df_external_data
 
 # Step 5 function
-def get_records_from_uuid_csv(env, api, df_record_uuids, records):
+def process_data(env, api, df_record_uuids, records):
 
     # Check if file already exists and delete based on env
     records_deleted_message = ''
     if records and env == 'prod':
         os.remove(records)
-        records_deleted_message = (f'There was already a records file present in the \'data\' folder at {records}.' +
-        'You are working in production, so for safety purposes this old file\n' +
-        'has now been removed to prevent working with older data.\n'
-        'A new one is created in this very function')
+        records_deleted_message = f'''There was already a records file
+        present in the 'data' folder at {records}. You are working in production, so for safety
+        purposes this old file has now been removed to prevent working with older data.
+        A new one is created in this function'''
     elif records and env == 'acc':
-        records_deleted_message = (f'There is already a records file present in the \'data\' folder.\n' +
-        'You are working in acceptence environment, so nothing has been done with this file.\n' +
-        f'If output is different than expected, consider removing this file at {records}')
+        records_deleted_message = f'''There is already a records file
+        present in the 'data' folder. You are working in acceptence environment, so nothing
+        has been done with this file. If output is different than expected, consider removing 
+        this file at {records}'''
     #IMAGE = Namespace(f"{PREFIX}/resources/records/Image#")
     #DEED = Namespace (f"{PREFIX}/resources/recordtypes/Deed#")
     #RT = Namespace(f"{PREFIX}/resources/recordtypes")
+    #print(f'I get in the MOTHERFOCKING FUNCTION with {df_record_uuids}')
     # loop through data with progress meter
     #for index, row in tqdm(data.iterrows(), total=data.shape[0]):
-    test_amount = 5
+    test_numbers = 5
     try:
-        for uuid in df_record_uuids["uuid"].iloc[:test_amount]:
+        for uuid in df_record_uuids["uuid"].iloc[:test_numbers]:
             response = api.get_record(uuid)
             print(response.text, file=open(records, 'a', encoding='utf-8')) 
             #record_block = URIRef(f"{PREFIX}/resources/records/{uuid}")
+            #print (f'This is the record block: {record_block}')
             if response.status_code != 200:
                 log.info("...Try to read again...")
                 time.sleep(3)
@@ -315,155 +334,58 @@ def get_records_from_uuid_csv(env, api, df_record_uuids, records):
     #    except:
     #        log.error(f"FAILED TRANSFORMATION {row.iloc[0]}")
 
-### !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! HELPER FUNCTIONS. USE THEM ELSEWHERE OR DELETE !!!!!!!!!!!!! 
 
-# Helper function 2 Step 6 
-def add_number_addition_to_address_block(inst, row, g, number_addition_added, error_list):
-    if (inst, SAA['houseNumberAddition'], Literal(row.numberAddition)) not in g:
-        g.add((inst, SAA['houseNumberAddition'], Literal(row.numberAddition)))
-        logging.info("Number addition added")
-        number_addition_added = True
-        g, error_list = add_number_addition_to_address_block(inst, row, g, error_list)
-    else:
-        logging.info(f"Number addition already in block")
-        number_addition_added = True
-    return g, number_addition_added, error_list
-
-# Helper function 3 Step 6 
-def add_adamlink_to_address(inst, row, g, number_addition_added, error_list):
-    if (inst, SAA['houseNumberAddition'], Literal(row.numberAddition)) not in g:
-        g.add((inst, SAA['houseNumberAddition'], Literal(row.numberAddition)))
-        logging.info("Number addition added")
-        number_addition_added = True
-        g, error_list = add_number_addition_to_address_block(inst, row, g, error_list)
-    else:
-        logging.info(f"Number addition already in block")
-        number_addition_added = True
-    return g, number_addition_added, error_list
-
-# Helper function 3 Step 6 
-def extract_street(inst, row, g, number_addition_added, error_list):
-    if (inst, SAA['houseNumberAddition'], Literal(row.numberAddition)) not in g:
-        g.add((inst, SAA['houseNumberAddition'], Literal(row.numberAddition)))
-        logging.info("Number addition added")
-        number_addition_added = True
-        g, error_list = add_number_addition_to_address_block(inst, row, g, error_list)
-    else:
-        logging.info(f"Number addition already in block")
-        number_addition_added = True
-    return g, number_addition_added, error_list
-
-### !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! END HELPER FUNCTIONS.  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+# Helper function Step 6 
+def get_value_from_records(record, inst, g):
+    
+    houseNumber = str(g.value(subject=inst, predicate=SAA['houseNumber']))
+    numberAddition = str(g.value(subject=inst, predicate=SAA['houseNumberAddition']))
+    ################### Check for ADD if not there ADD ADD
+    streetTextualValue = str(g.value(subject=inst, predicate=SAA['streetTextualValue']))
+    uuid = str(record).split('/')[-1]  # Does not work
+    
+    return uuid, houseNumber, numberAddition, streetTextualValue
 
 
 # Step 6 function
-def get_predicates(records, predicates):
-    
+def working_in_the_turtle(records, concept_list, alternatives, outliers):
+
+    # Define Namespaces
+    DEED = Namespace (f"{PREFIX}/resources/recordtypes/Deed#")
+    RT = Namespace(f"{PREFIX}/resources/recordtypes")
+
     try:
         # Working with the records
         g = Graph()
         g.parse(records, format='turtle')
         
-        
-        for inst in g.objects(subject=None, predicate=SAA['isAssociatedWithModernAddress'] ):
+        print(concept_list)
 
-            houseNumber = str(g.value(subject=inst, predicate=SAA['houseNumber']))
-            numberAddition = str(g.value(subject=inst, predicate=SAA['houseNumberAddition']))
-            streetTextualValue = str(g.value(subject=inst, predicate=SAA['streetTextualValue']))
-            print(houseNumber, numberAddition, streetTextualValue, )
+        concept_df = pd.DataFrame(concept_list, 
+                                  
             
-            print(type(predicates))
-            predicates.append({
-                'houseNumber' : houseNumber, 
-                'numberAddition' : numberAddition, 
-                'streetTextualValue' : streetTextualValue
-                })
-
-        print(f'\n\"THESE ARE THE PREDICATES RETRIEVED FROM THE TURTLE:\"\n\n{predicates}')
-        return predicates
+            dtype={'uuid': str,
+                  'preflabel': str,
+                  'scopeNote': str,
+                  'exactMatch': str,
+                  })
         
-    except:
-        log.error(f'There was an issue creating the predicate list for the records: {records},\n')               
-        errors.append({'fn: get_predicates': [records]})
-
-# Step 7 extract patternExcuus, nu met link:
-
-
-def extract_pattern(pattern, predicates, extracted):
-    
-    try:
-
-        predicates_df = pd.DataFrame(predicates)
-        print(predicates_df)
-        #match = pattern.match(predicates['streetTextualValue'])
-        extract_pattern = predicates_df['streetTextualValue'].str.extract(pattern)
-        
-        extracted_street = extract_pattern['street'].str.strip()
-        extracted_number = extract_pattern['number'].str.strip()
-        extracted_number_add = extract_pattern['add'].str.strip()
-        print(extract_street)
-        extracted.append({
-            'extracted_street' : extracted_street,
-            'extracted_number' : extracted_number,            
-            'extracted_number_add' : extracted_number_add}
-        )
-        
-        print(f'\n \"THIS IS THE LIST OF EXTRACTED STREETS:\"\n\n{extracted}')
-        return extracted
-    
-    except:
-        log.error(f'There was an issue extracting the pattern from the predicates : {predicates},\n')               
-        errors.append({'fn: get_predicates': [predicates]})
-
-# Step 8 function
-def working_in_the_turtle(records, concept_list, predicates, extracted, alternatives, outliers):
-
-    try:
-        g = Graph()
-        g.parse(records, format='turtle')
-        
-        concept_df = pd.DataFrame(concept_list)
-
-        print(concept_list['concept_street'])
-        # loop through data with progress meter
-        for index, row in tqdm(concept_list.iterrows(), total=concept_list.shape[0]):
-            logging.info(f"START {row.uuid}")
-            logging.info(f"Find street and adamlink: ({concept_list['concept_street']}, {row.adamlink})")
-            print(concept_list['concept_street'])
-            concept_uuid = row.uuid
-            concept_street = row.prefLabel
-            adamlink = row.exactMatch
-            print(f'Printing rows of our dataframe. UUID : {row.uuid} street: {row.prefLabel} adamlink: {row.exactMatch}')
+        for index, row in concept_df.iterrows():
+            row.uuid 
 
         for record in g.subjects(RDF.type,MEMORIX.Record):
-            print(f'I get in the for statement with the records : {records}')            
             
             for inst in g.objects(subject=record, predicate=SAA['isAssociatedWithModernAddress'] ):
-                print('I get in the second for')
-                #uuid, houseNumber, numberAddition, streetTextualValue = get_value_from_records(record, inst, g)
-                #print(streetTextualValue)
-
-                #if numberAddition is None and houseNumber  
-                #for s in streetTextualValue
-                #extracted = streetTextualValue.str.extract(pattern)
-                # street_name = extracted['street'].str.strip()
-                # house_number  = extracted['number'].str.strip()
-                # addition = extracted['add'].str.strip()
-        
-                #extracted = streetTextualValue.str.extract(pattern)
-                #print(f'I am after the extracted {extracted}')
-                #print(f'THIS IS THE EXTRACTED PATTERN: {extracted}')
-
+                uuid, houseNumber, numberAddition, streetTextualValue = get_value_from_records(record, inst, g)
             #if any(g.triples((deed, SAA['isAssociatedWithModernAddress'], None))):
             #    print(f'This is inside the triples') # This is my saa: textualvalue: {SAA['streetTextualValue']} for the deed: {deed}')  ##### WE ARE HERE !!!!!!!!!##########
-                print(records)
-            return records
+            return records, alternatives, outliers
         
     except:
         log.error(f'Something went wrong with reading the records {records}')
 
 # Step 7 function
-def alter_shit(records, houseNumber, numberAddition, migrate_street, record, uuid, df_external_data, concept_list):
+def alter_shit(g,records, houseNumber, numberAddition, migrate_street, record, uuid, df_external_data, concept_list):
 
     # loop through data with progress meter
     try:
@@ -534,11 +456,6 @@ def cli(ctx, env):
     # Determine environment
     ctx.obj["api"]= setup_environment(env)
 
-    # Declare script variables
-    ctx.obj['concept_list'] = []
-    ctx.obj['predicates'] = []
-    ctx.obj['extracted'] = []
-
     # Declare user variables
     ctx.obj['vocabulair'] = 'a4863c0c-d9e5-3902-831a-d0960e381a41'  #### !!!! uuid of vocabul air            
     ctx.obj['Deed'] = 'Deed'                                        #### !!!! Recordname for turtle
@@ -548,7 +465,7 @@ def cli(ctx, env):
     ctx.obj["records"] = 'data/records.ttl'      
     ctx.obj["alternatives"] = "data/alternatives.csv"            #### !!!! Location of deed turtle
     ctx.obj["outliers"] = "data/outliers.csv"            #### !!!! Location of deed turtle
-    ctx.obj['pattern'] = re.compile('^(?P<street>.*?)(?:\s+(?P<number>\d+)(?P<add>.*))?$')
+
     ######### SOWIESO WEG ctx.obj["excel_sheet"] = "../data/concept_streets.xlsx"         #### !!!! Location of concepts
     #ctx.obj["data"] = '../data/alternatieve_straatnamen.csv'    #### !!!! Location of adamlinks /alternative names
                     #### !!!! Location of adamlinks /alternative names
@@ -558,6 +475,110 @@ def cli(ctx, env):
 # EXPORT 
 # -----------------------------------
 
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! DELETE DELETE DELETE DELETE DELETE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+# @cli.command()
+# # Step 1 cli command
+# def download_record_turtle(ctx):
+# 
+#     retrieve_record_turtle_from_memorix(
+#         ctx.obj["api"], 
+#         ctx.obj["Deed"], 
+#         ctx.obj['record_turtle']
+#         )
+
+# Step 1 cli command
+@cli.command()
+def download_concept_vocabulaire(ctx):
+
+    retrieve_concept_turtle_from_memorix(
+        ctx.obj["env"], 
+        ctx.obj["api"], 
+        ctx.obj['vocabulair'], 
+        ctx.obj['concept_turtle']
+        )
+
+# Step 2 cli command
+@cli.command()
+def download_record_uuid(ctx):
+
+    retrieve_uuid_from_memorix( ctx.obj["env"], ctx.obj['record_uuids'])
+    
+# Step 3 cli command
+@cli.command()
+def turtle_to_list(ctx):
+    
+    concept_turtle_to_list( ctx.obj["concept_turtle"])
+
+# Step 4 cli command
+@cli.command()
+def read_added_datasheet(ctx):
+    
+    read_external_data_with_panda( ctx.obj["data"])
+
+# Step 5 cli command
+@cli.command()
+def concept_turtle_to_excel(ctx):
+    
+    process_data(
+        ctx.obj["env"], 
+        ctx.obj['api'], 
+        ctx.obj['df_record_uuids'], 
+        ctx.obj['records'], 
+        ctx.obj['df_external_data'], 
+        ctx.obj['concept_list']
+        )
+
+# Step 6 cli command
+@cli.command()
+def testing_working_with_data(ctx):
+    
+    working_in_the_turtle(
+        ctx.obj['records'], 
+        ctx.obj['concept_list'],
+        ctx.obj['alternatives'],
+        ctx.obj['outliers'],   
+        )
+    
+# Step 7 cli command
+@cli.command()
+def change_the_turtle(ctx):
+
+    alter_shit(
+        ctx.obj['graph'],
+        ctx.obj['records'],
+        ctx.obj['houseNumber'],
+        ctx.obj['numberAddition'],
+        ctx.obj['migrate_street'],
+        ctx.obj['record'],
+        ctx.obj['uuid'],
+        ctx.obj['df_external_data'], 
+        ctx.obj['concept_list']
+        )
+    
+# Step 8 cli command
+@cli.command()
+def alternative_list_creation(ctx):
+
+    alter_some_more_shit(
+        ctx.obj['graph'],
+        ctx.obj['houseNumber'],
+        ctx.obj['numberAddition'],
+        ctx.obj['migrate_street'],
+        ctx.obj['record'],
+        ctx.obj['uuid'],
+        ctx.obj['df_external_data'], 
+        ctx.obj['concept_list']
+        )
+       
+    #click.echo(f"Environment: {ctx.obj['env']}")
+#
+    #click.confirm(
+    #    "Continue to next step?",
+    #    abort=True
+    #) 
+
 # CLI Pipeline
 @cli.command()
 @click.argument("data")
@@ -566,12 +587,35 @@ def pipeline(ctx, data):
 
     # Store provided data globally
     ctx.obj["data"] = data
+  
+    # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! DELETE DELETE DELETE DELETE DELETE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    print('----------------------------------------------------------------------------\n\n')
-    click.echo(f"\t\"WE ARE IN THE ENVIRONMENT:\n\n\t\t'{ctx.obj['env']}'\"")
-    print('\n----------------------------------------------------------------------------\n')
 
-    click.echo("\n\tSTEP 1: DOWNLOADING A TURTLE FROM CONCEPT VOCABULAIR")
+    # click.echo("STEP 1: DOWNLOAD TURTLE RECORD")
+# 
+    # record_turtle, record_turtle_deleted_message = retrieve_record_turtle_from_memorix(
+    #     ctx.obj["api"], 
+    #     ctx.obj['Deed'], 
+    #     ctx.obj['record_turtle']
+    #     )
+    # 
+    #     # check for a deleted file and print message
+    # if record_turtle_deleted_message:
+    #     print(record_turtle_deleted_message)
+    #    
+    # ctx.obj['record_turtle'] = record_turtle
+
+    # click.echo(f"Environment: {ctx.obj['env']}")
+# 
+    # click.confirm(
+    #     "Continue to next step?",
+    #     abort=True
+    # )
+
+    click.echo("STEP 1: DOWNLOADING A TURTLE FROM CONCEPT VOCABULAIR")
+
+
+    click.echo(f"We are in the environment: {ctx.obj['env']}")
 
     # Retrieve a turtle with all concepts based on vocabulair    
     concept_turtle = retrieve_concept_turtle_from_memorix(
@@ -584,14 +628,16 @@ def pipeline(ctx, data):
     ctx.obj['concept_turtle'] = concept_turtle
 
     click.confirm(
-    '\n----------------------------------------------------------------------------\n\n'
-    '\t\"Downloading concept turtle is complete.\" \n'
-    '\t\"Do you want to continue retrieving the record uuids from memorix?\"\n'
-    '\n----------------------------------------------------------------------------\n\n',
-    abort=True
+        '''\n
+        ----------------------------------------------------------------------------\n
+        \tDownloading concept turtle is complete. \n
+        \tDo you want to continue retrieving the record uuids from memorix?\n
+        ----------------------------------------------------------------------------\n
+        \t''',
+        abort=True
     )
     
-    click.echo("\n\tSTEP 2: DOWNLOADING RECORD UUIDS")
+    click.echo("STEP 2: DOWNLOADING RECORD UUIDS")
     
     # Retrieve record UUIDS from memorix and put in dataframe 
     df_record_uuids = retrieve_uuid_from_memorix(
@@ -603,34 +649,37 @@ def pipeline(ctx, data):
 
     # click.echo(f"Environment: {ctx.obj['env']}")
 
-    click.confirm( 
-    '\n----------------------------------------------------------------------------\n\n'
-    '\t\"We have the record uuids.\" \n'
-    '\t\"Do you want to continue reading the concept turtle,\n'
-    '\tand create a list of the data?\"\n'
-    '\n----------------------------------------------------------------------------\n\n',
-    abort=True
+    click.confirm(
+        '''\n
+        ----------------------------------------------------------------------------\n
+        \tWe have the record uuids. \n
+        \tDo you want to continue reading the concept turtle\n
+        \tand create a list of the data?\n
+        ----------------------------------------------------------------------------\n
+        \t''',
+        abort=True
     )
 
-    click.echo("\n\tSTEP 3: READ TURTLE AND PUT IN LIST")
+    click.echo("STEP 3: READ TURTLE AND PUT IN LIST")
     
     # Read the concept turtle retrieved in step 1 and append data to list variable
-    concept_list = concept_turtle_to_list( 
-        ctx.obj["concept_turtle"],
-        ctx.obj['concept_list']
-    )
-
+    concept_list = concept_turtle_to_list( ctx.obj["concept_turtle"])
+    print('I am here for the concept_list')
     ctx.obj['concept_list'] = concept_list
 
+    # click.echo(f"Environment: {ctx.obj['env']}")
+
     click.confirm(
-    '\n----------------------------------------------------------------------------\n\n'
-    '\t\"The concept turtle is appended to a list.\"\n'
-    '\t\" Do you want to continue reading the datasheet you provided?\"\n'
-    '\n----------------------------------------------------------------------------\n\n',
-    abort=True
+        '''\n
+        ----------------------------------------------------------------------------\n
+        \tThe concept turtle is appended to a list. Do you want to continue\n
+        \treading the datasheet you provided?\n
+        ----------------------------------------------------------------------------\n
+        \t''',
+        abort=True
     )
 
-    click.echo("\n\tSTEP 4: READ EXTERNAL DATASHEET WITH PANDA")
+    click.echo("STEP 4: READ EXTERNAL DATASHEET WITH PANDA")
     
     # Add the provided external data to a dataframe
     df_external_data = read_external_data_with_panda( ctx.obj["data"])
@@ -639,17 +688,19 @@ def pipeline(ctx, data):
     # click.echo(f"Environment: {ctx.obj['env']}")
 
     click.confirm(
-        '\n----------------------------------------------------------------------------\n\n'
-        '\t\"We have a dataframe of the datasheet you provided.\" \n'
-        '\t\"Do you want to continue retrieving the records based on uuids?\"\n'
-        '\n----------------------------------------------------------------------------\n\n',
+        '''\n
+        ----------------------------------------------------------------------------\n
+        \tWe have a dataframe of the datasheet you provided. \n
+        \tDo you want to continue retrieving the records based on uuids?\n
+        ----------------------------------------------------------------------------\n
+        \t''',
         abort=True
     )
 
-    click.echo("\n\tSTEP 5: HERE WE START WITH GETTING A RECORD TURTLE")
+    click.echo("STEP 5: HERE WE START WITH GETTING A RECORD TURTLE")
     
     # Get all records in a turtle, based on UUIDS retrieved in step 2
-    records, records_deleted_message = get_records_from_uuid_csv(
+    records, records_deleted_message = process_data(
         ctx.obj["env"], 
         ctx.obj['api'], 
         ctx.obj['df_record_uuids'], 
@@ -658,63 +709,28 @@ def pipeline(ctx, data):
     
     # Check for a deleted file and print message accordingly
     if records_deleted_message:
-        print('\n----------------------------------------------------------------------------\n')
         print(records_deleted_message)
     ctx.obj['records'] = records
 
-    click.confirm(        
-        '\n----------------------------------------------------------------------------\n\n'
-        '\t\"All record uuids now have a full turtle record.\" \n'
-        '\t\"Do you want to continue retrieving the predicates from these records?\"\n'
-        '\n----------------------------------------------------------------------------\n\n',
+    # click.echo(f"Environment: {ctx.obj['env']}")
+
+    click.confirm(
+        '''\n
+        ----------------------------------------------------------------------------\n
+        \tAll record uuids now have a full record. \n
+        \tDo you want to continue altering data?\n
+        ----------------------------------------------------------------------------\n
+        \t''',
         abort=True
     )   
 
-    click.echo("\n\tSTEP 6 WE ARE RETRIEVING THE PREDICATES FROM THE TURTLE")
+    click.echo("STEP 6: WE ARE NOW ALTERING THE RECORDS")
 
-    predicates = get_predicates(
-        ctx.obj['records'], 
-        ctx.obj['predicates']
-        )
-    
-    ctx.obj['predicates'] = predicates
-
-
-    click.confirm(        
-        '\n----------------------------------------------------------------------------\n\n'
-        '\t\"We have a predicate Dataframe.\" \n'
-        '\t\"Do you want to continue extracting the pattern from the given predicate?\"\n'
-        '\n----------------------------------------------------------------------------\n\n',
-        abort=True
-    )   
-
-    click.echo("\n\tSTEP 7: WE ARE NOW EXTRACTING THE STREET FROM THE PREDICATE")
-
-    extracted = extract_pattern(
-        ctx.obj['pattern'],
-        ctx.obj['predicates'],
-        ctx.obj['extracted']
-        )
-
-    ctx.obj['extracted'] = extracted
-
-    click.confirm(        
-        '\n----------------------------------------------------------------------------\n\n'
-        '\t\"We have an extracted Dataframe.\"\n'
-        '\t\"Do you want to continue matching the extracted pattern with the concepts?\"\n'
-        '\n----------------------------------------------------------------------------\n\n',
-        abort=True
-    ) 
-
-    click.echo("\n\tSTEP 8: WE ARE NOW ALTERING THE RECORDS")
-
-    records = working_in_the_turtle(
+    records, alternatives, outliers = working_in_the_turtle(
         ctx.obj['records'],
         ctx.obj['concept_list'], 
-        ctx.obj['predicates'],
-        ctx.obj['extracted'],
         ctx.obj['alternatives'],
-        ctx.obj['outliers']
+        ctx.obj['outliers'] 
         )
     
     # ctx.obj['graph'] = g
@@ -723,21 +739,22 @@ def pipeline(ctx, data):
     # ctx.obj['migrate_street'] = streetTextualValue
     # ctx.obj['record'] = record
     # ctx.obj['uuid'] = uuid 
-    # ctx.obj['alternatives'] = alternatives
-    # ctx.obj['outliers'] = outliers
-    #ctx.obj['pattern'] = pattern
+    ctx.obj['alternatives'] = alternatives
+    ctx.obj['outliers'] = outliers
     
 #    click.echo(f"Environment: {ctx.obj['env']}")
 
     click.confirm(
-        '\n----------------------------------------------------------------------------\n\n'
-        '\t\"The records are altered.\" \n'
-        '\t\"Do you want to continue with ... YESS??? Here we do some more shit\"\n'
-        '\n----------------------------------------------------------------------------\n\n',
+        '''\n
+        ----------------------------------------------------------------------------\n
+        \tThe records are altered. \n
+        \tDo you want to continue with ... YESS??? ?\n
+        ----------------------------------------------------------------------------\n
+        \t''',
         abort=True
     ) 
 
-    click.echo("\n\tSTEP 7: TRYING TO ALTER SHIT WITH WHAT WE GOT")
+    click.echo("STEP 7: TRYING TO ALTER SHIT WITH WHAT WE GOT")
 
     # THIS IS NEXT STEP FOR ALTERNATIVE DATA OR OUTLIERS. MAKE ALL YOUR SHIT IN THE TURTLE HAPPEN IN 7!!
 
@@ -756,14 +773,16 @@ def pipeline(ctx, data):
     # click.echo(f"Environment: {ctx.obj['env']}")
 
     click.confirm(
-        '\n----------------------------------------------------------------------------\n\n'
-        '\t\"The bla bla bla.\"\n'
-        '\t\"Do you want to continue with ... YESS??? ?\"\n'
-        '\n----------------------------------------------------------------------------\n\n',
+        '''\n
+        ----------------------------------------------------------------------------\n
+        \tThe bla bla bla. \n
+        \tDo you want to continue with ... YESS??? ?\n
+        ----------------------------------------------------------------------------\n
+        \t''',
         abort=True
     ) 
 
-    click.echo("\n\tSTEP 8: NOT HERE YET")
+    click.echo("STEP 8: NOT HERE YET")
 
     #g, record, uuid, houseNumber, numberAddition, streetTextualValue = alter_shit(
     #    ctx.obj['graph'],
@@ -779,10 +798,12 @@ def pipeline(ctx, data):
     # click.echo(f"Environment: {ctx.obj['env']}")
 
     click.confirm(
-        '\n----------------------------------------------------------------------------\n\n'
-        '\t\"The bla bla bla.\"\n'
-        '\t\"Do you want to continue with ... YESS??? ?\"\n'
-        '\n----------------------------------------------------------------------------\n\n',
+        '''\n
+        ----------------------------------------------------------------------------\n
+        \tThe bla bla bla. \n
+        \tDo you want to continue with ... YESS??? ?\n
+        ----------------------------------------------------------------------------\n
+        \t''',
         abort=True
     ) 
 
