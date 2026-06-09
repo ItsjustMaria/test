@@ -14,12 +14,14 @@ from rdflib import Graph, URIRef, Literal, Namespace, RDF, BNode, XSD
 import logging
 from rapidfuzz import fuzz
 from pathlib import Path
+import math, numpy as np
 cwd = os.getcwd()  # Get the current working directory (cwd)
 files = os.listdir(cwd)  # Get all the files in that directory
 #print("Files in %r: %s" % (cwd, files))
-#WORK_REPO = Path(r"C:\Users\swart053\Documents\VSC\saa-nexus-scripts") # Adjust base path based on location
-HOME_REPO = Path("/opt/lampp/htdocs/test/cli_module")
-WORK_REPO = Path("/opt/lampp/htdocs/saa-nexus-scripts")
+WORK_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\saa-nexus-scripts") # Adjust base path based on location
+HOME_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\test\\cli_module") # Adjust base path based on location
+# HOME_REPO = Path("/opt/lampp/htdocs/test/cli_module")
+# WORK_REPO = Path("/opt/lampp/htdocs/saa-nexus-scripts")
 sys.path.append(str(WORK_REPO))
 from modules import memorix
 from modules import saa
@@ -191,6 +193,9 @@ def concept_turtle_to_list( concept_turtle, concept_list):
                 'adamlink' : exactMatch,
             }) 
 
+            # v = concept_list[0]['adamlink']
+            # print(type(v), v, math.isnan(v) if isinstance(v, float) else None, v is None, v is np.nan)
+        print(f'this is the length of the concept list {len(concept_list)}')
         print(f'\n\"THIS IS THE CONCEPT LIST RETRIEVED FROM MEMORIX::\"\n\n{concept_list}')
         return concept_list
     
@@ -370,9 +375,7 @@ def get_predicates(records, predicates):
             houseNumber = str(g.value(subject=inst, predicate=SAA['houseNumber']))
             numberAddition = str(g.value(subject=inst, predicate=SAA['houseNumberAddition']))
             streetTextualValue = str(g.value(subject=inst, predicate=SAA['streetTextualValue']))
-            print(houseNumber, numberAddition, streetTextualValue, )
-            
-            print(type(predicates))
+
             predicates.append({
                 'houseNumber' : houseNumber, 
                 'numberAddition' : numberAddition, 
@@ -386,22 +389,17 @@ def get_predicates(records, predicates):
         log.error(f'There was an issue creating the predicate list for the records: {records},\n')               
         errors.append({'fn: get_predicates': [records]})
 
-# Step 7 extract patternExcuus, nu met link:
-
-
+# Step 7 extract pattern
 def extract_pattern(pattern, predicates, extracted):
     
     try:
 
         predicates_df = pd.DataFrame(predicates)
-        print(predicates_df)
-        #match = pattern.match(predicates['streetTextualValue'])
         extract_pattern = predicates_df['streetTextualValue'].str.extract(pattern)
         
         extracted_street = extract_pattern['street'].str.strip()
         extracted_number = extract_pattern['number'].str.strip()
         extracted_number_add = extract_pattern['add'].str.strip()
-        print(extract_street)
         extracted.append({
             'extracted_street' : extracted_street,
             'extracted_number' : extracted_number,            
@@ -419,21 +417,62 @@ def extract_pattern(pattern, predicates, extracted):
 def working_in_the_turtle(records, concept_list, predicates, extracted, alternatives, outliers):
 
     try:
+        print('I am in the 8. Do I get here?')
         g = Graph()
         g.parse(records, format='turtle')
         
-        concept_df = pd.DataFrame(concept_list)
+#        print(extracted)
 
-        print(concept_list['concept_street'])
-        # loop through data with progress meter
+        concept_df = pd.json_normalize(concept_list)
+        extracted_df = pd.json_normalize(extracted)
+        mask = concept_df == ""                     # True where empty strings
+        df_where_not_empty = concept_df[~mask.any(axis=1)]   # example: drop rows with any empty-string
+        print(df_where_not_empty)
+        print(f'My dataframe after json alteration : \n\n {extracted_df}')
+        concept_street = concept_df['concept_street']
+        extracted_street = extracted_df['extracted_street']
+        print(f'this is the length of the concept_street column : {len(concept_street)}')
+        print(f'this is the length of the concept list : {len(concept_list)}')
+        print(f'this is the length of the concept df : {len(concept_df)}')
+        print(f'this is the length of the extracted_street column : {len(extracted_street)}')
+        print(f'this is the length of the extracted list : {len(extracted)}')
+        print(f'this is the length of the extracted df : {len(extracted_df)}')
+
+        matches = []
+        match = ''
+        '''# loop through data with progress meter
         for index, row in tqdm(concept_list.iterrows(), total=concept_list.shape[0]):
             logging.info(f"START {row.uuid}")
             logging.info(f"Find street and adamlink: ({concept_list['concept_street']}, {row.adamlink})")
-            print(concept_list['concept_street'])
-            concept_uuid = row.uuid
-            concept_street = row.prefLabel
-            adamlink = row.exactMatch
-            print(f'Printing rows of our dataframe. UUID : {row.uuid} street: {row.prefLabel} adamlink: {row.exactMatch}')
+            # concept_uuid = row.uuid
+            # concept_street = row.prefLabel
+            # adamlink = row.exactMatch
+            # print(f'Printing rows of our dataframe. UUID : {row.uuid} street: {row.prefLabel} adamlink: {row.exactMatch}')'''
+
+        # loop through data with progress meter
+        for index, row in tqdm(concept_df.iterrows(), total=concept_df.shape[0]):
+            logging.info(f"START {row.uuid}")
+
+            print('in the first loop')
+
+            for index, row in tqdm(extracted_df.iterrows(), total=extracted_df.shape[0]):
+                logging.info(f"Compare streetnames between concepts and migrated streets: ({concept_df['concept_street']}, {extracted['street']})")
+
+                print('in the second loop')
+                if extracted_street == concept_street:
+                    match ='yes'
+                    print('In th yes match')
+                else: 
+                    match = 'no'
+                    print('in the no match')
+                
+                matches.append({{concept_df['uuid'],extracted_df['extracted_street']} : f'This is {match} match'})
+                print(matches)
+            # concept_uuid = row.uuid
+            # concept_street = row.prefLabel
+            # adamlink = row.exactMatch
+            # print(f'Printing rows of our dataframe. UUID : {row.uuid} street: {row.prefLabel} adamlink: {row.exactMatch}')
+           
 
         for record in g.subjects(RDF.type,MEMORIX.Record):
             print(f'I get in the for statement with the records : {records}')            
@@ -682,7 +721,7 @@ def pipeline(ctx, data):
 
     click.confirm(        
         '\n----------------------------------------------------------------------------\n\n'
-        '\t\"We have a predicate Dataframe.\" \n'
+        '\t\"We have a predicate list.\" \n'
         '\t\"Do you want to continue extracting the pattern from the given predicate?\"\n'
         '\n----------------------------------------------------------------------------\n\n',
         abort=True
@@ -700,7 +739,7 @@ def pipeline(ctx, data):
 
     click.confirm(        
         '\n----------------------------------------------------------------------------\n\n'
-        '\t\"We have an extracted Dataframe.\"\n'
+        '\t\"We have an extracted list.\"\n'
         '\t\"Do you want to continue matching the extracted pattern with the concepts?\"\n'
         '\n----------------------------------------------------------------------------\n\n',
         abort=True

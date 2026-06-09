@@ -3,8 +3,8 @@ import json
 import csv
 from copy import deepcopy
 from pathlib import Path
-#WORK_REPO = Path(r"C:\Users\swart053\Documents\VSC\saa-nexus-scripts") # Adjust base path based on location
-WORK_REPO = Path("/opt/lampp/htdocs/saa-nexus-scripts")
+WORK_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\saa-nexus-scripts") # Adjust base path based on location
+#WORK_REPO = Path("/opt/lampp/htdocs/saa-nexus-scripts")
 sys.path.append(str(WORK_REPO))
 from modules import memorix
 from modules import saa
