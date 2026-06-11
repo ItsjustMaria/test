@@ -365,26 +365,37 @@ def extract_street(inst, row, g, number_addition_added, error_list):
 # Step 6 function
 def get_predicates(records, predicates):
     
+    '''Adamlink meenemen. Niet alleen om te kunnen vullen, maar ook omdat deze in combinatie met 
+       het migratie adresveld al op 85.034 records is gevuld [ aldus Memorix ] dus deze wil je 
+       filteren en niet meenemen in je wijziging'''
+
     try:
         # Working with the records
         g = Graph()
         g.parse(records, format='turtle')
         
-        
-        for inst in g.objects(subject=None, predicate=SAA['isAssociatedWithModernAddress'] ):
+        for record in g.subjects(RDF.type,MEMORIX.Record):
 
-            houseNumber = str(g.value(subject=inst, predicate=SAA['houseNumber']))
-            numberAddition = str(g.value(subject=inst, predicate=SAA['houseNumberAddition']))
-            streetTextualValue = str(g.value(subject=inst, predicate=SAA['streetTextualValue']))
+            for inst in g.objects(subject=None, predicate=SAA['isAssociatedWithModernAddress'] ):
 
-            predicates.append({
-                'houseNumber' : houseNumber, 
-                'numberAddition' : numberAddition, 
-                'streetTextualValue' : streetTextualValue
-                })
+                uuid = str(record).split('/')[-1] 
+                houseNumber = str(g.value(subject=inst, predicate=SAA['houseNumber']))
+                numberAddition = str(g.value(subject=inst, predicate=SAA['houseNumberAddition']))
+                street = str(g.value(subject=inst, predicate=SAA['street']))
+                streetTextualValue = str(g.value(subject=inst, predicate=SAA['streetTextualValue']))
+                adamlink = str(g.value(subject=inst, predicate=SAA['hasOrHadSubjectLocation']))
 
-        print(f'\n\"THESE ARE THE PREDICATES RETRIEVED FROM THE TURTLE:\"\n\n{predicates}')
-        return predicates
+                predicates.append({
+                    'uuid' : uuid,
+                    'houseNumber' : houseNumber, 
+                    'numberAddition' : numberAddition, 
+                    'street' : street,
+                    'streetTextualValue' : streetTextualValue,
+                    'adamlink' : adamlink
+                    })
+
+            print(f'\n\"THESE ARE THE PREDICATES RETRIEVED FROM THE TURTLE:\"\n\n{predicates}')
+            return predicates
         
     except:
         log.error(f'There was an issue creating the predicate list for the records: {records},\n')               
@@ -394,7 +405,7 @@ def get_predicates(records, predicates):
 def extract_pattern(pattern, predicates, extracted):
     
     try:
-
+        
         predicates_df = pd.DataFrame(predicates)
         extract_pattern = predicates_df['streetTextualValue'].str.extract(pattern)
         
@@ -402,6 +413,12 @@ def extract_pattern(pattern, predicates, extracted):
         extracted_number = extract_pattern['number'].str.strip()
         extracted_number_add = extract_pattern['add'].str.strip()
         extracted.append({
+            'uuid' : predicates_df['uuid'],
+            'street' : predicates_df['street'],
+            'houseNumber' : predicates_df['houseNumber'], 
+            'numberAddition' : predicates_df['numberAddition'], 
+            'streetTextualValue' : predicates_df['streetTextualValue'],
+            'adamlink' : predicates_df['adamlink'],
             'extracted_street' : extracted_street,
             'extracted_number' : extracted_number,            
             'extracted_number_add' : extracted_number_add}
