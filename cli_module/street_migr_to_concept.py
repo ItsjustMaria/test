@@ -18,10 +18,10 @@ import math, numpy as np
 cwd = os.getcwd()  # Get the current working directory (cwd)
 files = os.listdir(cwd)  # Get all the files in that directory
 #print("Files in %r: %s" % (cwd, files))
-WORK_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\saa-nexus-scripts") # Adjust base path based on location
-HOME_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\test\\cli_module") # Adjust base path based on location
-# HOME_REPO = Path("/opt/lampp/htdocs/test/cli_module")
-# WORK_REPO = Path("/opt/lampp/htdocs/saa-nexus-scripts")
+#WORK_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\saa-nexus-scripts") # Adjust base path based on location
+#HOME_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\test\\cli_module") # Adjust base path based on location
+HOME_REPO = Path("/opt/lampp/htdocs/test/cli_module")
+WORK_REPO = Path("/opt/lampp/htdocs/saa-nexus-scripts")
 sys.path.append(str(WORK_REPO))
 from modules import memorix
 from modules import saa
@@ -191,6 +191,7 @@ def concept_turtle_to_list( concept_turtle, concept_list):
                 'uuid' : uuid,
                 'concept_street' : prefLabel,
                 'adamlink' : exactMatch,
+                'scope' : scopeNote
             }) 
 
             # v = concept_list[0]['adamlink']
