@@ -270,7 +270,7 @@ def read_external_data_with_panda(data):
     return df_external_data
 
 # Step 5 function
-def get_records_from_uuid_csv(df_record_uuids, records, pattern, total_predicates):
+def get_records_from_uuid_csv(df_record_uuids, records, predicates, total_predicates):
 
     # Check if file already exists and delete based on env
     '''
@@ -298,118 +298,47 @@ def get_records_from_uuid_csv(df_record_uuids, records, pattern, total_predicate
             yes = input(' Switch records data and we need a yes to go on. (Y/N) : ')
             if yes == 'Y':
                 continue'''
+
     test_amount = 5
-    for index, row in df_record_uuids.head(5).iterrows():
-        logging.info(f"START {row.uuid}")
-    
-        try:
-            '''##### TESTING PUT BACK WHEN FOR REAL #######'''
-            #response = api.get_record(row.uuid)
-            #if response.status_code != 200:
-            #    logging.error(f"Reading failed for {row.uuid}")
-            #else:
-            #    # load the graph
-            #    g = Graph()
-            #    g.parse(data=response.text, format='turtle')
-            #    adresid_added = False
-
-            g = Graph()
-            g.parse(records, format='turtle')                    
-            
-
-            record = URIRef(f"https://{PREFIX}.memorix.io/resources/records/{row.uuid}")
-            
-            print(f'This is my record: {record}')
-            #for record in g.subjects(RDF.type,MEMORIX.Record):
-            #    record_uuid = str(record).split('/')[-1] 
-            #    for inst in g.objects(record, SAA.isAssociatedWithModernAddress ):
-
-            # Turtle node location    
-            migration_Address_Block = next(g.objects(None, SAA['isAssociatedWithModernAddress']), None)     
-            migration_street = next(g.objects(record, SAA['streetTextualValue']), None)
-            migration_number = next(g.objects(migration_Address_Block, SAA['houseNumber']), None)
-            migration_nr_add = next(g.objects(record, SAA['houseNumberAddition']), None)
-            adamlink = next(g.objects(record, SAA['hasOrHadSubjectLocation']), None)
-
-            # Values
-            houseNumber = str(g.value(record, predicate=SAA['houseNumber']))
-            numberAddition = str(g.value(record, predicate=SAA['houseNumberAddition']))
-            streetTextualValue = str(g.value(record, predicate=SAA['streetTextualValue']))
-            
-            print(f'This is my houseNumber: {houseNumber}')
-            street_df = pd.DataFrame(migration_street)
-            extract_pattern = street_df['streetTextualValue'].str.extract(pattern)
+    try:
+        g = Graph()
+        g.parse(records, format='turtle')                    
         
-            street_df['extracted_street'] = extract_pattern['street'].str.strip()
-            street_df['extracted_number'] = extract_pattern['number'].str.strip()
-            street_df['extracted_number_add'] = extract_pattern['add'].str.strip()
+        for record in g.subjects(RDF.type,MEMORIX.Record):
+            record_uuid = str(record).split('/')[-1] 
+            for inst in g.objects(record, SAA.isAssociatedWithModernAddress ):
 
-            # variables for extracted names from migration field
-            extracted_street = street_df['extracted_street']
-            extracted_nr = street_df['extracted_number']
-            extracted_nr_add = street_df['extracted_number_add']   
-
-            # Compare extracted street to concept street name
-            streets_the_same = ''#(Levenshtein.ratio(str(row.streetname).lower(), street_name_memorix.lower()) > 0.95 or Levenshtein.distance(str(row.streetname).lower(), street_name_memorix.lower()) <= 1 or str(row.streetname).lower() == street_alternatief_manual.lower() or str(row.streetname).lower() in streets_alternatief_adamlink)
-
-            print(extracted_street, extracted_nr, extracted_nr_add)
-
-
-            if houseNumber == extracted_nr:
-               continue
-            elif houseNumber == '' and extracted_nr != "" :
-                pass
-
-            input("STOP AT THIS POINT!")        
-
-            '''addr_bnode = BNode()
-            #g.add((record, migration_Address_Block, addr_bnode))
-            g.add((addr_bnode, RDF.type, MEMORIX.GeoCoordinates))
-            g.add((coord, SCHEMA.latitude, Literal(row.latitude, datatype=XSD.decimal)))         
-            g.add((coord, SCHEMA.longitude, Literal(row.longitude, datatype=XSD.decimal)))'''
+                ## IF NOT AVAILABLE OR IF EMPTY?? 
+                migrationAddress = next(g.objects(None, SAA['isAssociatedWithModernAddress']), None)       
+                houseNumber = str(g.value(subject=inst, predicate=SAA['houseNumber']))
+                numberAddition = str(g.value(subject=inst, predicate=SAA['houseNumberAddition']))
+                street = str(g.value(subject=inst, predicate=SAA['street']))
+                streetTextualValue = str(g.value(subject=inst, predicate=SAA['streetTextualValue']))
+                adamlink = str(g.value(subject=inst, predicate=SAA['hasOrHadSubjectLocation']))
+                predicates.append({
+                    'uuid' : record_uuid,
+                    'houseNumber' : houseNumber, 
+                    'numberAddition' : numberAddition, 
+                    'street' : street,
+                    'streetTextualValue' : streetTextualValue,
+                    'adamlink' : adamlink
+                })
             
-            if any(g.triples((migration_Address_Block, SAA['streetTextualValue'], None))):
-                ''' Here you start checking if any of the nodes '''
-                #logging.error(f"1853 Adamlink already filled in for {row.uuid}")
-
-            # adamlink komt hier
-            if row['adres 1875']==row['adres 1875']:
-                g.add((record, SAA['hasOrHadSubjectLocation'], URIRef(f"{row['adres 1875']}")))
-
-            # huisnummer komt hier
-            if row['adres 1875']==row['adres 1875']:
-                g.add((migration_Address_Block, migration_number, f"{row['houseNumber']}"))
-
-            # huisnummer toevoeging komt hier
-            if row['adres 1875']==row['adres 1875']:
-                g.add((migration_Address_Block, migration_nr_add, f"{row['houseNumberAddition']}"))
-
-
-
-            '''predicates.append({
-                'uuid' : record_uuid,
-                'houseNumber' : houseNumber, 
-                'numberAddition' : numberAddition, 
-                'street' : street,
-                'streetTextualValue' : streetTextualValue,
-                'adamlink' : adamlink
-            })
-
             total_predicates.append(record_uuid)  
 
-            print(f'These are the predicates:\n\n {predicates}')'''
+        print(f'These are the predicates:\n\n {predicates}')
 
-            print('\n----------------------------------------------------------------------------\n\n' +
-              f'\tEr zijn: {len(total_predicates)} records opgehaald uit Memorix met behulp van de eerder verkregen uuids\n' +
-              f'\tDe lengte van het originele bestand bedraagt: \'{len(df_record_uuids['uuid'])}\'\n' +
-              f'\tEr wordt getest met {test_amount if env == 'acc' else 0} records\n' +
-              f'\tEr zijn {(test_amount if env == 'acc' else len(df_record_uuids['uuid'])) - len(total_predicates)} records verloren gegaan,\n' +
-              f'\tbij het ophalen van de uuids uit Memorix')  
-
-            return records #, records_deleted_message
+        print('\n----------------------------------------------------------------------------\n\n' +
+          f'\tEr zijn: {len(total_predicates)} records opgehaald uit Memorix met behulp van de eerder verkregen uuids\n' +
+          f'\tDe lengte van het originele bestand bedraagt: \'{len(df_record_uuids['uuid'])}\'\n' +
+          f'\tEr wordt getest met {test_amount if env == 'acc' else 0} records\n' +
+          f'\tEr zijn {(test_amount if env == 'acc' else len(df_record_uuids['uuid'])) - len(total_predicates)} records verloren gegaan,\n' +
+          f'\tbij het ophalen van de uuids uit Memorix')  
+        
+        return records #, records_deleted_message
                 
-        except:
-            log.error(f"FAILED TO GET RECORD FOR UUID: {df_record_uuids}")
+    except:
+        log.error(f"FAILED TO GET RECORD FOR UUID: {df_record_uuids}")
     
     #for index, row in df_record_uuids.iterrows():
     #    print(type(row))
@@ -829,7 +758,7 @@ def main():
     records = get_records_from_uuid_csv( 
         df_record_uuids, 
         records,
-        pattern,
+        predicates,
         total_predicates
         )
     

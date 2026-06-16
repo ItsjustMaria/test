@@ -157,7 +157,7 @@ def main(env, street_uuids):
                 uuids.append(rid)
 
         total = data.get("pagination", {}).get("total", total)
-        print(f"\n\tFetched: {len(uuids)} / {total} / {next_token}")
+        #print(f"\n\tFetched: {len(uuids)} / {total} / {next_token}")
 
     # ---------------------------
     # Write UUIDs to CSV
@@ -168,7 +168,8 @@ def main(env, street_uuids):
         for u in uuids:
             writer.writerow([u])
 
-    return f"Done. Wrote {len(uuids)} UUIDs to {street_uuids}"
+    #return f"Done. Wrote {len(uuids)} UUIDs to {street_uuids}"
+    return street_uuids
 
 if __name__ == '__main__':
     main()
