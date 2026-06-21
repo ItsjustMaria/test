@@ -15,9 +15,6 @@ import logging
 from rapidfuzz import fuzz
 from pathlib import Path
 import math, numpy as np
-cwd = os.getcwd()  # Get the current working directory (cwd)
-files = os.listdir(cwd)  # Get all the files in that directory
-#print("Files in %r: %s" % (cwd, files))
 #WORK_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\saa-nexus-scripts") # Adjust base path based on location
 #HOME_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\test\\cli_module") # Adjust base path based on location
 HOME_REPO = Path("/opt/lampp/htdocs/test/cli_module")
@@ -25,6 +22,7 @@ WORK_REPO = Path("/opt/lampp/htdocs/saa-nexus-scripts")
 sys.path.append(str(WORK_REPO))
 from modules import memorix
 from modules import saa
+from modules import saa_rdf as nrdf
 PREFIX = 'stadsarchief'
 
 '''
@@ -57,13 +55,10 @@ PREFIX = 'stadsarchief'
    'python this_script.py pipeline --env [specify tst /acc /prod] data_to_be_used.ext'
 '''
 
-# Declare global variables
+# Script variabelen
 current_datetime = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
-# ctx.obj["current_datetime"] = current_datetime
 logfile = f'logs/street_migr_to_concept {str(current_datetime)}.log'
 errors = []
-#PREFIX = 'stadsarchiefamsterdam'
-#pattern = re.compile('^(?P<street>.*?)(?:\s+(?P<number>\d+)(?P<add>.*))?$')
 
 # Log handler 
 for handler in logging.root.handlers[:]:
@@ -80,13 +75,11 @@ log = logging.getLogger()
 env = sys.argv[1]
 data = sys.argv[2]
 
-
 # -----------------------------------
 # DECLARATIONS
 # -----------------------------------
 
-# Environment setup
-
+# Omgeving setup
 if env == 'acc':
     PREFIX = 'https://ams-migrate.memorix.io'
     settings_file = Path(WORK_REPO, 'settings.json') 
@@ -101,9 +94,7 @@ else:
 settings = saa.readJsonFile(settings_file) 
 api = memorix.ApiClient(settings)
 
-
-
-# define Namespaces
+# Namespace bepalingen
 SAA = Namespace("https://data.archief.amsterdam/ontology#")
 RICO = Namespace("https://www.ica.org/standards/RiC/ontology#")
 MEMORIX = Namespace("http://memorix.io/ontology#")
@@ -113,39 +104,16 @@ SKOS = Namespace(f"http://www.w3.org/2004/02/skos/core#")
 DEED = Namespace (f"{PREFIX}/resources/recordtypes/Deed#")
 RT = Namespace(f"{PREFIX}/resources/recordtypes")
 IMAGE = Namespace(f"https://{PREFIX}.memorix.io/resources/recordtypes/Image#")
-
-
-
-
-'''args = [
-    env,
-    data,
-    predicates,
-    extracted,
-    total_concept_uuids,
-    total_record_uuids,
-    total_predicates,
-    vocabulair,
-    deed,
-    record_turtle,
-    concept_turtle,
-    record_uuids,
-    records,
-    alternatives,
-    outliers,
-    pattern
-]'''
-
+SKOS = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
 
 # -----------------------------------
 # FUNCTIONS
 # -----------------------------------
 
-# Step 1 function
-def retrieve_concept_turtle_from_memorix(vocabulair, concept_turtle, total_concept_uuids):
+# Step 1 fucntie
+def retrieve_concept_turtle_from_memorix(vocabulair, concept_turtle, concept_list, total_concept_uuids):
     
-
-    # Get turtle of concept vocabulaire from Memorix
+    # Concept vocabulaire turtle uit memorix halen
     try:
         response = api.list_concepts( vocabulair)
         print(response.text,  file=open(concept_turtle, 'w', encoding='utf-8'))
@@ -153,17 +121,34 @@ def retrieve_concept_turtle_from_memorix(vocabulair, concept_turtle, total_conce
         g = rdflib.Graph()
         g.parse(concept_turtle, format="ttl")
 
+  
         for s in g.subjects(rdflib.RDF.type, SKOS.Concept):
             s_str = str(s)
 
             match = re.search(r'/vocabularies/concepts/([^/>]+)', s_str)
             uuid = match.group(1) if match else ""
 
-            total_concept_uuids.append(uuid)
-        print('\n----------------------------------------------------------------------------\n\n' + 
-              f"\tGereed. Er zijn {len(total_concept_uuids)} UUIDs naar de concept turtle geschreven op locatie: {concept_turtle}")
+            prefLabel = next((str(lab) for lab in g.objects(s, SKOS.prefLabel)), "")
+            exactMatch = next((str(em) for em in g.objects(s, SKOS.exactMatch)), "") # <-- fout: want exactMatch kan nu meer dan 1 waarde hebben
+            scopeNote = next((str(sn) for sn in g.objects(s, SKOS.scopeNote)), "")
 
-        return concept_turtle
+            concept_list.append({
+                'concept_uuid' : uuid,
+                'streetTextualValue' : prefLabel,
+                'adamlink' : exactMatch,
+                'scope' : scopeNote
+            }) 
+
+            total_concept_uuids.append(uuid)
+
+        print('\n----------------------------------------------------------------------------\n\n' +
+              f"\tGereed. Er zijn {len(total_concept_uuids)} UUIDs naar de concept turtle geschreven op locatie: {concept_turtle}" +
+              f'\tDit is de lengte van de uitgelezen turtle van de concepten vocabulaire: {len(concept_list)}\n' +
+              f'\tEn dit was de lengte van het aantal concepten na downloaden uit memorix: \'{len(total_concept_uuids)}\'\n' +
+              f'\tEr zijn {len(concept_list) - len(total_concept_uuids)} concepten verloren gegaan bij het uitlezen van de data')
+        
+        return concept_list, total_concept_uuids
+
     except:
         if concept_turtle:
             log.error(f'''There was an issue while creating the vocabulair: 
@@ -177,12 +162,12 @@ def retrieve_concept_turtle_from_memorix(vocabulair, concept_turtle, total_conce
 # Step 2 function
 def retrieve_uuid_from_memorix(env, record_uuids):
     
-    #### !!!! ALTER PATH BASED ON PLACEMENT OF MODULE 
+    # Path based on location of script and datafolder
     sys.path.append(str(HOME_REPO))
     import get_uuid  
     try: 
-        # Get uuids based on turtle 
-        response = get_uuid.main(env, record_uuids)
+        # Get uuids with query 
+        #response = get_uuid.main(env, record_uuids)
 
         df = pd.read_csv(record_uuids,
 
@@ -202,52 +187,10 @@ def retrieve_uuid_from_memorix(env, record_uuids):
     except:
         log.error(f'''The uuid's : {record_uuids} had an issue at 
         accespoint {env}.''')
-        errors.append({'fn: retrieve_uuid_from_memorix': [env,record_uuids, response, df, df_record_uuids, HOME_REPO]})
+        errors.append({'fn: retrieve_uuid_from_memorix': [env,record_uuids, df, df_record_uuids, HOME_REPO]})
 
 
 # Step 3 function
-def concept_turtle_to_list( concept_turtle, concept_list, total_concept_uuids):
-    
-    # Load RDF/concept_turtle 
-    g = rdflib.Graph()
-    g.parse(concept_turtle, format="ttl")
-
-    # Namespace
-    SKOS = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
-
-    try: 
-        for s in g.subjects(rdflib.RDF.type, SKOS.Concept):
-            s_str = str(s)
-
-            match = re.search(r'/vocabularies/concepts/([^/>]+)', s_str)
-            uuid = match.group(1) if match else ""
-
-            prefLabel = next((str(lab) for lab in g.objects(s, SKOS.prefLabel)), "")
-            exactMatch = next((str(em) for em in g.objects(s, SKOS.exactMatch)), "") # <-- fout: want exactMatch kan nu meer dan 1 waarde hebben
-            scopeNote = next((str(sn) for sn in g.objects(s, SKOS.scopeNote)), "")
-
-            concept_list.append({
-                'uuid' : uuid,
-                'concept_street' : prefLabel,
-                'adamlink' : exactMatch,
-                'scope' : scopeNote
-            }) 
-
-            # v = concept_list[0]['adamlink']
-            # print(type(v), v, math.isnan(v) if isinstance(v, float) else None, v is None, v is np.nan)
-        print('\n----------------------------------------------------------------------------\n\n' +
-              f'\tDit is de lengte van de uitgelezen turtle van de concepten vocabulaire: {len(concept_list)}\n' +
-              f'\tEn dit was de lengte van het aantal concepten na downloaden uit memorix: \'{len(total_concept_uuids)}\'\n' +
-              f'\tEr zijn {len(concept_list) - len(total_concept_uuids)} concepten verloren gegaan bij het uitlezen van de data')
-        #print(f'\n\"THIS IS THE CONCEPT LIST RETRIEVED FROM MEMORIX::\"\n\n{concept_list}')
-        return concept_list
-    
-    except:
-        log.error(f'There was an issue reading the concept turtle : {concept_turtle},\n'
-                  f'and creating the concept_list.')
-        errors.append({'fn: concept_turtle_to_list': [concept_turtle]})
-
-# Step 4 function
 def read_external_data_with_panda(data):
     
     try: 
@@ -260,7 +203,7 @@ def read_external_data_with_panda(data):
         df_external_data = pd.DataFrame(df)
 
         print('\n----------------------------------------------------------------------------\n\n' + 
-              f"\tGereed. Er zijn {len(df_external_data['straat-label-altlabel'])} rijen opgehaald uit de externe datasheet {data}.\n")
+              f"\tGereed. Er zijn {len(df_external_data['street-label-altlabel'])} rijen opgehaald uit de externe datasheet {data}.\n")
 
     except: 
         log.error(f'There was an issue reading the externally added data : {data},\n' +
@@ -269,147 +212,396 @@ def read_external_data_with_panda(data):
     
     return df_external_data
 
-# Step 5 function
-def get_records_from_uuid_csv(df_record_uuids, records, pattern, total_predicates):
+
+# Step 4 function
+def get_turtle_for_record_with_uuid(df_record_uuids, records, predicates, total_predicates):
 
     # Check if file already exists and delete based on env
-    '''
     records_deleted_message = ''
-    if os.path.exists(records):
-        pass
-        
-        os.remove(records)
+    if os.path.exists(records):     
+        #os.remove(records)
         records_deleted_message = (f'\tThere was already a records file present in the \'data\' folder at {records}.\n' +
         '\tTo prevent double data, this file has been deleted\n' +
         '\tA new one has been created in this very function')
-    else :
 
-        for uuid in df_record_uuids["uuid"].iloc[:test_amount]:
-            response = api.get_record(uuid)
-            print(response.text, file=open(records, 'a', encoding='utf-8')) 
-            #record_block = URIRef(f"{PREFIX}/resources/records/{uuid}")
-            if response.status_code != 200:
-                log.info("...Try to read again...")
-                time.sleep(3)
-                response = api.get_record(uuid)
-                if response.status_code != 200:
-                    log.error(f"Reading failed for {uuid}")
-            
-            yes = input(' Switch records data and we need a yes to go on. (Y/N) : ')
-            if yes == 'Y':
-                continue'''
     test_amount = 5
-    for index, row in df_record_uuids.head(5).iterrows():
-        logging.info(f"START {row.uuid}")
+    try:
+        ##### UNCOMMENT WHEN LIVE ###########
+        for index, row in df_record_uuids.head(test_amount).iterrows():
+            logging.info(f"START {row.uuid}")
+            print(row.uuid)
+
+            '''    #record_block = URIRef(f"{PREFIX}/resources/records/{uuid}")
+                #print (f'This is the record block: {record_block}')
+                if response.status_code != 200:
+                    log.info("...Try to read again...")
+                    time.sleep(3)
+                    response = api.get_record(uuid)
+                    if response.status_code != 200:
+                        log.error(f"Reading failed for {uuid}")
+            else:'''
     
-        try:
-            '''##### TESTING PUT BACK WHEN FOR REAL #######'''
-            #response = api.get_record(row.uuid)
-            #if response.status_code != 200:
-            #    logging.error(f"Reading failed for {row.uuid}")
-            #else:
-            #    # load the graph
-            #    g = Graph()
-            #    g.parse(data=response.text, format='turtle')
-            #    adresid_added = False
+        # load the graph
+        g = Graph()
+        g.parse(records , format='turtle')
 
-            g = Graph()
-            g.parse(records, format='turtle')                    
-            
+        for record in g.subjects(RDF.type, MEMORIX.Record):
 
-            record = URIRef(f"https://{PREFIX}.memorix.io/resources/records/{row.uuid}")
-            
-            print(f'This is my record: {record}')
-            #for record in g.subjects(RDF.type,MEMORIX.Record):
-            #    record_uuid = str(record).split('/')[-1] 
-            #    for inst in g.objects(record, SAA.isAssociatedWithModernAddress ):
+            record_uuid = str(record).rsplit('/', 1)[-1]
 
-            # Turtle node location    
-            migration_Address_Block = next(g.objects(None, SAA['isAssociatedWithModernAddress']), None)     
-            migration_street = next(g.objects(record, SAA['streetTextualValue']), None)
-            migration_number = next(g.objects(migration_Address_Block, SAA['houseNumber']), None)
-            migration_nr_add = next(g.objects(record, SAA['houseNumberAddition']), None)
-            adamlink = next(g.objects(record, SAA['hasOrHadSubjectLocation']), None)
+            address = next(g.objects(
+                record,
+                SAA.isAssociatedWithModernAddress
+            ))
 
-            # Values
-            houseNumber = str(g.value(record, predicate=SAA['houseNumber']))
-            numberAddition = str(g.value(record, predicate=SAA['houseNumberAddition']))
-            streetTextualValue = str(g.value(record, predicate=SAA['streetTextualValue']))
-            
-            print(f'This is my houseNumber: {houseNumber}')
-            street_df = pd.DataFrame(migration_street)
-            extract_pattern = street_df['streetTextualValue'].str.extract(pattern)
-        
-            street_df['extracted_street'] = extract_pattern['street'].str.strip()
-            street_df['extracted_number'] = extract_pattern['number'].str.strip()
-            street_df['extracted_number_add'] = extract_pattern['add'].str.strip()
-
-            # variables for extracted names from migration field
-            extracted_street = street_df['extracted_street']
-            extracted_nr = street_df['extracted_number']
-            extracted_nr_add = street_df['extracted_number_add']   
-
-            # Compare extracted street to concept street name
-            streets_the_same = ''#(Levenshtein.ratio(str(row.streetname).lower(), street_name_memorix.lower()) > 0.95 or Levenshtein.distance(str(row.streetname).lower(), street_name_memorix.lower()) <= 1 or str(row.streetname).lower() == street_alternatief_manual.lower() or str(row.streetname).lower() in streets_alternatief_adamlink)
-
-            print(extracted_street, extracted_nr, extracted_nr_add)
-
-
-            if houseNumber == extracted_nr:
-               continue
-            elif houseNumber == '' and extracted_nr != "" :
-                pass
-
-            input("STOP AT THIS POINT!")        
-
-            '''addr_bnode = BNode()
-            #g.add((record, migration_Address_Block, addr_bnode))
-            g.add((addr_bnode, RDF.type, MEMORIX.GeoCoordinates))
-            g.add((coord, SCHEMA.latitude, Literal(row.latitude, datatype=XSD.decimal)))         
-            g.add((coord, SCHEMA.longitude, Literal(row.longitude, datatype=XSD.decimal)))'''
-            
-            if any(g.triples((migration_Address_Block, SAA['streetTextualValue'], None))):
-                ''' Here you start checking if any of the nodes '''
-                #logging.error(f"1853 Adamlink already filled in for {row.uuid}")
-
-            # adamlink komt hier
-            if row['adres 1875']==row['adres 1875']:
-                g.add((record, SAA['hasOrHadSubjectLocation'], URIRef(f"{row['adres 1875']}")))
-
-            # huisnummer komt hier
-            if row['adres 1875']==row['adres 1875']:
-                g.add((migration_Address_Block, migration_number, f"{row['houseNumber']}"))
-
-            # huisnummer toevoeging komt hier
-            if row['adres 1875']==row['adres 1875']:
-                g.add((migration_Address_Block, migration_nr_add, f"{row['houseNumberAddition']}"))
-
-
-
-            '''predicates.append({
-                'uuid' : record_uuid,
-                'houseNumber' : houseNumber, 
-                'numberAddition' : numberAddition, 
-                'street' : street,
-                'streetTextualValue' : streetTextualValue,
-                'adamlink' : adamlink
+            predicates.append({
+                'uuid': record_uuid,
+                'streetTextualValue': str(g.value(address, SAA.streetTextualValue)),
+                'house_number': str(g.value(address, SAA.houseNumber)),
+                'number_add': str(g.value(address, SAA.houseNumberAddition)),
             })
 
-            total_predicates.append(record_uuid)  
+            total_predicates += 1
+            
 
-            print(f'These are the predicates:\n\n {predicates}')'''
+
+        print('\n----------------------------------------------------------------------------\n\n' +
+              f"\tGereed. Er zijn {len(predicates)} records uit de turtle gehaald" +
+              f'\tDit was het aantal uuids uit Memorix gehaald: \'{len(df_record_uuids)}\'\n' +
+              f'\tEr wordt getest met {test_amount} uuids\n' +
+              f'\tEr zijn {(test_amount if test_amount >= 0 else len(df_record_uuids)) - len(predicates)} rec ords verloren gegaan bij het uitlezen van de data.')
+
+        logging.info(f"\t\t,  {predicates, df_record_uuids, records}")
+
+        return records, predicates, total_predicates, test_amount
+    
+    except:
+        log.error(f'There was an issue retrieving the turtle for id: {df_record_uuids(row.uuid)},\n')               
+        errors.append({'fn: get_turtle_for_record_with_uuid': [records, df_record_uuids, predicates]})
+
+# Step 5 function 
+def match_data(pattern,
+               predicates, 
+               total_predicates, 
+               extracted, 
+               df_external_data, 
+               concept_list, 
+               total_concept_uuid,
+               test_amount,
+               df_record_uuids
+               ):
+
+    '''Adamlink meenemen. Niet alleen om te kunnen vullen in csv voor manual check, maar ook omdat deze in combinatie met 
+    het migratie adresveld al op 7.703.851 locaties_met_adam records is gevuld [ aldus Memorix ] dus deze wil je 
+    filteren en niet meenemen in je wijziging'''
+    
+    try:
+
+        # - De turtle predicates omzetten in een dataframe
+        predicates_df = pd.DataFrame(predicates)
+
+        # - De migratie street-string opsplitsen in street nummer, nummertoevoeging
+        extract_pattern = predicates_df['streetTextualValue'].str.extract(pattern)
+
+        # - De string onderdelen toevoegen aan het dataframe
+        predicates_df['streetTextualValue'] = extract_pattern['street'].str.strip()
+        predicates_df['extracted_number'] = extract_pattern['number'].str.strip()
+        predicates_df['extracted_number_add'] = extract_pattern['add'].str.strip()
+        
+        # Lege velden normaliseren en string 'None' vervangen met NaN
+        predicates_df.fillna("",inplace=True)
+        predicates_df['house_number'] = predicates_df['house_number'].replace('None', np.nan)
+        predicates_df['extracted_number'] = predicates_df['extracted_number'].replace('None', np.nan)
+        predicates_df['number_add'] = predicates_df['number_add'].replace('None', np.nan)
+        predicates_df['extracted_number_add'] = predicates_df['extracted_number_add'].replace('None', np.nan)
+        
+        # Outliers naar dataframe omzetten obv index van predicates
+        outliers_df = pd.DataFrame(index=predicates_df.index)
+
+        # Uuid overnemen van predicates
+        outliers_df['uuid'] = predicates_df['uuid']
+
+        # huisnummers en toevoegingen vullen waar leeg en naar df schrijven indien afwijkend
+        street_map = {
+                      'house_number': 'extracted_number',
+                      'number_add': 'extracted_number_add',
+                      'uuid' : 'uuid'
+        }
+        
+        for target, source in street_map.items():
+
+            # masker voor vullen predicatenlijst indien leeg 
+            mask_fill = (
+                predicates_df[target].isna() &
+                predicates_df[source].notna()
+            )
+            predicates_df.loc[mask_fill, target] = predicates_df.loc[mask_fill, source]
+
+            # Wegschrijven naar outliers indien data reeds bestaat en afwijkt
+            mask_to_csv = (
+                predicates_df[target].notna() &
+                predicates_df[source].notna() &
+                (predicates_df[target] != predicates_df[source])
+            )
+            outliers_df.loc[mask_to_csv, target] = predicates_df.loc[mask_to_csv, source]
+        
+        # Dataframe maken van concepten
+        concept_df = pd.DataFrame(concept_list, index=range(len(concept_list)))
+        
+        # concept uuid en adamlink toevoegen aan predicates dataframe obv 'straat' met behulp van een merge         
+        merge_concepts = predicates_df.merge(concept_df[['streetTextualValue', 'concept_uuid', 'adamlink']], on = 'streetTextualValue', how='left' )
+        predicates_df = merge_concepts
+
+        # nummer van adamlink afhalen van alternatieve lijst en toevoegen aan kolom altlabel in twee dataframes separaat
+        predicates_df['altlabel'] = predicates_df['adamlink'].str.extract(r'(\d+)')
+        df_external_data['number_altlabel'] = df_external_data['straat-label-altlabel'].str.extract(r'(\d+)')
+
+        # Nummer altlabel tussen dataframes vergelijken en toevoegen aan een lijst
+        def find_alternatives(row, df_external_data):    
+  
+            if pd.notna(row['altlabel']):
+                # Find all rows in the alternatives dataframe with the same number
+                number_to_match = row['altlabel']
+                #print(f"Looking for alternatives for number: {number_to_match}")
+                alternatives = df_external_data[df_external_data['number_altlabel'] == number_to_match]
+                return alternatives['straat-label-altlabel'].tolist()  # Return all matching alternatives
+            return []
+
+        # Lijst alternative schrijfwijzen toevoegen aan predicates dataframe
+        predicates_df['alternative_names'] = predicates_df.apply(find_alternatives, axis=1, args=[df_external_data])
+
+        # List alternatieve schrijfwijzen overnemen in outliers obv 'uuid'
+        merge_concepts = outliers_df.merge(predicates_df[['uuid', 'alternative_names']], on = 'uuid', how='left' )
+        outliers_df = merge_concepts
+
+        print(outliers_df)
+        
+        print('\n----------------------------------------------------------------------------\n\n' +
+             f"\tGereed. Er zijn {len(predicates_df)} rijen verwerkt in het predicates dataframe" +
+             f'\tEr wordt gewerkt met {(test_amount if test_amount >= 0 else len(total_predicates) - len())} records\'\n' +
+              f'\tEr wordt getest met {test_amount} uuids\n' +
+              f'\tEr zijn {(test_amount if test_amount >= 0 else len(df_record_uuids)) - len(predicates)} records verloren gegaan bij het uitlezen van de data.')
+        
+        return predicates_df, outliers_df
+
+    except:
+        log.error(f'There was an issue extracting the pattern from the predicates : {predicates},\n')               
+        errors.append({'fn: match_data': [predicates]})
+
+        '''NOG MEE VERDER LATER '''
+        #for index, row in data:
+
+        #    record = URIRef(f"https://{PREFIX}/resources/records/{row.uuid}")
+
+        #    if any(g.triples((record_block, SAA['hasOrHadSubjectLocation'], None))):
+        #        logging.error(f"Modern Adamlink already filled in for {row.uuid}")
+        #        continue
+        #    # if there is a modern adamlink to add, add it
+        #    if row['adres 1875']==row['adres 1875']:
+        #        g.add((record_block, SAA['hasOrHadSubjectLocation'], URIRef(f"{row['adres 1875']}")))
+
+
+        #        adamlink = str(g.value(subject=record, predicate=SAA['hasOrHadSubjectLocation']))
+
+        #        adamlink = list(g.objects(record, SAA['hasOrHadSubjectLocation']))
+
+
+        '''for inst in g.objects(record, SAA.isAssociatedWithModernAddress ):
+
+        houseNumber = str(g.value(subject=inst, predicate=SAA.houseNumber))
+        print(f'This is my houseNumber: {houseNumber}')
+        print(f'This is my record: {record}')
+        #for record in g.subjects(RDF.type,MEMORIX.Record):
+        record_uuid = str(record).split('/')[-1] 
+        print(record_uuid)'''
+
+        return data #, records_deleted_message
+
+
+
+# Helper function 2 Step 6 
+def add_number_add_to_address_block(inst, row, g, number_add_added, error_list):
+    if (inst, SAA['houseNumberAddition'], Literal(row.numberAddition)) not in g:
+        g.add((inst, SAA['houseNumberAddition'], Literal(row.numberAddition)))
+        logging.info("Number addition added")
+        number_add_added = True
+        g, error_list = add_number_add_to_address_block(inst, row, g, error_list)
+    else:
+        logging.info(f"Number addition already in block")
+        number_add_added = True
+    return g, number_add_added, error_list
+
+# Helper function 3 Step 6 
+def add_adamlink_to_address(inst, row, g, number_add_added, error_list):
+    if (inst, SAA['houseNumberAddition'], Literal(row.numberAddition)) not in g:
+        g.add((inst, SAA['houseNumberAddition'], Literal(row.numberAddition)))
+        logging.info("Number addition added")
+        number_add_added = True
+        g, error_list = add_number_add_to_address_block(inst, row, g, error_list)
+    else:
+        logging.info(f"Number addition already in block")
+        number_add_added = True
+    return g, number_add_added, error_list
+
+# Helper function 3 Step 6 
+def extract_street(inst, row, g, number_add_added, error_list):
+    if (inst, SAA['houseNumberAddition'], Literal(row.numberAddition)) not in g:
+        g.add((inst, SAA['houseNumberAddition'], Literal(row.numberAddition)))
+        logging.info("Number addition added")
+        number_add_added = True
+        g, error_list = add_number_add_to_address_block(inst, row, g, error_list)
+    else:
+        logging.info(f"Number addition already in block")
+        number_add_added = True
+    return g, number_add_added, error_list
+
+### !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! END HELPER FUNCTIONS.  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+
+
+'''# Step 6 function
+def get_predicates(records, predicates, total_record_uuids, total_predicates):
+    
+    Adamlink meenemen. Niet alleen om te kunnen vullen, maar ook omdat deze in combinatie met 
+       het migratie adresveld al op 85.034 records is gevuld [ aldus Memorix ] dus deze wil je 
+       filteren en niet meenemen in je wijziging
+
+    input(' We are ate 6. CHeck the output or abort (Y/N): ')
+    try:
+        # Working with the records
+        g = Graph()
+        g.parse(records, format='turtle')
+        
+        for s, p, o in g:
+            print(f"Subject = {s} \n Object  = {p}\n Predicate = {o}\n")
+
+        for record in g.subjects(RDF.type, MEMORIX.Record):
+            uuid = str(record).split('/')[-1] 
+            print(f'I am printing the uuid here : {uuid}')
+
+            for inst in g.objects(record, SAA.isAssociatedWithModernAddress ):
+                
+                print(inst)
+                houseNumber = str(g.value(subject=inst, predicate=SAA['houseNumber']))
+                numberAddition = str(g.value(subject=inst, predicate=SAA['houseNumberAddition']))
+                street = str(g.value(subject=inst, predicate=SAA['street']))
+                streetTextualValue = str(g.value(subject=inst, predicate=SAA['streetTextualValue']))
+                adamlink = str(g.value(subject=inst, predicate=SAA['hasOrHadSubjectLocation']))
+
+                predicates.append({
+                    'uuid' : uuid,
+                    'houseNumber' : houseNumber, 
+                    'numberAddition' : numberAddition, 
+                    'street' : street,
+                    'streetTextualValue' : streetTextualValue,
+                    'adamlink' : adamlink
+                    })
+                
+                total_predicates.append(uuid)    
 
             print('\n----------------------------------------------------------------------------\n\n' +
-              f'\tEr zijn: {len(total_predicates)} records opgehaald uit Memorix met behulp van de eerder verkregen uuids\n' +
-              f'\tDe lengte van het originele bestand bedraagt: \'{len(df_record_uuids['uuid'])}\'\n' +
-              f'\tEr wordt getest met {test_amount if env == 'acc' else 0} records\n' +
-              f'\tEr zijn {(test_amount if env == 'acc' else len(df_record_uuids['uuid'])) - len(total_predicates)} records verloren gegaan,\n' +
-              f'\tbij het ophalen van de uuids uit Memorix')  
+              f'\tEr zijn nu: {len(total_predicates)} predicates uitgelezen uit de records turtle\n' +
+              f'\tHet aantal records waar in deze run mee wordt gewerkt bedraagt: {len(total_record_uuids)}\n' +
+              f'\tEr zijn {(len(total_record_uuids)) - len(total_predicates)} records verloren gegaan,\n') 
+        
+            #print(f'\n\"THESE ARE THE predicates RETRIEVED FROM THE TURTLE:\"\n\n{predicates}')
 
-            return records #, records_deleted_message
-                
-        except:
-            log.error(f"FAILED TO GET RECORD FOR UUID: {df_record_uuids}")
+            return predicates
+        
+    except:
+        log.error(f'There was an issue creating the predicate list for the records: {records},\n')               
+        errors.append({'fn: get_predicates': [records]})'''
+
+
+
+# Step 6 function
+def fill_data(records, predicates_df):
+
+    try:
+        g = Graph()
+        g.parse(records, format='turtle') 
+        print(records)
+
+        for index, row in predicates_df.iterrows():
+            print(predicates_df["uuid"].tolist())    
+            logging.info(f"START {row.uuid}")
+            logging.info(f"Fill concept for street {row.streetTextualValue} and uuid {row.uuid} with concept uuid {row.concept_uuid}")
+            
+            record_uri = URIRef(f"{PREFIX}/resources/records/{row.uuid}")
+            concept_uri = URIRef(f"{PREFIX}/resources/vocabularies/concepts/{row.concept_uuid}")
+            print(record_uri)
+            print(record_uri in set(g.subjects(RDF.type, MEMORIX.Record)))
+            address = next(
+                g.objects(
+                record_uri,
+                SAA.isAssociatedWithModernAddress
+            ))
+            
+            if not address:
+                print(f"No address for {row.uuid}")
+                continue
+            '''if (address, SAA.street, None) not in g:
+                logging.info(f'Street concept already filled for uuid: {row.uuid}')
+                print((address, SAA.street, concept_uri) in g)
+                print(f'This is the {row.uuid}')'''
+            g.add((address, SAA.street, URIRef(concept_uri)))
+            print((address, SAA.street, concept_uri) in g)
+            print(list(g.objects(address, SAA.street)))
+            for t in g.triples((address, None, None)):
+                print(t)
+
+            '''    a                 skos:ConceptScheme ;
+    memorix:audience  memorix:AudienceExternal ;
+    skos:prefLabel    "{name}"@en ;
+    skos:scopeNote    "{description}" .      
+    """'''
+
+           # for record in g.subjects(RDF.type, api.Record):
+
+            #print(records.text)
+
+
+            '''address = next(g.objects(
+                    record,
+                    SAA.isAssociatedWithModernAddress
+                ))
+
+                if row.concept_uuid != '' | np.nan:
+
+                    concept_node = label()
+                g.add((address, SAA.hasOrHadSubjectLocation, concept_node))
+                g.add((address, RDF.type, MEMORIX.GeoCoordinates))
+                g.add((coord_bnode, SCHEMA.latitude, Literal(row.latitude, datatype=XSD.decimal)))         
+                g.add((coord_bnode, SCHEMA.longitude, Literal(row.longitude, datatype=XSD.decimal)))
+                print('Well it is not in there')
+                g.add((address, SAA.street, Literal(row.concept_uuid))) #URIRef(f"{row['concept_uuid']}")))
+                print('Well it is not in there')'''
+
+
+        #        logging.info(f'An adamlink was created for uuid {row.uuid}')
+                   # g.add((modern_adres_blok, SAA['street'], URIRef(f"{row['concept_uuid']}")))'''
+                        
+            #concept_uuid = row
+            ### if concept in memorix is already filled, log info and stop 
+        #    if any(g.triples((modern_adres_blok, SAA['street'], None))):
+        #        logging.info(f'Street concept already filled for uuid: {row.uuid}')
+        #        print('I am checking the triples')
+        #        break 
+            # if there is a modern adamlink to add, add it (or give error if no block in Memorix exists)
+            #if row['concept_uuid'] != '' | np.nan :
+            #    #if not modern_adres_blok:
+            #    #    logging.info(f"No adamlink block existst for {row.uuid}")
+            #    
+            #    logging.info(f"An adamlink was created for uuid: {row.uuid}")
+
+        print('Check the turtle')
+        
+        
+        #predicates_df['adamlink'] : str(g.value(address, SAA.hasOrHadSubjectLocationn))
+
+
+
+                #except:
+        #log.error(f"FAILED TO GET RECORD FOR UUID: {data}")
     
     #for index, row in df_record_uuids.iterrows():
     #    print(type(row))
@@ -464,156 +656,6 @@ def get_records_from_uuid_csv(df_record_uuids, records, pattern, total_predicate
     #        log.error(f"FAILED TRANSFORMATION {row.iloc[0]}")
 
 ### !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! HELPER FUNCTIONS. USE THEM ELSEWHERE OR DELETE !!!!!!!!!!!!! 
-
-# Helper function 2 Step 6 
-def add_number_addition_to_address_block(inst, row, g, number_addition_added, error_list):
-    if (inst, SAA['houseNumberAddition'], Literal(row.numberAddition)) not in g:
-        g.add((inst, SAA['houseNumberAddition'], Literal(row.numberAddition)))
-        logging.info("Number addition added")
-        number_addition_added = True
-        g, error_list = add_number_addition_to_address_block(inst, row, g, error_list)
-    else:
-        logging.info(f"Number addition already in block")
-        number_addition_added = True
-    return g, number_addition_added, error_list
-
-# Helper function 3 Step 6 
-def add_adamlink_to_address(inst, row, g, number_addition_added, error_list):
-    if (inst, SAA['houseNumberAddition'], Literal(row.numberAddition)) not in g:
-        g.add((inst, SAA['houseNumberAddition'], Literal(row.numberAddition)))
-        logging.info("Number addition added")
-        number_addition_added = True
-        g, error_list = add_number_addition_to_address_block(inst, row, g, error_list)
-    else:
-        logging.info(f"Number addition already in block")
-        number_addition_added = True
-    return g, number_addition_added, error_list
-
-# Helper function 3 Step 6 
-def extract_street(inst, row, g, number_addition_added, error_list):
-    if (inst, SAA['houseNumberAddition'], Literal(row.numberAddition)) not in g:
-        g.add((inst, SAA['houseNumberAddition'], Literal(row.numberAddition)))
-        logging.info("Number addition added")
-        number_addition_added = True
-        g, error_list = add_number_addition_to_address_block(inst, row, g, error_list)
-    else:
-        logging.info(f"Number addition already in block")
-        number_addition_added = True
-    return g, number_addition_added, error_list
-
-### !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! END HELPER FUNCTIONS.  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-
-
-'''# Step 6 function
-def get_predicates(records, predicates, total_record_uuids, total_predicates):
-    
-    Adamlink meenemen. Niet alleen om te kunnen vullen, maar ook omdat deze in combinatie met 
-       het migratie adresveld al op 85.034 records is gevuld [ aldus Memorix ] dus deze wil je 
-       filteren en niet meenemen in je wijziging
-
-    input(' We are ate 6. CHeck the output or abort (Y/N): ')
-    try:
-        # Working with the records
-        g = Graph()
-        g.parse(records, format='turtle')
-        
-        for s, p, o in g:
-            print(f"Subject = {s} \n Object  = {p}\n Predicate = {o}\n")
-
-        for record in g.subjects(RDF.type, MEMORIX.Record):
-            uuid = str(record).split('/')[-1] 
-            print(f'I am printing the uuid here : {uuid}')
-
-            for inst in g.objects(record, SAA.isAssociatedWithModernAddress ):
-                
-                print(inst)
-                houseNumber = str(g.value(subject=inst, predicate=SAA['houseNumber']))
-                numberAddition = str(g.value(subject=inst, predicate=SAA['houseNumberAddition']))
-                street = str(g.value(subject=inst, predicate=SAA['street']))
-                streetTextualValue = str(g.value(subject=inst, predicate=SAA['streetTextualValue']))
-                adamlink = str(g.value(subject=inst, predicate=SAA['hasOrHadSubjectLocation']))
-
-                predicates.append({
-                    'uuid' : uuid,
-                    'houseNumber' : houseNumber, 
-                    'numberAddition' : numberAddition, 
-                    'street' : street,
-                    'streetTextualValue' : streetTextualValue,
-                    'adamlink' : adamlink
-                    })
-                
-                total_predicates.append(uuid)    
-
-            print('\n----------------------------------------------------------------------------\n\n' +
-              f'\tEr zijn nu: {len(total_predicates)} predicaten uitgelezen uit de records turtle\n' +
-              f'\tHet aantal records waar in deze run mee wordt gewerkt bedraagt: {len(total_record_uuids)}\n' +
-              f'\tEr zijn {(len(total_record_uuids)) - len(total_predicates)} records verloren gegaan,\n') 
-        
-            #print(f'\n\"THESE ARE THE PREDICATES RETRIEVED FROM THE TURTLE:\"\n\n{predicates}')
-
-            return predicates
-        
-    except:
-        log.error(f'There was an issue creating the predicate list for the records: {records},\n')               
-        errors.append({'fn: get_predicates': [records]})'''
-
-# Step 6 extract pattern
-def extract_pattern(pattern, predicates, extracted):
-    
-    '''Adamlink meenemen. Niet alleen om te kunnen vullen, maar ook omdat deze in combinatie met 
-    het migratie adresveld al op 85.034 records is gevuld [ aldus Memorix ] dus deze wil je 
-    filteren en niet meenemen in je wijziging'''
-
-    try:
-        
-        predicates_df = pd.DataFrame(predicates)
-        extract_pattern = predicates_df['streetTextualValue'].str.extract(pattern)
-        print(extract_pattern)
-
-        predicates_df['extracted_street'] = extract_pattern['street'].str.strip()
-        predicates_df['extracted_number'] = extract_pattern['number'].str.strip()
-        predicates_df['extracted_number_add'] = extract_pattern['add'].str.strip()
-        print(predicates_df['extracted_number'])
-        extracted = predicates_df.to_dict(orient='records')
-        #    record = {
-        #    'uuid' : predicates_df['uuid'],
-        #    'street' : predicates_df['street'],
-        #    'houseNumber' : predicates_df['houseNumber'], 
-        #    'numberAddition' : predicates_df['numberAddition'], 
-        #    'streetTextualValue' : predicates_df['streetTextualValue'],
-        #    'adamlink' : predicates_df['adamlink'],
-#
-        #
-        #    extracted.append(record)
-        #
-        print(f'\n \"THIS IS THE LIST OF EXTRACTED STREETS:\"\n\n{extracted}')
-        return extracted
-    
-    except:
-        log.error(f'There was an issue extracting the pattern from the predicates : {predicates},\n')               
-        errors.append({'fn: extract_pattern': [predicates]})
-
-# Step 8 function
-def match_data(concept_list, extracted):
-
-    try:
-        print ('I do get in the eight')
-        concept_df = pd.DataFrame(concept_list, index=range(len(concept_list)))
-
-        extracted_df = pd.DataFrame(extracted, index=range(len(extracted)))
-
-        # Match if not empty and if not equal to already present data
-        different_nr = extracted_df['extracted_number'].notna() & extracted_df['houseNumber'].notna() & (extracted_df['extracted_number'] != extracted_df['houseNumber'])
-        different_add = extracted_df['extracted_number_add'].notna() & extracted_df['numberAddition'].notna() & (extracted_df['extracted_number_add'] != extracted_df['numberAddition'])
-        
-        # Match if not equal or if not empty string
-        new_nr = (extracted_df['houseNumber'] != extracted_df['extr_nr']) | (extracted_df['houseNumber'] == '')
-        new_add = (extracted_df['numberAddition'] != extracted_df['extracted_number_add']) | (extracted_df['numberAddition'] == '')
-
-        print(different_add, different_nr, new_nr, new_add)
-
-        matches = []
-        match = ''
         '''# loop through data with progress meter
         for index, row in tqdm(concept_list.iterrows(), total=concept_list.shape[0]):
             logging.info(f"START {row.uuid}")
@@ -665,11 +707,20 @@ def match_data(concept_list, extracted):
             #if any(g.triples((deed, SAA['isAssociatedWithModernAddress'], None))):
             #    print(f'This is inside the triples') # This is my saa: textualvalue: {SAA['streetTextualValue']} for the deed: {deed}')  ##### WE ARE HERE !!!!!!!!!##########
             #    print(records)
-        return concept_df, extracted_df
-        
-    except:
-        log.error(f'Something went wrong with matching the data {concept_list, extracted}')
-        errors.append({'fn: match_data': [concept_list, extracted]})
+
+        #print('\n----------------------------------------------------------------------------\n\n' +
+        #     f"\tGereed. Er zijn {len(predicates_df)} rijen verwerkt in het predicates dataframe" +
+        #     f'\tEr wordt gewerkt met {(test_amount if test_amount >= 0 else len(total_predicates) - len())} records\'\n' +
+        #      f'\tEr wordt getest met {test_amount} uuids\n' +
+        #      f'\tEr zijn {(test_amount if test_amount >= 0 else len(df_record_uuids)) - len(predicates)} records verloren gegaan bij het uitlezen van de data.')
+
+
+        return records
+            
+    except Exception as e:
+        print(f"FAILED {row.uuid}: {e}")
+        log.error(f'Something went wrong with matching the data { records, predicates_df}')
+        errors.append({'fn: fill_data': [records, predicates_df]})
 
 
 # Step 7 function
@@ -712,7 +763,7 @@ def alter_shit(records, houseNumber, numberAddition, migrate_street, record, uui
         log.error(f"FAILED TRANSFORMATION {records}")
 
 # Step 9 function
-def alter_some_more_shit(g, houseNu4mber, numberAddition, migrate_street, record, uuid):
+def alter_some_more_shit(g, houseNumber, numberAddition, migrate_street, record, uuid):
 
         pass
 
@@ -730,20 +781,19 @@ def main():
     extracted = []
     total_concept_uuids = []
     total_record_uuids = []
-    total_predicates = [] 
+    total_predicates = 0 
 
     # User variables
     vocabulair = 'a4863c0c-d9e5-3902-831a-d0960e381a41'  #### !!!! uuid of vocabul air            
-    deed = 'Deed'                                        #### !!!! Recordname for turtle
-    record_turtle = "data/record_turtle.ttl"                 #### !!!! Location of deed turtle
     concept_turtle = "data/concept_turtle.ttl"                #### !!!! Location of street turtle
     record_uuids = "data/record_uuids.csv"            #### !!!! Location of deed turtle
     records = 'data/records.ttl'      
+    recordia = 'data/recordia.ttl'      
     alternatives = "data/alternatives.csv"            #### !!!! Location of deed turtle
     outliers = "data/outliers.csv"            #### !!!! Location of deed turtle
     pattern = r'^(?P<street>.*?)(?:\s+(?P<number>\d+)(?P<add>.*))?$'
     ######### SOWIESO WEG ctx.obj["excel_sheet"] = "../data/concept_streets.xlsx"         #### !!!! Location of concepts
-    #ctx.obj["data"] = '../data/alternatieve_straatnamen.csv'    #### !!!! Location of adamlinks /alternative names
+    #ctx.obj["data"] = '../data/alternatieve_streetnamen.csv'    #### !!!! Location of adamlinks /alternative names
                     #### !!!! Location of adamlinks /alternative names
     #ctx.obj["log"] = log_setup(logfile)
 
@@ -760,9 +810,10 @@ def main():
     print("\n\tSTEP 1: DOWNLOADEN VAN DE DE TURTLE CONCEPT VOCABULAIR")
 
     # Retrieve a turtle with all concepts based on vocabulair    
-    concept_turtle = retrieve_concept_turtle_from_memorix(
+    concept_turtle, total_concept_uuids = retrieve_concept_turtle_from_memorix(
         vocabulair, 
-        concept_turtle,
+        concept_turtle, 
+        concept_list, 
         total_concept_uuids
         ) 
     
@@ -773,23 +824,6 @@ def main():
     '\n----------------------------------------------------------------------------\n\n', 
     )
     
-    print("\n\tSTEP 3: READ TURTLE AND PUT IN LIST")
-    
-    # Read the concept turtle retrieved in step 1 and append data to list variable
-    concept_list = concept_turtle_to_list( 
-        concept_turtle,
-        concept_list,
-        total_concept_uuids
-    )
-
-    print(
-    '\n----------------------------------------------------------------------------\n\n' +
-    '\t\"The concept turtle is appended to a list.\"\n' +
-    '\t\" Do you want to continue reading the datasheet you provided?\"\n' +
-    '\n----------------------------------------------------------------------------\n\n',
-    )
-
-
     print("\n\tSTEP 2: DOWNLOADING RECORD UUIDS")
     
     # Retrieve record UUIDS from memorix and put in dataframe 
@@ -808,7 +842,7 @@ def main():
     '\n----------------------------------------------------------------------------\n\n',   
     )
 
-    print("\n\tSTEP 4: READ EXTERNAL DATASHEET WITH PANDA")
+    print("\n\tSTEP 3: READ EXTERNAL DATASHEET WITH PANDA")
     
     # Add the provided external data to a dataframe
     df_external_data = read_external_data_with_panda( 
@@ -823,13 +857,13 @@ def main():
         '\n----------------------------------------------------------------------------\n\n',
     )
 
-    print("\n\tSTEP 5: HERE WE START WITH GETTING A RECORD TURTLE")
+    print("\n\tSTEP 4: RECORD TURTLE UITLEZEN EN DATA NAAR DATAFRAME VERPLAATSEN")
     
     # Get all records in a turtle, based on UUIDS retrieved in step 2
-    records = get_records_from_uuid_csv( 
+    records, predicates, total_predicates, test_amount = get_turtle_for_record_with_uuid( 
         df_record_uuids, 
         records,
-        pattern,
+        predicates,
         total_predicates
         )
     
@@ -845,28 +879,18 @@ def main():
         '\n----------------------------------------------------------------------------\n\n',
     )   
 
-    print("\n\tSTEP 6 WE ARE RETRIEVING THE PREDICATES FROM THE TURTLE")
+    print("\n\tSTEP 5 DATA MATCHEN EN TOEVOEGEN AAN DATAFRAME")
 
-    #predicates = get_predicates(
-    #    records, 
-    #    predicates,
-    #    total_record_uuids,
-    #    total_predicates
-    #    )
-    #
-    #print(        
-    #    '\n----------------------------------------------------------------------------\n\n' +
-    #    '\t\"We have a predicate list.\" \n' +
-    #    '\t\"Do you want to continue extracting the pattern from the given predicate?\"\n' +
-    #    '\n----------------------------------------------------------------------------\n\n'
-    #)   
-
-    print("\n\tSTEP 6: WE ARE NOW EXTRACTING THE STREET FROM THE PREDICATE")
-
-    extracted = extract_pattern(
+    predicates_df, outliers_df = match_data(
         pattern,
         predicates,
-        extracted
+        total_predicates,
+        extracted,
+        df_external_data,
+        concept_list,
+        total_concept_uuids,
+        test_amount,
+        df_record_uuids
         )
 
     print(        
@@ -876,12 +900,27 @@ def main():
         '\n----------------------------------------------------------------------------\n\n',
     ) 
 
-    print("\n\tSTEP 8: WE ARE NOW ALTERING THE RECORDS")
+    print("\n\tSTEP 6: DATA TERUGZETTEN IN TURTLE")
 
-    records = match_data(
-        concept_list, 
-        extracted
+
+    records = fill_data(
+        records,
+        predicates_df
         )
+    #
+    #print(        
+    #    '\n----------------------------------------------------------------------------\n\n' +
+    #    '\t\"We have a predicate list.\" \n' +
+    #    '\t\"Do you want to continue extracting the pattern from the given predicate?\"\n' +
+    #    '\n----------------------------------------------------------------------------\n\n'
+    #)  
+
+    print("\n\tSTEP 7: UPDATE NAAR MEMORIX")
+
+    #records = update_to_memorix(
+    #    records, 
+    #    outliers_df
+    #    )
     
     # ctx.obj['graph'] = g
     # ctx.obj['houseNumber'] = houseNumber
@@ -902,7 +941,7 @@ def main():
         '\n----------------------------------------------------------------------------\n\n',
     ) 
 
-    print("\n\tSTEP 7: TRYING TO ALTER SHIT WITH WHAT WE GOT")
+    print("\n\tSTEP 7: DONE??")
 
     # THIS IS NEXT STEP FOR ALTERNATIVE DATA OR OUTLIERS. MAKE ALL YOUR SHIT IN THE TURTLE HAPPEN IN 7!!
 
@@ -922,35 +961,7 @@ def main():
        
     # print(f"Environment: {ctx.obj['env']}")
 
-    print(
-        '\n----------------------------------------------------------------------------\n\n' +
-        '\t\"The bla bla bla.\"\n' +
-        '\t\"Do you want to continue with ... YESS??? ?\"\n' +
-        '\n----------------------------------------------------------------------------\n\n'
-    ) 
-
-    print("\n\tSTEP 8: NOT HERE YET")
-
-    #g, record, uuid, houseNumber, numberAddition, streetTextualValue = alter_shit(
-    #    ctx.obj['graph'],
-    #    ctx.obj['houseNumber'],
-    #    ctx.obj['numberAddition'],
-    #    ctx.obj['migrate_street'],
-    #    ctx.obj['record'],
-    #    ctx.obj['uuid'],
-    #    ctx.obj['df_external_data'], 
-    #    ctx.obj['concept_list']
-    #    )
-    #   
-    # print(f"Environment: {ctx.obj['env']}")
-
-    print(
-        '\n----------------------------------------------------------------------------\n\n' +
-        '\t\"The bla bla bla.\"\n' +
-        '\t\"Do you want to continue with ... YESS??? ?\"\n' +
-        '\n----------------------------------------------------------------------------\n\n'
-    ) 
-
+    
     print('Done!')
 
 
