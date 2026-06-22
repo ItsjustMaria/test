@@ -91,9 +91,9 @@ elif env == 'tst':
 else:
     raise ValueError("Environment must be 'acc' or 'prod'")
 
-settings = saa.readJsonFile(settings_file) 
+'''settings = saa.readJsonFile(settings_file) 
 api = memorix.ApiClient(settings)
-
+'''
 # Namespace bepalingen
 SAA = Namespace("https://data.archief.amsterdam/ontology#")
 RICO = Namespace("https://www.ica.org/standards/RiC/ontology#")
@@ -115,8 +115,8 @@ def retrieve_concept_turtle_from_memorix(vocabulair, concept_turtle, concept_lis
     
     # Concept vocabulaire turtle uit memorix halen
     try:
-        response = api.list_concepts( vocabulair)
-        print(response.text,  file=open(concept_turtle, 'w', encoding='utf-8'))
+        '''response = api.list_concepts( vocabulair)
+        print(response.text,  file=open(concept_turtle, 'w', encoding='utf-8'))'''
 
         g = rdflib.Graph()
         g.parse(concept_turtle, format="ttl")
@@ -526,16 +526,30 @@ def fill_data(records, predicates_df):
             logging.info(f"START {row.uuid}")
             logging.info(f"Fill concept for street {row.streetTextualValue} and uuid {row.uuid} with concept uuid {row.concept_uuid}")
             
+            # Record en Concept URI bepalen 
             record_uri = URIRef(f"{PREFIX}/resources/records/{row.uuid}")
             concept_uri = URIRef(f"{PREFIX}/resources/vocabularies/concepts/{row.concept_uuid}")
+            adamlink = URIRef(row.adamlink)
+
             print(record_uri)
             print(record_uri in set(g.subjects(RDF.type, MEMORIX.Record)))
+            print(row.adamlink)
+            
+            # Adresblock bepalen
             address = next(
                 g.objects(
                 record_uri,
                 SAA.isAssociatedWithModernAddress
             ))
+
+            '''# Adresblock bepalen -> Overbodig denkelijk, omdat hij direct onder het record hangt
+            adamlink = next(
+                g.objects(
+                record_uri,
+                SAA.hasOrHadSubjectLocation
+            ))'''
             
+            # Uitzonderingen vastleggen -> Onmogelijk. Betere uitzondering bepalen
             if not address:
                 print(f"No address for {row.uuid}")
                 continue
@@ -543,11 +557,34 @@ def fill_data(records, predicates_df):
                 logging.info(f'Street concept already filled for uuid: {row.uuid}')
                 print((address, SAA.street, concept_uri) in g)
                 print(f'This is the {row.uuid}')'''
-            g.add((address, SAA.street, URIRef(concept_uri)))
-            print((address, SAA.street, concept_uri) in g)
+            
+            # Concept toevoegen aan turtle
+            g.add((address, SAA.street, concept_uri))
+
+
+            # Adamlink toevoegen aan turtle
+            g.add((record_uri, SAA.hasOrHadSubjectLocation, adamlink))           
+            
+            print((record_uri, SAA.street, concept_uri) in g)
             print(list(g.objects(address, SAA.street)))
             for t in g.triples((address, None, None)):
                 print(t)
+                
+        # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EXCEPTION OCCURS HERE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+            # Check of huisnummer leeg is, dan toeveogen
+            if (address, SAA.houseNumber, None) not in g:
+                g.add((address, SAA.houseNumber, row.house_number))
+            for p in g.triples((address, SAA.houseNumber, None)):
+                print(p)
+
+        
+            # Check of huisnummer-toevoeging leeg is, dan toeveogen
+            if (address, SAA.houseNumberAddition, None) not in g:
+                g.add((address, SAA.houseNumberAddition, row.number_add))           
+            for p in g.triples((address, SAA.houseNumberAddition, None)):
+                print(p)
+
+        # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EXCEPTION OCCURS HERE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    
 
             '''    a                 skos:ConceptScheme ;
     memorix:audience  memorix:AudienceExternal ;
