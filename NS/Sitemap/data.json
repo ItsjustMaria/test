@@ -1,0 +1,106 @@
+{
+  "archive": {
+    "title": "Sample Archive",
+    "description": "A demonstration of unified archival data.",
+    "items": [
+      {
+        "id": "root",
+        "type": "folder",
+        "title": "Root",
+        "description": "Top-level folder",
+        "children": ["category1", "category2", "category3"]
+      },
+      {
+        "id": "category1",
+        "type": "folder",
+        "title": "Historical Dates",
+        "description": "Items organized by date",
+        "children": ["item1", "item2"]
+      },
+      {
+        "id": "category2",
+        "type": "folder",
+        "title": "Archive Builders",
+        "description": "Items organized by creator",
+        "children": ["item3"]
+      },
+      {
+        "id": "category3",
+        "type": "folder",
+        "title": "Relations",
+        "description": "Items organized by subject/object/predicate",
+        "children": ["item4", "item5"]
+      },
+      {
+        "id": "item1",
+        "type": "document",
+        "title": "Medieval Manuscript",
+        "description": "A 14th century text about local history.",
+        "date": "1350-1400",
+        "creator": "Monastery of St. John",
+        "subject": "History",
+        "object": "Local Events",
+        "predicate": "describes",
+        "relations": ["item2", "item4"],
+        "thumbnail": "manuscript.jpg",
+        "category": "Historical Dates"
+      },
+      {
+        "id": "item2",
+        "type": "document",
+        "title": "City Map",
+        "description": "A map of the city from 1500.",
+        "date": "1500",
+        "creator": "City Cartographer",
+        "subject": "Geography",
+        "object": "City Layout",
+        "predicate": "depicts",
+        "relations": ["item1"],
+        "thumbnail": "map1500.jpg",
+        "category": "Historical Dates"
+      },
+      {
+        "id": "item3",
+        "type": "document",
+        "title": "Digital Report",
+        "description": "A modern report on archival practices.",
+        "date": "2020-2025",
+        "creator": "National Archives",
+        "subject": "Archival Science",
+        "object": "Best Practices",
+        "predicate": "outlines",
+        "relations": [],
+        "thumbnail": null,
+        "category": "Archive Builders"
+      },
+      {
+        "id": "item4",
+        "type": "linked-data",
+        "title": "Linked Data: St. John's Monastery",
+        "description": "Linked data entry for the monastery.",
+        "subject": "St. John's Monastery",
+        "object": "Monastery",
+        "predicate": "is a",
+        "relations": ["item1", "item5"],
+        "date": null,
+        "creator": null,
+        "thumbnail": null,
+        "category": "Relations"
+      },
+      {
+        "id": "item5",
+        "type": "linked-data",
+        "title": "Linked Data: Local Events",
+        "description": "Linked data entry for local events.",
+        "subject": "Local Events",
+        "object": "Historical Event",
+        "predicate": "is a",
+        "relations": ["item1", "item4"],
+        "date": null,
+        "creator": null,
+        "thumbnail": null,
+        "category": "Relations"
+      }
+    ]
+  }
+}
