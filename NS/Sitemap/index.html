@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archival Data Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar for view switching -->
+    <div class="sidebar">
+        <h2>Views</h2>
+        <ul class="view-menu">
+            <li class="view-option active" data-view="hierarchical">
+                <span class="icon">📁</span> Hierarchical
+            </li>
+            <li class="view-option" data-view="timeline">
+                <span class="icon">📅</span> Timeline
+            </li>
+            <li class="view-option" data-view="grid">
+                <span class="icon">🖼️</span> Grid
+            </li>
+            <li class="view-option" data-view="graph">
+                <span class="icon">🌐</span> Graph
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main content area for views -->
+    <div class="main-content">
+        <div id="hierarchical-view" class="view active">
+            <h1>Hierarchical View</h1>
+            <p>Placeholder for hierarchical folder structure.</p>
+        </div>
+        <div id="timeline-view" class="view">
+            <h1>Timeline View</h1>
+            <p>Placeholder for timeline + folder structure.</p>
+        </div>
+        <div id="grid-view" class="view">
+            <h1>Grid View</h1>
+            <p>Placeholder for grid of thumbnails.</p>
+        </div>
+        <div id="graph-view" class="view">
+            <h1>Graph View</h1>
+            <p>Placeholder for 3D linked data graph (Three.js).</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
