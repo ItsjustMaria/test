@@ -344,11 +344,18 @@ def match_data(pattern,
         
         # Dataframe maken van concepten
         concept_df = pd.DataFrame(concept_list, index=range(len(concept_list)))
-        
-        # concept uuid en adamlink toevoegen aan predicates dataframe obv 'straat' met behulp van een merge         
+        # concept uuid en adamlink toevoegen aan predicates dataframe obv 'straat' met behulp van een merge 
+        #print(concept_df['adamlink'])
+        predicates_df['streetTextualValue'] = predicates_df['streetTextualValue'].str.strip('\r\n ')
+        concept_df['streetTextualValue'] = concept_df['streetTextualValue'].str.strip('\r\n ')
+        #predicates_df['street_key'] = predicates_df['streetTextualValue'].str.lower().str.replace(r'\s+', '', regex=True)
+        #print(f' Streetkey predicates :\n\n {predicates_df['street_key']}')
+        #concept_df['street_key'] = concept_df['streetTextualValue'].str.lower().str.replace(r'\s+', '', regex=True)    
+        #print(f' Streetkey predicates : \n\n {concept_df['street_key']}')
         merge_concepts = predicates_df.merge(concept_df[['streetTextualValue', 'concept_uuid', 'adamlink']], on = 'streetTextualValue', how='left' )
         predicates_df = merge_concepts
-
+        print(f' Streetkey predicates :\n\n {predicates_df['streetTextualValue']}')
+        print(f' Streetkey concepts :\n\n {predicates_df['streetTextualValue']}')
         # nummer van adamlink afhalen van alternatieve lijst en toevoegen aan kolom altlabel in twee dataframes separaat
         predicates_df['altlabel'] = predicates_df['adamlink'].str.extract(r'(\d+)')
         df_external_data['number_altlabel'] = df_external_data['straat-label-altlabel'].str.extract(r'(\d+)')
@@ -468,7 +475,7 @@ def fill_data(records, predicates_df, outliers_df, concept_added, adamlink_added
         outliers_df.to_csv(outliers, sep=';', 
     encoding= 'utf-8',
     index= False, header= True)        
-        print(outliers.text)
+
 
 
     except:
