@@ -41,7 +41,7 @@
         "subject": "History",
         "object": "Local Events",
         "predicate": "describes",
-        "relations": ["item2", "item4"],
+        "relations": ["https://www.medieval.com", "https://www.st-john.com"],
         "thumbnail": "manuscript.jpg",
         "category": "Historical Dates"
       },
