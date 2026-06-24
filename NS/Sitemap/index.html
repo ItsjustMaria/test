@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archival Data Visualizer</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Load Three.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
     <!-- Sidebar for view switching -->
@@ -29,20 +32,19 @@
     <!-- Main content area for views -->
     <div class="main-content">
         <div id="hierarchical-view" class="view active">
-            <h1>Hierarchical View</h1>
-            <p>Placeholder for hierarchical folder structure.</p>
+            <div class="folder-tree" id="folder-tree"></div>
         </div>
         <div id="timeline-view" class="view">
-            <h1>Timeline View</h1>
-            <p>Placeholder for timeline + folder structure.</p>
+            <div class="timeline-container">
+                <div class="timeline" id="timeline"></div>
+                <div class="timeline-items" id="timeline-items"></div>
+            </div>
         </div>
         <div id="grid-view" class="view">
-            <h1>Grid View</h1>
-            <p>Placeholder for grid of thumbnails.</p>
+            <div class="grid-container" id="grid-container"></div>
         </div>
         <div id="graph-view" class="view">
-            <h1>Graph View</h1>
-            <p>Placeholder for 3D linked data graph (Three.js).</p>
+            <div id="graph-container"></div>
         </div>
     </div>
 

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archival Data Visualizer</title>
+<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #ffffff;
+    --surface: #004699;
+    --surface2: #0256bc;
+    --accent: #ec0000;
+    --accent2: #533483;
+    --text: #eaeaea;
+    --text-muted: #8a8a9a;
+    --folder: #f0a500;
+    --document: #53d8fb;
+    --linked: #e94560;
+    --border: rgba(255,255,255,0.08);
+    --sidebar-w: 180px;
+  }
+
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar {
+    width: var(--sidebar-w);
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    flex-shrink: 0;
+    z-index: 10;
+  }
+  .sidebar h2 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0 20px 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+  }
+  .view-menu { list-style: none; }
+  .view-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 20px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-muted);
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .view-option:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+  .view-option.active { color: var(--text); border-left-color: var(--accent); background: rgba(233,69,96,0.08); }
+  .view-option .icon { font-size: 40px; }
+  img {object-fit: contain; object-position: 50% 50%; max-width: 50px; }
+
+  /* ===== MAIN ===== */
+  .main-content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+  .view {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 24px;
+    animation: fadeIn 0.3s ease;
+  }
+  .view.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ===== VIEW HEADER ===== */
+  .view-header {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .view-header h1 { font-size: 20px; font-weight: 600; }
+  .view-header p { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+  /* ===== HIERARCHICAL VIEW ===== */
+  .folder-tree {
+    font-size: 13px;
+  }
+  .folder-tree ul { list-style: none; padding-left: 0; }
+  .folder-tree ul ul { padding-left: 22px; border-left: 1px dashed var(--border); margin-left: 8px; }
+  .folder-tree li { margin: 2px 0; }
+
+  .folder-row, .doc-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .folder-row:hover { background: rgba(255,255,255,0.05); }
+  .doc-row:hover { background: rgba(83,212,251,0.07); }
+
+  .toggle-btn {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--text-muted);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .toggle-btn.open { transform: rotate(90deg); }
+
+  .folder-icon { color: var(--folder); font-size: 40px; }
+  .doc-icon { color: var(--document); font-size: 40px; }
+  .folder-name { font-weight: 500; color: var(--text); }
+  .doc-name { color: var(--text-muted); }
+
+  .meta-tags { display: flex; gap: 5px; margin-left: auto; flex-wrap: wrap; }
+  .tag {
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.06);
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .tag.topic { background: rgba(83,52,131,0.4); color: #1b0b50; }
+  .tag.creator { background: rgba(240,165,0,0.18); color: #e6b249; }
+  .tag.relation { background: rgba(233,69,96,0.18); color: #af2a3e; }
+
+  .children-list { overflow: hidden; max-height: 0; transition: max-height 0.3s ease; }
+  .children-list.open { max-height: 2000px; }
+
+  /* ===== TIMELINE VIEW ===== */
+  #timeline-view { overflow-y: auto; }
+  .timeline-scroll {
+    overflow-x: auto;
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+  }
+  .timeline-track {
+    position: relative;
+    height: 56px;
+    min-width: 800px;
+  }
+  .timeline-axis {
+    position: absolute;
+    left: 0; right: 0; top: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--surface2) 5%, var(--surface2) 95%, transparent);
+  }
+  .timeline-tick {
+    position: absolute;
+    top: 14px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .timeline-tick .yr {
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+  .timeline-tick .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 2px solid var(--accent2);
+  }
+  .timeline-dot-item {
+    position: absolute;
+    top: 20px;
+    transform: translateX(-50%);
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    z-index: 2;
+  }
+  .timeline-dot-item:hover { transform: translateX(-50%) scale(1.5); background: #ff6b6b; }
+  .timeline-dot-item .tip {
+    display: none;
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 10px;
+    white-space: nowrap;
+    color: var(--text);
+    pointer-events: none;
+    z-index: 10;
+  }
+  .timeline-dot-item:hover .tip { display: block; }
+
+  .timeline-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tl-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .tl-card:hover { border-color: var(--accent2); background: rgba(83,52,131,0.1); }
+  .tl-date {
+    min-width: 60px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    padding-top: 2px;
+  }
+  .tl-body h3 { font-size: 14px; margin-bottom: 4px; }
+  .tl-body p { font-size: 12px; color: var(--text-muted); }
+
+  /* ===== GRID VIEW ===== */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 16px;
+  }
+  .grid-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .grid-item:hover { transform: translateY(-3px); border-color: var(--accent2); }
+  .grid-thumb {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+  }
+  .grid-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .grid-info { padding: 10px 12px 12px; }
+  .grid-info h3 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+  .grid-info p { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; line-height: 1.4; }
+  .grid-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+
+  /* ===== GRAPH VIEW ===== */
+  #graph-view { padding: 0; overflow: hidden; }
+  #graph-container { width: 100%; height: 100%; position: relative; }
+  #graph-container canvas { display: block; }
+
+  #graph-info-panel {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 280px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    display: none;
+    z-index: 100;
+    animation: slideIn 0.2s ease;
+  }
+  @keyframes slideIn { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
+  #graph-info-panel .panel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  #graph-info-panel h3 { font-size: 15px; color: var(--text); line-height: 1.3; }
+  #graph-info-panel .close-btn { cursor: pointer; font-size: 18px; color: var(--text-muted); line-height: 1; padding: 2px; }
+  #graph-info-panel .close-btn:hover { color: var(--accent); }
+  .panel-row { margin-bottom: 8px; }
+  .panel-row label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 2px; }
+  .panel-row span { font-size: 12px; color: var(--text); }
+  .panel-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+
+  .graph-legend {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 11px;
+    z-index: 50;
+  }
+  .graph-legend h4 { color: var(--text-muted); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .legend-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* ===== ITEM DETAIL MODAL ===== */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    max-width: 520px;
+    width: 90%;
+    position: relative;
+    animation: fadeIn 0.2s ease;
+  }
+  .modal h2 { font-size: 20px; margin-bottom: 6px; }
+  .modal .modal-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
+  .modal p { font-size: 13px; line-height: 1.6; color: var(--text-muted); margin-bottom: 12px; }
+  .modal .modal-close { position: absolute; top: 16px; right: 18px; font-size: 22px; cursor: pointer; color: var(--text-muted); }
+  .modal .modal-close:hover { color: var(--accent); }
+  .modal-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>View</h2>
+  <ul class="view-menu">
+    <li class="view-option active" data-view="hierarchical"><span class="icon"><img src="assets/img/List_view.png" alt=""></span> Hierarchical</li>
+    <li class="view-option" data-view="timeline"><span class="icon"><img src="assets/img/timeline_Image.png" alt=""></span> Timeline</li>
+    <li class="view-option" data-view="grid"><span class="icon"><img src="assets/img/Grid-view.png" alt=""></span> Grid</li>
+    <li class="view-option" data-view="graph"><span class="icon"><img src="assets/img/graph.png" alt=""></span> Graph</li>
+  </ul>
+</div>
+
+<div class="main-content">
+  <div id="hierarchical-view" class="view active">
+    <div class="view-header">
+      <h1>Hierarchical Archive</h1>
+      <p>Folder structure organized by topic, creator and relation — click ▶ to expand</p>
+    </div>
+    <div class="folder-tree" id="folder-tree"></div>
+  </div>
+
+  <div id="timeline-view" class="view">
+    <div class="view-header">
+      <h1>Timeline Archive</h1>
+      <p>Items arranged chronologically — hover the dots to preview, click cards to open</p>
+    </div>
+    <div class="timeline-scroll"><div class="timeline-track" id="timeline-track"><div class="timeline-axis"></div></div></div>
+    <div class="timeline-cards" id="timeline-cards"></div>
+  </div>
+
+  <div id="grid-view" class="view">
+    <div class="view-header">
+      <h1>Visual Grid</h1>
+      <p>Thumbnails with topic, creator and relation tags — click any item to open</p>
+    </div>
+    <div class="grid-container" id="grid-container"></div>
+  </div>
+
+  <div id="graph-view" class="view">
+    <div id="graph-container"></div>
+    <div id="graph-info-panel">
+      <div class="panel-header">
+        <h3 id="gp-title">—</h3>
+        <span class="close-btn" id="graph-close">×</span>
+      </div>
+      <p class="panel-desc" id="gp-desc"></p>
+      <div class="panel-row"><label>Subject</label><span id="gp-subject"></span></div>
+      <div class="panel-row"><label>Predicate</label><span id="gp-predicate"></span></div>
+      <div class="panel-row"><label>Object</label><span id="gp-object"></span></div>
+      <div class="panel-row"><label>Relations</label><span id="gp-relations"></span></div>
+    </div>
+    <div class="graph-legend">
+      <h4>Node types</h4>
+      <div class="legend-row"><div class="legend-dot" style="background:#e94560"></div> Subject</div>
+      <div class="legend-row"><div class="legend-dot" style="background:#f0a500"></div> Object</div>
+      <div class="legend-row"><div class="legend-dot" style="background:#53d8fb"></div> Predicate</div>
+    </div>
+  </div>
+</div>
+
+<!-- Detail modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <span class="modal-close" id="modal-close">×</span>
+    <h2 id="modal-title"></h2>
+    <div class="modal-meta" id="modal-meta"></div>
+    <p id="modal-desc"></p>
+    <div class="modal-tags" id="modal-tags"></div>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   ARCHIVE DATA  – edit this object to change content for any archive
+   ===================================================================== */
+const archiveData = {
+  archive: {
+    name: "Municipal Historical Archive",
+    items: [
+      /* ---- FOLDERS ---- */
+      { id: "root",      type: "folder", title: "Municipal Historical Archive",
+        children: ["f-maps","f-docs","f-photos","f-linked"] },
+      { id: "f-maps",    type: "folder", title: "Cartography & Maps",
+        topic: "Geography", children: ["d-map1","d-map2","d-map3"] },
+      { id: "f-docs",    type: "folder", title: "Official Documents",
+        topic: "Governance", children: ["d-doc1","d-doc2","d-doc3"] },
+      { id: "f-photos",  type: "folder", title: "Photographs",
+        topic: "Daily Life", children: ["d-photo1","d-photo2","d-photo3"] },
+      { id: "f-linked",  type: "folder", title: "Linked Data",
+        topic: "Relations", children: ["ld-1","ld-2","ld-3","ld-4","ld-5"] },
+
+      /* ---- DOCUMENTS ---- */
+      { id: "d-map1", type: "document", title: "City Plan 1850",
+        date: "1850", creator: "J. de Vries", topic: "Geography",
+        description: "Detailed cadastral plan of the city centre showing all parcels and waterways.",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camponotus_flavomarginatus_ant.jpg/320px-Camponotus_flavomarginatus_ant.jpg",
+        relations: ["d-map2","ld-1"], subject:"City Plan", predicate:"depicts", object:"City Centre 1850" },
+
+      { id: "d-map2", type: "document", title: "Harbour Extension Plan 1872",
+        date: "1872", creator: "Rijkswaterstaat", topic: "Geography",
+        description: "Proposed expansion of the eastern docking facilities.",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Biharwe_heritage_site.jpg/320px-Biharwe_heritage_site.jpg",
+        relations: ["d-map1","ld-2"], subject:"Harbour Plan", predicate:"extends", object:"Harbour 1850" },
+
+      { id: "d-map3", type: "document", title: "Rail Network 1910",
+        date: "1910", creator: "NS Archives", topic: "Infrastructure",
+        description: "Complete overview of the railway lines connecting the region.",
+        thumbnail: null,
+        relations: ["d-doc1"], subject:"Rail Map", predicate:"shows", object:"Railway Lines" },
+
+      { id: "d-doc1", type: "document", title: "Municipal Charter 1648",
+        date: "1648", creator: "City Council", topic: "Governance",
+        description: "Original charter granting city rights and privileges, sealed by the States-General.",
+        thumbnail: null,
+        relations: ["d-doc2","ld-3"], subject:"Charter", predicate:"grants", object:"City Rights" },
+
+      { id: "d-doc2", type: "document", title: "Census Register 1795",
+        date: "1795", creator: "Stadsarchief", topic: "Demographics",
+        description: "First systematic census of inhabitants listing occupation and address.",
+        thumbnail: null,
+        relations: ["d-doc1","d-doc3","ld-4"], subject:"Census", predicate:"records", object:"Population 1795" },
+
+      { id: "d-doc3", type: "document", title: "Trade Ordinance 1820",
+        date: "1820", creator: "Chamber of Commerce", topic: "Commerce",
+        description: "Regulation of market days, weights and measures for the harbour trade.",
+        thumbnail: null,
+        relations: ["d-doc2"], subject:"Ordinance", predicate:"regulates", object:"Trade" },
+
+      { id: "d-photo1", type: "document", title: "Market Square c.1900",
+        date: "1900", creator: "G. Brouwer Fotoarchief", topic: "Daily Life",
+        description: "Panoramic photograph of the weekly market with merchants and townspeople.",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/280px-PNG_transparency_demonstration_1.png",
+        relations: ["d-photo2","ld-5"], subject:"Photo", predicate:"shows", object:"Market Square 1900" },
+
+      { id: "d-photo2", type: "document", title: "Shipyard Workers 1925",
+        date: "1925", creator: "Unknown", topic: "Labour",
+        description: "Group portrait of workers at the state shipyard.",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camponotus_flavomarginatus_ant.jpg/320px-Camponotus_flavomarginatus_ant.jpg",
+        relations: ["d-photo1"], subject:"Photo", predicate:"depicts", object:"Shipyard Workers" },
+
+      { id: "d-photo3", type: "document", title: "Flood Aftermath 1953",
+        date: "1953", creator: "Persfoto", topic: "Disaster",
+        description: "Aerial photograph of flooded polders following the North Sea Flood.",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Biharwe_heritage_site.jpg/320px-Biharwe_heritage_site.jpg",
+        relations: ["ld-2"], subject:"Aerial Photo", predicate:"documents", object:"1953 Flood" },
+
+      /* ---- LINKED DATA ---- */
+      { id: "ld-1", type: "linked-data", title: "City Centre",
+        date: "1850", creator: "Linked Data Project", topic: "Geography",
+        description: "RDF node representing the geographic entity 'City Centre' with coordinates and boundary polygon.",
+        relations: ["ld-2","ld-3"], subject:"City Centre", predicate:"locatedIn", object:"Municipality" },
+
+      { id: "ld-2", type: "linked-data", title: "Harbour District",
+        date: "1872", creator: "Linked Data Project", topic: "Geography",
+        description: "RDF node for the harbour area, linked to shipping records and spatial data.",
+        relations: ["ld-1","ld-4"], subject:"Harbour", predicate:"partOf", object:"City Centre" },
+
+      { id: "ld-3", type: "linked-data", title: "City Council 1648",
+        date: "1648", creator: "Linked Data Project", topic: "Governance",
+        description: "Authority record for the governing body that issued the 1648 charter.",
+        relations: ["ld-1","ld-5"], subject:"City Council", predicate:"issued", object:"Charter 1648" },
+
+      { id: "ld-4", type: "linked-data", title: "Population Record 1795",
+        date: "1795", creator: "Linked Data Project", topic: "Demographics",
+        description: "SKOS concept linking census entries to persons and addresses.",
+        relations: ["ld-3","ld-5"], subject:"Census Record", predicate:"identifies", object:"Inhabitant" },
+
+      { id: "ld-5", type: "linked-data", title: "Market Square",
+        date: "1900", creator: "Linked Data Project", topic: "Daily Life",
+        description: "Geographic and thematic node tying photographs, trade records and maps to the square.",
+        relations: ["ld-1","ld-2","ld-4"], subject:"Market Square", predicate:"featureOf", object:"City Centre" }
+    ]
+  }
+};
+
+/* =====================================================================
+   HELPERS
+   ===================================================================== */
+function getItem(id) {
+  return archiveData.archive.items.find(i => i.id === id);
+}
+function allItems() { return archiveData.archive.items; }
+
+function tagHTML(label, cls) {
+  return `<span class="tag ${cls}">${label}</span>`;
+}
+
+/* =====================================================================
+   MODAL
+   ===================================================================== */
+function openModal(item) {
+  document.getElementById('modal-title').textContent = item.title;
+  document.getElementById('modal-meta').textContent =
+    [item.date ? `📅 ${item.date}` : '', item.creator ? `🏛 ${item.creator}` : ''].filter(Boolean).join('  ·  ');
+  document.getElementById('modal-desc').textContent = item.description || 'No description available.';
+  const tags = document.getElementById('modal-tags');
+  tags.innerHTML = '';
+  if (item.topic)    tags.innerHTML += tagHTML(item.topic, 'topic');
+  if (item.creator)  tags.innerHTML += tagHTML(item.creator, 'creator');
+  if (item.subject)  tags.innerHTML += tagHTML('S: '+item.subject, 'relation');
+  if (item.predicate) tags.innerHTML += tagHTML('P: '+item.predicate, '');
+  if (item.object)   tags.innerHTML += tagHTML('O: '+item.object, 'relation');
+  document.getElementById('modal-overlay').classList.add('open');
+}
+document.getElementById('modal-close').onclick = () =>
+  document.getElementById('modal-overlay').classList.remove('open');
+document.getElementById('modal-overlay').onclick = (e) => {
+  if (e.target === document.getElementById('modal-overlay'))
+    document.getElementById('modal-overlay').classList.remove('open');
+};
+
+/* =====================================================================
+   VIEW 1 — HIERARCHICAL
+   ===================================================================== */
+function renderHierarchical() {
+  const root = getItem('root');
+  const container = document.getElementById('folder-tree');
+  container.innerHTML = '';
+  const ul = document.createElement('ul');
+  ul.appendChild(buildNode(root));
+  container.appendChild(ul);
+}
+
+function buildNode(node) {
+  const li = document.createElement('li');
+
+  if (node.type === 'folder') {
+    const row = document.createElement('div');
+    row.className = 'folder-row';
+
+    const toggle = document.createElement('span');
+    toggle.className = 'toggle-btn';
+    toggle.textContent = '▶';
+
+    const icon = document.createElement('span');
+    icon.className = 'folder-icon';
+    icon.textContent = '📁';
+
+    const name = document.createElement('span');
+    name.className = 'folder-name';
+    name.textContent = node.title;
+
+    const tags = document.createElement('div');
+    tags.className = 'meta-tags';
+    if (node.topic) tags.innerHTML += tagHTML(node.topic, 'topic');
+
+    row.append(toggle, icon, name, tags);
+    li.appendChild(row);
+
+    const childList = document.createElement('ul');
+    childList.className = 'children-list';
+
+    (node.children || []).forEach(cid => {
+      const child = getItem(cid);
+      if (child) childList.appendChild(buildNode(child));
+    });
+
+    li.appendChild(childList);
+
+    row.addEventListener('click', () => {
+      const open = childList.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.textContent = open ? '▼' : '▶';
+    });
+
+  } else {
+    const row = document.createElement('div');
+    row.className = 'doc-row';
+
+    const icon = document.createElement('span');
+    icon.className = 'doc-icon';
+    icon.textContent = node.type === 'linked-data' ? '🔗' : '📄';
+
+    const name = document.createElement('span');
+    name.className = 'doc-name';
+    name.textContent = node.title;
+
+    const tags = document.createElement('div');
+    tags.className = 'meta-tags';
+    if (node.date)    tags.innerHTML += tagHTML(node.date, '');
+    if (node.creator) tags.innerHTML += tagHTML(node.creator, 'creator');
+    if (node.topic)   tags.innerHTML += tagHTML(node.topic, 'topic');
+    if (node.relations && node.relations.length)
+      tags.innerHTML += tagHTML(`${node.relations.length} relation${node.relations.length>1?'s':''}`, 'relation');
+
+    row.append(icon, name, tags);
+    li.appendChild(row);
+    row.addEventListener('click', () => openModal(node));
+  }
+  return li;
+}
+
+/* =====================================================================
+   VIEW 2 — TIMELINE
+   ===================================================================== */
+function renderTimeline() {
+  const items = allItems()
+    .filter(i => i.date && i.type !== 'folder')
+    .sort((a,b) => parseInt(a.date) - parseInt(b.date));
+
+  const track = document.getElementById('timeline-track');
+  // Remove existing dots
+  track.querySelectorAll('.timeline-dot-item, .timeline-tick').forEach(e => e.remove());
+
+  if (!items.length) return;
+  const years = items.map(i => parseInt(i.date));
+  const minY = Math.min(...years);
+  const maxY = Math.max(...years) + 1;
+  const range = maxY - minY || 1;
+
+  // Year ticks every ~50 years
+  const step = range <= 100 ? 25 : 50;
+  for (let y = Math.ceil(minY/step)*step; y <= maxY; y += step) {
+    const pct = (y - minY) / range * 90 + 5;
+    const tick = document.createElement('div');
+    tick.className = 'timeline-tick';
+    tick.style.left = pct + '%';
+    tick.innerHTML = `<span class="yr">${y}</span><div class="dot"></div>`;
+    track.appendChild(tick);
+  }
+
+  items.forEach(item => {
+    const pct = (parseInt(item.date) - minY) / range * 90 + 5;
+    const dot = document.createElement('div');
+    dot.className = 'timeline-dot-item';
+    dot.style.left = pct + '%';
+    dot.innerHTML = `<div class="tip">${item.title} (${item.date})</div>`;
+    dot.addEventListener('click', () => openModal(item));
+    track.appendChild(dot);
+  });
+
+  // Cards
+  const cards = document.getElementById('timeline-cards');
+  cards.innerHTML = '';
+  items.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'tl-card';
+    card.innerHTML = `
+      <div class="tl-date">${item.date}</div>
+      <div class="tl-body">
+        <h3>${item.title}</h3>
+        <p>${item.description || ''}</p>
+      </div>
+      <div class="meta-tags" style="margin-left:auto;align-self:center">
+        ${item.topic ? tagHTML(item.topic,'topic') : ''}
+        ${item.creator ? tagHTML(item.creator,'creator') : ''}
+      </div>`;
+    card.addEventListener('click', () => openModal(item));
+    cards.appendChild(card);
+  });
+}
+
+/* =====================================================================
+   VIEW 3 — GRID
+   ===================================================================== */
+function renderGrid() {
+  const items = allItems().filter(i => i.type !== 'folder');
+  const container = document.getElementById('grid-container');
+  container.innerHTML = '';
+
+  items.forEach(item => {
+    const el = document.createElement('div');
+    el.className = 'grid-item';
+
+    const thumb = document.createElement('div');
+    thumb.className = 'grid-thumb';
+    if (item.thumbnail) {
+      const img = document.createElement('img');
+      img.src = item.thumbnail;
+      img.alt = item.title;
+      img.onerror = () => { thumb.textContent = item.type === 'linked-data' ? '🔗' : '📄'; };
+      thumb.appendChild(img);
+    } else {
+      thumb.textContent = item.type === 'linked-data' ? '🔗' : '📄';
+    }
+
+    const info = document.createElement('div');
+    info.className = 'grid-info';
+    info.innerHTML = `
+      <h3>${item.title}</h3>
+      <p>${(item.description||'').substring(0,80)}${(item.description||'').length>80?'…':''}</p>
+      <div class="grid-tags">
+        ${item.topic ? tagHTML(item.topic,'topic') : ''}
+        ${item.creator ? tagHTML(item.creator,'creator') : ''}
+        ${(item.relations&&item.relations.length) ? tagHTML(item.relations.length+' rel.','relation') : ''}
+      </div>`;
+
+    el.append(thumb, info);
+    el.addEventListener('click', () => openModal(item));
+    container.appendChild(el);
+  });
+}
+
+/* =====================================================================
+   VIEW 4 — 3D GRAPH  (Three.js, low-poly for performance)
+   ===================================================================== */
+let gScene, gCamera, gRenderer, gControls, gNodes=[], gAnimId=null, gInitialized=false;
+
+function initGraph() {
+  if (gInitialized) return;
+  gInitialized = true;
+
+  const container = document.getElementById('graph-container');
+  const W = container.clientWidth, H = container.clientHeight;
+
+  gScene = new THREE.Scene();
+  gScene.background = new THREE.Color(0xffffff);
+  // Subtle fog for depth
+  gScene.fog = new THREE.FogExp2(0xfffff04, 0.012);
+
+  gCamera = new THREE.PerspectiveCamera(60, W/H, 0.1, 500);
+  gCamera.position.set(0, 0, 45);
+
+  gRenderer = new THREE.WebGLRenderer({ antialias: false });
+  gRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  gRenderer.setSize(W, H);
+  container.appendChild(gRenderer.domElement);
+
+  gControls = new THREE.OrbitControls(gCamera, gRenderer.domElement);
+  gControls.enableDamping = true;
+  gControls.dampingFactor = 0.08;
+  gControls.minDistance = 10;
+  gControls.maxDistance = 120;
+
+  // Ambient stars
+  const starGeo = new THREE.BufferGeometry();
+  const starPos = [];
+  for (let i=0; i<600; i++) {
+    starPos.push((Math.random()-0.5)*200, (Math.random()-0.5)*200, (Math.random()-0.5)*200);
+  }
+  starGeo.setAttribute('position', new THREE.Float32BufferAttribute(starPos, 3));
+  gScene.add(new THREE.Points(starGeo, new THREE.PointsMaterial({color:0xffffff, size:0.25})));
+
+  document.getElementById('graph-close').onclick = () => {
+    document.getElementById('graph-info-panel').style.display = 'none';
+  };
+
+  gRenderer.domElement.addEventListener('click', onGraphClick);
+  animateGraph();
+}
+
+// Node colour by role
+const NODE_COLORS = { subject: 0xe94560, object: 0xf0a500, predicate: 0x53d8fb };
+
+function buildGraph() {
+  // Remove old nodes/lines
+  gNodes.forEach(o => gScene.remove(o));
+  gNodes = [];
+
+  const items = allItems().filter(i => i.type === 'linked-data' || i.type === 'document');
+  const nodeMap = {};
+
+  // Spread in a sphere
+  items.forEach((item, i) => {
+    const phi = Math.acos(-1 + (2*i)/items.length);
+    const theta = Math.sqrt(items.length * Math.PI) * phi;
+    const r = 20;
+
+    const role = item.type === 'linked-data' ? 'subject' : (item.predicate ? 'predicate' : 'object');
+    const color = NODE_COLORS[role];
+
+    const geo = new THREE.SphereGeometry(1.2, 8, 6);
+    const mat = new THREE.MeshBasicMaterial({ color });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(
+      r * Math.sin(phi) * Math.cos(theta),
+      r * Math.sin(phi) * Math.sin(theta),
+      r * Math.cos(phi)
+    );
+    mesh.userData = { id: item.id };
+    gScene.add(mesh);
+    gNodes.push(mesh);
+    nodeMap[item.id] = mesh;
+  });
+
+  // Lines between related nodes
+  items.forEach(item => {
+    (item.relations||[]).forEach(rid => {
+      const a = nodeMap[item.id], b = nodeMap[rid];
+      if (!a || !b) return;
+      const pts = [a.position.clone(), b.position.clone()];
+      const geo = new THREE.BufferGeometry().setFromPoints(pts);
+      const line = new THREE.Line(geo, new THREE.LineBasicMaterial({ color:0x334466, opacity:0.6, transparent:true }));
+      gScene.add(line);
+      gNodes.push(line);
+    });
+  });
+}
+
+function onGraphClick(e) {
+  const container = document.getElementById('graph-container');
+  const rect = container.getBoundingClientRect();
+  const mouse = new THREE.Vector2(
+    ((e.clientX - rect.left) / rect.width) * 2 - 1,
+    -((e.clientY - rect.top) / rect.height) * 2 + 1
+  );
+  const rc = new THREE.Raycaster();
+  rc.setFromCamera(mouse, gCamera);
+  const meshes = gNodes.filter(n => n.isMesh);
+  const hits = rc.intersectObjects(meshes);
+  if (!hits.length) return;
+  const item = getItem(hits[0].object.userData.id);
+  if (!item) return;
+  const panel = document.getElementById('graph-info-panel');
+  document.getElementById('gp-title').textContent = item.title;
+  document.getElementById('gp-desc').textContent = item.description || '—';
+  document.getElementById('gp-subject').textContent = item.subject || '—';
+  document.getElementById('gp-predicate').textContent = item.predicate || '—';
+  document.getElementById('gp-object').textContent = item.object || '—';
+  document.getElementById('gp-relations').textContent =
+    (item.relations||[]).map(id => { const r=getItem(id); return r?r.title:id; }).join(', ') || 'None';
+  panel.style.display = 'block';
+}
+
+function animateGraph() {
+  gAnimId = requestAnimationFrame(animateGraph);
+  gControls.update();
+  gRenderer.render(gScene, gCamera);
+}
+
+window.addEventListener('resize', () => {
+  if (!gRenderer) return;
+  const c = document.getElementById('graph-container');
+  gCamera.aspect = c.clientWidth / c.clientHeight;
+  gCamera.updateProjectionMatrix();
+  gRenderer.setSize(c.clientWidth, c.clientHeight);
+});
+
+/* =====================================================================
+   VIEW SWITCHING
+   ===================================================================== */
+const renderers = {
+  hierarchical: renderHierarchical,
+  timeline: renderTimeline,
+  grid: renderGrid,
+  graph: () => {
+    initGraph();
+    buildGraph();
+  }
+};
+
+document.querySelectorAll('.view-option').forEach(opt => {
+  opt.addEventListener('click', () => {
+    const v = opt.getAttribute('data-view');
+    document.querySelectorAll('.view').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.view-option').forEach(el => el.classList.remove('active'));
+    document.getElementById(`${v}-view`).classList.add('active');
+    opt.classList.add('active');
+    renderers[v]();
+  });
+});
+
+/* =====================================================================
+   BOOT
+   ===================================================================== */
+renderHierarchical();
+</script>
+</body>
+</html>
