@@ -84,14 +84,14 @@ kwrgs = {
         'records_deleted_message' : (f'\tThere was already a records file present in the \'data\' folder.\n' +
             '\tTo prevent double data, this file has been deleted\n' +
             '\tA new one has been created in this very function'),
+        
         # User variables
-        'vocabulair' : 'a4863c0c-d9e5-3902-831a-d0960e381a41',  #### !!!! uuid of vocabul air            
-        'concept_turtle' : "data/concept_turtle.ttl",               #### !!!! Location of street turtle
-        'record_uuids' : "data/record_uuids.csv",            #### !!!! Location of deed turtle
-        'records' : 'data/records.ttl',      
-        'recordia' : 'data/recordia.ttl',      
-        'alternatives' : "data/alternatives.csv",            #### !!!! Location of deed turtle
-        'outliers' : "data/outliers.csv",            #### !!!! Location of deed turtle
+        'vocabulair' : 'a4863c0c-d9e5-3902-831a-d0960e381a41',  #### !!!! uuid of vocabulair            
+        'concept_turtle' : "data/concept_turtle.ttl",           #### !!!! Location of street turtle
+        'record_uuids' : "data/record_uuids.csv",               #### !!!! Location of uuid from memorix
+        'records' : 'data/records.ttl',                         #### !!!! Location of records turtle
+        'alternatives' : "data/alternatives.csv",               #### !!!! Location of external csv
+        'outliers' : "data/outliers.csv",                       #### !!!! Location of output outliers
         'pattern' : r'^(?P<street>.*?)(?:\s+(?P<number>\d+)(?P<add>.*))?$'
 }
 
@@ -384,17 +384,19 @@ def upload_data(**kwrgs):
         ))
 
         # Data wanneer leeg, toevoegen aan turtle
+
+
+        #if ((record_uri, SAA.hasOrHadSubjectLocation,None) not in g):
+        #    g.add((record_uri, SAA.hasOrHadSubjectLocation, adamlink))
+        #    turtle_changed = True
+        #else: 
+        #    log.info(f'Adamlink already filled for uuid: {record_uri}')  
+
         if ((record_uri, SAA.hasOrHadSubjectLocation,None) not in g):
             g.add((address, SAA.street, concept_uri))
             turtle_changed = True
         else: 
             log.error(f'Concept already filled for uuid: {record_uri}')    
-
-        if ((record_uri, SAA.hasOrHadSubjectLocation,None) not in g):
-            g.add((record_uri, SAA.hasOrHadSubjectLocation, adamlink))
-            turtle_changed = True
-        else: 
-            log.info(f'Adamlink already filled for uuid: {record_uri}')  
 
         if (address, SAA.houseNumber, None) not in g:
             g.add((address, SAA.houseNumber, Literal(row.house_number)))
@@ -415,20 +417,20 @@ def upload_data(**kwrgs):
         for t in g.triples((record_uri, SAA.hasOrHadSubjectLocation, None)):
             print(t)
 
-        for index, row in kwrgs['predicates_df'].iterrows():
+        for index, row in kwrgs['records'].iterrows():
 
             if turtle_changed:
                 logging.info("Correct")
                 turtle = g.serialize(format="turtle")
-                response = api.update_record(row.uuid, turtle)
-
-                if response.status_code == 200:            
-                    logging.info(f"SUCCEED {row.uuid}")     
-                    kwrgs['result'] = True   
-
-                else:            
-                    logging.error(f"FAIL {row.uuid}")
-                    logging.error(response.text)
+                #response = api.update_record(row.uuid, turtle)
+                print(turtle)
+                #if response.status_code == 200:            
+                #    logging.info(f"SUCCEED {row.uuid}")     
+                #    kwrgs['result'] = True   
+#
+                #else:            
+                #    logging.error(f"FAIL {row.uuid}")
+                #    logging.error(response.text)
 
     return kwrgs['result']
 
@@ -550,7 +552,7 @@ def main(**kwrgs):
 
         kwrgs['predicates_df'], kwrgs['outliers_df'], kwrgs['result'] = match_data(**kwrgs)
 
-        if kwrgs['predicates_df']:
+        if kwrgs['result']:
             print(
               '\n----------------------------------------------------------------------------\n\n' +
               f"\tGereed. Er zijn {len(kwrgs['predicates_df'])} rijen verwerkt in het predicates dataframe" +
