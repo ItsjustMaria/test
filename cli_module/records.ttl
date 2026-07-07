@@ -1,0 +1,289 @@
+PREFIX dash:         <http://datashapes.org/dash#>
+PREFIX dc:           <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms:      <http://purl.org/dc/terms/>
+PREFIX deed:         <https://ams-migrate.memorix.io/resources/recordtypes/Deed#>
+PREFIX file:         <https://ams-migrate.memorix.io/resources/recordtypes/File#>
+PREFIX html:         <http://www.w3.org/1999/xhtml/>
+PREFIX memorix:      <http://memorix.io/ontology#>
+PREFIX owl:          <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ric-dft:      <https://www.ica.org/standards/RiC/vocabularies/documentaryFormTypes#>
+PREFIX ric-rst:      <https://www.ica.org/standards/RiC/vocabularies/recordSetTypes#>
+PREFIX rico:         <https://www.ica.org/standards/RiC/ontology#>
+PREFIX rt:           <https://ams-migrate.memorix.io/resources/recordtypes/>
+PREFIX saa:          <https://data.archief.amsterdam/ontology#>
+PREFIX schema:       <http://schema.org/>
+PREFIX sh:           <http://www.w3.org/ns/shacl#>
+PREFIX skos:         <http://www.w3.org/2004/02/skos/core#>
+PREFIX vocabularies: <https://ams-migrate.memorix.io/resources/vocabularies/conceptschemes/>
+PREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>
+
+<https://ams-migrate.memorix.io/resources/records/751690d6-08a2-d18e-816d-8d526f851ff8/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://ams-migrate.memorix.io/resources/records/751690d6-08a2-d18e-816d-8d526f851ff8>;
+        dcterms:title      "99, Bredeweg - Brink" .
+
+<https://ams-migrate.memorix.io/resources/records/7fa55372-ff89-3224-e053-b784100a61db>
+        rdf:type  rt:Fonds .
+
+<https://ams-migrate.memorix.io/resources/records/7fa55372-ff89-3224-e053-b784100a61db/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://ams-migrate.memorix.io/resources/records/7fa55372-ff89-3224-e053-b784100a61db>;
+        dcterms:title      "30461, Archief van het Bevolkingsregister Amsterdam: woningkaarten" .
+
+<https://ams-migrate.memorix.io/resources/vocabularies/concepts/596de5e2-9dc6-40ea-a0e0-25865d7bb412>
+        rdf:type        skos:Concept;
+        skos:prefLabel  "bevolkingsregistratie" .
+
+<https://ams-migrate.memorix.io/resources/vocabularies/concepts/e8a92b13-efe1-4b2e-e053-b784100a3466>
+        rdf:type        skos:Concept;
+        skos:prefLabel  "bedrijfsnaam" .
+
+<https://ams-migrate.memorix.io/resources/records/006a825e-d0fa-4abc-9891-941024a83749>
+        rdf:type                     rt:Deed , memorix:Record;
+        saa:hasSpecification         [ rdf:type                       saa:Specification;
+                                       saa:specificationTextualValue  "Protestants Tehuis voor werkende meisjes  Beth San (Op Dreef)";
+                                       saa:specificationType          <https://ams-migrate.memorix.io/resources/vocabularies/concepts/e8a92b13-efe1-4b2e-e053-b784100a3466>
+                                     ];
+        saa:indexName                "Index op woningkaarten";
+        saa:isAssociatedWithModernAddress
+                [ rdf:type                saa:Address;
+                  saa:houseNumber         "162";
+                  saa:streetTextualValue  "Van Breestraat"
+                ];
+        saa:isOrWasAlsoIncludedIn    <https://ams-migrate.memorix.io/resources/records/7fa55372-ff89-3224-e053-b784100a61db>;
+        rico:hasDocumentaryFormType  <https://ams-migrate.memorix.io/resources/vocabularies/concepts/596de5e2-9dc6-40ea-a0e0-25865d7bb412>;
+        rico:isOrWasIncludedIn       <https://ams-migrate.memorix.io/resources/records/751690d6-08a2-d18e-816d-8d526f851ff8>;
+        rico:title                   "Bevolkingsregistratie, Van Breestraat 162" .
+
+<https://ams-migrate.memorix.io/resources/records/751690d6-08a2-d18e-816d-8d526f851ff8>
+        rdf:type  rt:File .
+
+PREFIX dash:         <http://datashapes.org/dash#>
+PREFIX dc:           <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms:      <http://purl.org/dc/terms/>
+PREFIX deed:         <https://ams-migrate.memorix.io/resources/recordtypes/Deed#>
+PREFIX file:         <https://ams-migrate.memorix.io/resources/recordtypes/File#>
+PREFIX html:         <http://www.w3.org/1999/xhtml/>
+PREFIX API:      <http://API.io/ontology#>
+PREFIX owl:          <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ric-dft:      <https://www.ica.org/standards/RiC/vocabularies/documentaryFormTypes#>
+PREFIX ric-rst:      <https://www.ica.org/standards/RiC/vocabularies/recordSetTypes#>
+PREFIX rico:         <https://www.ica.org/standards/RiC/ontology#>
+PREFIX rt:           <https://ams-migrate.memorix.io/resources/recordtypes/>
+PREFIX saa:          <https://data.archief.amsterdam/ontology#>
+PREFIX schema:       <http://schema.org/>
+PREFIX sh:           <http://www.w3.org/ns/shacl#>
+PREFIX skos:         <http://www.w3.org/2004/02/skos/core#>
+PREFIX vocabularies: <https://ams-migrate.memorix.io/resources/vocabularies/conceptschemes/>
+PREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>
+
+<https://ams-migrate.memorix.io/resources/records/00952b75-bf9b-4b6b-a147-f17305fc5e91>
+        rdf:type                     rt:Deed , memorix:Record;
+        saa:indexName                "Index op woningkaarten";
+        saa:isAssociatedWithModernAddress
+                [ rdf:type                 saa:Address;
+                  saa:houseNumber          "28";
+                  saa:houseNumberAddition  "mauritshuis";
+                  saa:streetTextualValue   "Mauritskade 115 hs"
+                ];
+        saa:isOrWasAlsoIncludedIn    <https://ams-migrate.memorix.io/resources/records/7fa55372-ff89-3224-e053-b784100a61db>;
+        rico:hasDocumentaryFormType  <https://ams-migrate.memorix.io/resources/vocabularies/concepts/596de5e2-9dc6-40ea-a0e0-25865d7bb412>;
+        rico:isOrWasIncludedIn       <https://ams-migrate.memorix.io/resources/records/9604bb38-6fe1-3885-d43b-4e51588c256c>;
+        rico:title                   "Bevolkingsregistratie, Mauritskade 28-mauritshuis" .
+
+<https://ams-migrate.memorix.io/resources/records/9604bb38-6fe1-3885-d43b-4e51588c256c>
+        rdf:type  rt:File .
+
+<https://ams-migrate.memorix.io/resources/records/7fa55372-ff89-3224-e053-b784100a61db>
+        rdf:type  rt:Fonds .
+
+<https://ams-migrate.memorix.io/resources/records/7fa55372-ff89-3224-e053-b784100a61db/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://ams-migrate.memorix.io/resources/records/7fa55372-ff89-3224-e053-b784100a61db>;
+        dcterms:title      "30461, Archief van het Bevolkingsregister Amsterdam: woningkaarten" .
+
+<https://ams-migrate.memorix.io/resources/vocabularies/concepts/596de5e2-9dc6-40ea-a0e0-25865d7bb412>
+        rdf:type        skos:Concept;
+        skos:prefLabel  "bevolkingsregistratie" .
+
+<https://ams-migrate.memorix.io/resources/records/9604bb38-6fe1-3885-d43b-4e51588c256c/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://ams-migrate.memorix.io/resources/records/9604bb38-6fe1-3885-d43b-4e51588c256c>;
+        dcterms:title      "335, Mataramstraat - Tweede Nassaustraat" .
+
+PREFIX dash:         <http://datashapes.org/dash#>
+PREFIX dc:           <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms:      <http://purl.org/dc/terms/>
+PREFIX deed:         <https://ams-migrate.memorix.io/resources/recordtypes/Deed#>
+PREFIX file:         <https://ams-migrate.memorix.io/resources/recordtypes/File#>
+PREFIX html:         <http://www.w3.org/1999/xhtml/>
+PREFIX memorix:      <http://memorix.io/ontology#>
+PREFIX owl:          <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ric-dft:      <https://www.ica.org/standards/RiC/vocabularies/documentaryFormTypes#>
+PREFIX ric-rst:      <https://www.ica.org/standards/RiC/vocabularies/recordSetTypes#>
+PREFIX rico:         <https://www.ica.org/standards/RiC/ontology#>
+PREFIX rt:           <https://ams-migrate.memorix.io/resources/recordtypes/>
+PREFIX saa:          <https://data.archief.amsterdam/ontology#>
+PREFIX schema:       <http://schema.org/>
+PREFIX sh:           <http://www.w3.org/ns/shacl#>
+PREFIX skos:         <http://www.w3.org/2004/02/skos/core#>
+PREFIX vocabularies: <https://ams-migrate.memorix.io/resources/vocabularies/conceptschemes/>
+PREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>
+
+<https://ams-migrate.memorix.io/resources/records/4ade6d0b-4e89-ac89-96b5-5fa613c52a50/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://ams-migrate.memorix.io/resources/records/4ade6d0b-4e89-ac89-96b5-5fa613c52a50>;
+        dcterms:title      "45, Borgerstraat 2- 272; Borneokade; Borneostraat 5-24." .
+
+<https://ams-migrate.memorix.io/resources/records/4ade6d0b-4e89-ac89-96b5-5fa613c52a50>
+        rdf:type  rt:File .
+
+<https://ams-migrate.memorix.io/resources/records/7248ac65-91e7-42a6-e053-b784100a0961>
+        rdf:type  rt:Fonds .
+
+<https://ams-migrate.memorix.io/resources/vocabularies/concepts/596de5e2-9dc6-40ea-a0e0-25865d7bb412>
+        rdf:type        skos:Concept;
+        skos:prefLabel  "bevolkingsregistratie" .
+
+<https://ams-migrate.memorix.io/resources/records/7248ac65-91e7-42a6-e053-b784100a0961/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://ams-migrate.memorix.io/resources/records/7248ac65-91e7-42a6-e053-b784100a0961>;
+        dcterms:title      "5445, Archief van de Dienst Bevolkingsregister: woningkaarten" .
+
+<https://ams-migrate.memorix.io/resources/records/0099a87b-d198-4e13-9990-b8b3d0e2df3e>
+        rdf:type                     rt:Deed , memorix:Record;
+        saa:indexName                "Index op woningkaarten";
+        saa:isAssociatedWithModernAddress
+                [ rdf:type                 saa:Address;
+                  saa:houseNumber          "86";
+                  saa:houseNumberAddition  "huis";
+                  saa:streetTextualValue   "Borgerstraat 12"
+                ];
+        saa:isOrWasAlsoIncludedIn    <https://ams-migrate.memorix.io/resources/records/7248ac65-91e7-42a6-e053-b784100a0961>;
+        rico:hasDocumentaryFormType  <https://ams-migrate.memorix.io/resources/vocabularies/concepts/596de5e2-9dc6-40ea-a0e0-25865d7bb412>;
+        rico:isOrWasIncludedIn       <https://ams-migrate.memorix.io/resources/records/4ade6d0b-4e89-ac89-96b5-5fa613c52a50>;
+        rico:title                   "Bevolkingsregistratie, Borgerstraat 86-huis" .
+
+PREFIX dash:         <http://datashapes.org/dash#>
+PREFIX dc:           <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms:      <http://purl.org/dc/terms/>
+PREFIX deed:         <https://ams-migrate.memorix.io/resources/recordtypes/Deed#>
+PREFIX file:         <https://ams-migrate.memorix.io/resources/recordtypes/File#>
+PREFIX html:         <http://www.w3.org/1999/xhtml/>
+PREFIX memorix:      <http://memorix.io/ontology#>
+PREFIX owl:          <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ric-dft:      <https://www.ica.org/standards/RiC/vocabularies/documentaryFormTypes#>
+PREFIX ric-rst:      <https://www.ica.org/standards/RiC/vocabularies/recordSetTypes#>
+PREFIX rico:         <https://www.ica.org/standards/RiC/ontology#>
+PREFIX rt:           <https://ams-migrate.memorix.io/resources/recordtypes/>
+PREFIX saa:          <https://data.archief.amsterdam/ontology#>
+PREFIX schema:       <http://schema.org/>
+PREFIX sh:           <http://www.w3.org/ns/shacl#>
+PREFIX skos:         <http://www.w3.org/2004/02/skos/core#>
+PREFIX vocabularies: <https://ams-migrate.memorix.io/resources/vocabularies/conceptschemes/>
+PREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>
+
+<https://ams-migrate.memorix.io/resources/records/298a11d6-857e-c506-4e0c-9a14a2c36515/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://ams-migrate.memorix.io/resources/records/298a11d6-857e-c506-4e0c-9a14a2c36515>;
+        dcterms:title      "118, Helmersstraat, Eerste 241-337, 2-248; Helmersstraat, Tweede1-17." .
+
+<https://ams-migrate.memorix.io/resources/records/298a11d6-857e-c506-4e0c-9a14a2c36515>
+        rdf:type  rt:File .
+
+<https://ams-migrate.memorix.io/resources/records/00bae71a-d7d7-4727-8ff1-6b73852f9daf>
+        rdf:type                     rt:Deed , memorix:Record;
+        saa:indexName                "Index op woningkaarten";
+        saa:isAssociatedWithModernAddress
+                [ rdf:type                 saa:Address;
+                  saa:houseNumber          "40";
+                  saa:houseNumberAddition  "bovenhuis";
+                  saa:streetTextualValue   "Eerste Helmersstraat 40 2e etage"
+                ];
+        saa:isOrWasAlsoIncludedIn    <https://ams-migrate.memorix.io/resources/records/7248ac65-91e7-42a6-e053-b784100a0961>;
+        rico:hasDocumentaryFormType  <https://ams-migrate.memorix.io/resources/vocabularies/concepts/596de5e2-9dc6-40ea-a0e0-25865d7bb412>;
+        rico:isOrWasIncludedIn       <https://ams-migrate.memorix.io/resources/records/298a11d6-857e-c506-4e0c-9a14a2c36515>;
+        rico:title                   "Bevolkingsregistratie, Eerste Helmersstraat 40-bovenhuis" .
+
+<https://ams-migrate.memorix.io/resources/records/7248ac65-91e7-42a6-e053-b784100a0961>
+        rdf:type  rt:Fonds .
+
+<https://ams-migrate.memorix.io/resources/vocabularies/concepts/596de5e2-9dc6-40ea-a0e0-25865d7bb412>
+        rdf:type        skos:Concept;
+        skos:prefLabel  "bevolkingsregistratie" .
+
+<https://ams-migrate.memorix.io/resources/records/7248ac65-91e7-42a6-e053-b784100a0961/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://ams-migrate.memorix.io/resources/records/7248ac65-91e7-42a6-e053-b784100a0961>;
+        dcterms:title      "5445, Archief van de Dienst Bevolkingsregister: woningkaarten" .
+
+PREFIX dash:         <http://datashapes.org/dash#>
+PREFIX dc:           <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms:      <http://purl.org/dc/terms/>
+PREFIX deed:         <https://ams-migrate.memorix.io/resources/recordtypes/Deed#>
+PREFIX file:         <https://ams-migrate.memorix.io/resources/recordtypes/File#>
+PREFIX html:         <http://www.w3.org/1999/xhtml/>
+PREFIX memorix:      <http://memorix.io/ontology#>
+PREFIX owl:          <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ric-dft:      <https://www.ica.org/standards/RiC/vocabularies/documentaryFormTypes#>
+PREFIX ric-rst:      <https://www.ica.org/standards/RiC/vocabularies/recordSetTypes#>
+PREFIX rico:         <https://www.ica.org/standards/RiC/ontology#>
+PREFIX rt:           <https://ams-migrate.memorix.io/resources/recordtypes/>
+PREFIX saa:          <https://data.archief.amsterdam/ontology#>
+PREFIX schema:       <http://schema.org/>
+PREFIX sh:           <http://www.w3.org/ns/shacl#>
+PREFIX skos:         <http://www.w3.org/2004/02/skos/core#>
+PREFIX vocabularies: <https://ams-migrate.memorix.io/resources/vocabularies/conceptschemes/>
+PREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>
+
+<https://ams-migrate.memorix.io/resources/records/7ae9418c-0a02-4ce9-5223-18f3a2d76838>
+        rdf:type  rt:File .
+
+<https://ams-migrate.memorix.io/resources/records/7fa55372-ff89-3224-e053-b784100a61db>
+        rdf:type  rt:Fonds .
+
+<https://ams-migrate.memorix.io/resources/records/00bbf971-b9fa-43a8-9c10-e3cac1483bbf>
+        rdf:type                     rt:Deed , memorix:Record;
+        saa:hasSpecification         [ rdf:type                       saa:Specification;
+                                       saa:specificationTextualValue  "R.K. Kindertehuis Amstelstad";
+                                       saa:specificationType          <https://ams-migrate.memorix.io/resources/vocabularies/concepts/e8a92b13-efe1-4b2e-e053-b784100a3466>
+                                     ];
+        saa:indexName                "Index op woningkaarten";
+        saa:isAssociatedWithModernAddress
+                [ rdf:type                saa:Address;
+                  saa:houseNumber         "73";
+                  saa:streetTextualValue  "Fred. Roeskestraat 73 hs"
+                ];
+        saa:isOrWasAlsoIncludedIn    <https://ams-migrate.memorix.io/resources/records/7fa55372-ff89-3224-e053-b784100a61db>;
+        rico:hasDocumentaryFormType  <https://ams-migrate.memorix.io/resources/vocabularies/concepts/596de5e2-9dc6-40ea-a0e0-25865d7bb412>;
+        rico:isOrWasIncludedIn       <https://ams-migrate.memorix.io/resources/records/7ae9418c-0a02-4ce9-5223-18f3a2d76838>;
+        rico:title                   "Bevolkingsregistratie, Fred. Roeskestraat 73" .
+
+<https://ams-migrate.memorix.io/resources/records/7fa55372-ff89-3224-e053-b784100a61db/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://ams-migrate.memorix.io/resources/records/7fa55372-ff89-3224-e053-b784100a61db>;
+        dcterms:title      "30461, Archief van het Bevolkingsregister Amsterdam: woningkaarten" .
+
+<https://ams-migrate.memorix.io/resources/vocabularies/concepts/596de5e2-9dc6-40ea-a0e0-25865d7bb412>
+        rdf:type        skos:Concept;
+        skos:prefLabel  "bevolkingsregistratie" .
+
+<https://ams-migrate.memorix.io/resources/records/7ae9418c-0a02-4ce9-5223-18f3a2d76838/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://ams-migrate.memorix.io/resources/records/7ae9418c-0a02-4ce9-5223-18f3a2d76838>;
+        dcterms:title      "18, Frankemaheerd - Frederik van Eedenstraat" .
+
+<https://ams-migrate.memorix.io/resources/vocabularies/concepts/e8a92b13-efe1-4b2e-e053-b784100a3466>
+        rdf:type        skos:Concept;
+        skos:prefLabel  "bedrijfsnaam" .
+
