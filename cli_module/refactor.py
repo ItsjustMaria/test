@@ -15,10 +15,10 @@ import logging
 from rapidfuzz import fuzz
 from pathlib import Path
 import math, numpy as np
-#WORK_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\saa-nexus-scripts") # Adjust base path based on location
-#HOME_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\test\\cli_module") # Adjust base path based on location
-HOME_REPO = Path("/opt/lampp/htdocs/test/cli_module")
-WORK_REPO = Path("/opt/lampp/htdocs/saa-nexus-scripts")
+WORK_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\saa-nexus-scripts") # Adjust base path based on location
+HOME_REPO = Path(r"C:\\Users\\swart053\\Documents\\VSC\\test\\cli_module") # Adjust base path based on location
+#HOME_REPO = Path("/opt/lampp/htdocs/test/cli_module")
+#WORK_REPO = Path("/opt/lampp/htdocs/saa-nexus-scripts")
 sys.path.append(str(WORK_REPO))
 from modules import memorix
 from modules import saa
@@ -70,7 +70,7 @@ logging.basicConfig(
 )
 log = logging.getLogger()
 
-kwrgs = {
+var = {
         # Declare script variables
         'response' : {},
         'result' : False,
@@ -80,7 +80,7 @@ kwrgs = {
         'total_concept_uuids' : [],
         'total_record_uuids' : [],
         'total_predicates' : 0, 
-        'test_amount': 5,
+        'test_amount': 100,
         'records_deleted_message' : (f'\tThere was already a records file present in the \'data\' folder.\n' +
             '\tTo prevent double data, this file has been deleted\n' +
             '\tA new one has been created in this very function'),
@@ -135,17 +135,17 @@ SKOS = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
 # -----------------------------------
 
 # Step 1 fucntie
-def retrieve_concept_turtle_from_memorix(**kwrgs):
+def retrieve_concept_turtle_from_memorix(**var):
 
-    kwrgs['result'] = False
+    var['result'] = False
     # Concept vocabulaire turtle uit memorix halen
-    response = api.list_concepts( kwrgs['vocabulair'])
+    '''response = api.list_concepts( var['vocabulair'])
     
-    print(response.text,  file=open(kwrgs['concept_turtle'], 'w', encoding='utf-8'))
+    print(response.text,  file=open(var['concept_turtle'], 'w', encoding='utf-8'))'''
     # response = 200  # TEMP
     
     g = rdflib.Graph()
-    g.parse(kwrgs['concept_turtle'], format="ttl")
+    g.parse(var['concept_turtle'], format="ttl")
 
     for s in g.subjects(rdflib.RDF.type, SKOS.Concept):
         s_str = str(s)
@@ -157,50 +157,50 @@ def retrieve_concept_turtle_from_memorix(**kwrgs):
         exactMatch = next((str(em) for em in g.objects(s, SKOS.exactMatch)), "") # <-- fout: want exactMatch kan nu meer dan 1 waarde hebben
         scopeNote = next((str(sn) for sn in g.objects(s, SKOS.scopeNote)), "")
 
-        kwrgs['concept_list'].append({
+        var['concept_list'].append({
             'concept_uuid' : uuid,
             'streetTextualValue' : prefLabel,
             'adamlink' : exactMatch,
             'scope' : scopeNote
         }) 
 
-        kwrgs['total_concept_uuids'].append(uuid)   
+        var['total_concept_uuids'].append(uuid)   
 
-    kwrgs['result'] = True
+    var['result'] = True
         
-    return kwrgs['concept_list'], kwrgs['total_concept_uuids'], kwrgs['result']
+    return var['concept_list'], var['total_concept_uuids'], var['result']
     
 
 # Step 2 function
-def retrieve_uuid_from_memorix(**kwrgs):
+def retrieve_uuid_from_memorix(**var):
     
-    kwrgs['result'] = False
+    var['result'] = False
     # Path based on location of script and datafolder
     sys.path.append(str(HOME_REPO))
-    import get_uuid  
+    '''import get_uuid  
 
     # Get uuids with query and give storage location for csv
-    response = get_uuid.main(env, kwrgs['record_uuids']) #Give storage location
+    response = get_uuid.main(env, var['record_uuids']) #Give storage location'''
     #response = 200  # TEMP
 
     #Read csv from storage location
-    kwrgs['df_record_uuids'] = pd.read_csv(kwrgs['record_uuids'], #response
+    var['df_record_uuids'] = pd.read_csv(var['record_uuids'], #response
 
         sep=";",             
         dtype={ "uuid": str
            })
 
-    kwrgs['df_record_uuids'] = pd.DataFrame(kwrgs['df_record_uuids'])
+    var['df_record_uuids'] = pd.DataFrame(var['df_record_uuids'])
 
-    kwrgs['result'] = True
+    var['result'] = True
 
-    return kwrgs['df_record_uuids'], kwrgs['result'] 
+    return var['df_record_uuids'], var['result'] 
 
 
 # Step 3 function
-def read_external_data_with_panda(data, **kwrgs):
+def read_external_data_with_panda(data, **var):
     
-    kwrgs['result'] = False
+    var['result'] = False
 
     df = pd.read_csv(data, 
 
@@ -208,43 +208,45 @@ def read_external_data_with_panda(data, **kwrgs):
     dtype={ "straat-label-altlabel": str
         })
 
-    kwrgs['df_external_data'] = pd.DataFrame(df)
+    var['df_external_data'] = pd.DataFrame(df)
     
-    kwrgs['result'] = True
+    var['result'] = True
    
-    return kwrgs['df_external_data'], kwrgs['result'] 
+    return var['df_external_data'], var['result'] 
 
 
 # Step 4 function
-def get_turtle_for_record_with_uuid(**kwrgs):
+def get_turtle_for_record_with_uuid(**var):
 
-    kwrgs['result'] = False
+    var['result'] = False
 
     # Check if file already exists and delete based on env
-    if os.path.exists(kwrgs['records']):     
-        # os.remove(records)
-        # print(kwrgs['records_deleted_message']) 
-        pass
+    if os.path.exists(var['records']):     
+        os.remove(var['records'])
+        print(var['records_deleted_message']) 
         
-    for index, row in kwrgs['df_record_uuids'].head(kwrgs['test_amount']).iterrows():
+    count = 0 
 
+    for index, row in var['df_record_uuids'].head(var['test_amount']).iterrows():
+        count += 1
         log.info(f"START {row.uuid}")
         uuid =row.uuid
         response = api.get_record(uuid)
+        print(response.text,  file=open('record' + f'{count}', 'w', encoding='utf-8'))
 
         if response.status_code != 200:
             log.info("...Try to read again...")
             time.sleep(3)
             response = api.get_record(uuid)
-            #print(response.text,  file=open(kwrgs['records'], 'w', encoding='utf-8'))
+            print(response.text,  file=open('record' + f'{count}', 'a', encoding='utf-8'))
 
             if response.status_code != 200:
                 log.error(f"Reading failed for {uuid}")
-        else:
+        
             #response = 200  # TEMP        
             # load the graph
             g = Graph()
-            g.parse(kwrgs['records'] , format='turtle')
+            g.parse('record' + f'{count}', format='turtle')
 
             record_uri = URIRef(f"{PREFIX}/resources/records/{uuid}")
 
@@ -253,46 +255,48 @@ def get_turtle_for_record_with_uuid(**kwrgs):
                 SAA.isAssociatedWithModernAddress
             ))
             #print(address.values)
-            kwrgs['predicates'].append({
+            var['predicates'].append({
                   'uuid': uuid,
                   'streetTextualValue': str(g.value(address, SAA.streetTextualValue)),
                   'house_number': str(g.value(address, SAA.houseNumber)),
                   'number_add': str(g.value(address, SAA.houseNumberAddition)),
             })
-            kwrgs['total_predicates'] += 1
+            var['total_predicates'] += 1
 
-            kwrgs['result'] = True
+            var['result'] = True
 
-    return kwrgs['predicates'], kwrgs['total_predicates'], kwrgs['result']
+    print(var['predicates'])
+    input('Check the for the predicates ')
+    return var['predicates'], var['total_predicates'], var['result']
     
 
 # Step 5 function 
-def match_data(**kwrgs):
+def match_data(**var):
 
-    kwrgs['result'] = False    
+    var['result'] = False    
     # - De turtle predicates omzetten in een dataframe
-    kwrgs['predicates_df'] = pd.DataFrame(kwrgs['predicates'])
+    var['predicates_df'] = pd.DataFrame(var['predicates'])
 
     # - De migratie street-string opsplitsen in street nummer, nummertoevoeging
-    extract_pattern = kwrgs['predicates_df']['streetTextualValue'].str.extract(kwrgs['pattern'])
+    extract_pattern = var['predicates_df']['streetTextualValue'].str.extract(var['pattern'])
 
     # - De string onderdelen toevoegen aan het dataframe
-    kwrgs['predicates_df']['streetTextualValue'] = extract_pattern['street'].str.strip()
-    kwrgs['predicates_df']['extracted_number'] = extract_pattern['number'].str.strip()
-    kwrgs['predicates_df']['extracted_number_add'] = extract_pattern['add'].str.strip()
+    var['predicates_df']['streetTextualValue'] = extract_pattern['street'].str.strip()
+    var['predicates_df']['extracted_number'] = extract_pattern['number'].str.strip()
+    var['predicates_df']['extracted_number_add'] = extract_pattern['add'].str.strip()
 
     # Lege velden normaliseren en string 'None' vervangen met NaN
-    kwrgs['predicates_df'].fillna("",inplace=True)
-    kwrgs['predicates_df']['house_number'] = kwrgs['predicates_df']['house_number'].replace('None', np.nan)
-    kwrgs['predicates_df']['extracted_number'] = kwrgs['predicates_df']['extracted_number'].replace('None', np.nan)
-    kwrgs['predicates_df']['number_add'] = kwrgs['predicates_df']['number_add'].replace('None', np.nan)
-    kwrgs['predicates_df']['extracted_number_add'] = kwrgs['predicates_df']['extracted_number_add'].replace('None', np.nan)
+    var['predicates_df'].fillna("",inplace=True)
+    var['predicates_df']['house_number'] = var['predicates_df']['house_number'].replace('None', np.nan)
+    var['predicates_df']['extracted_number'] = var['predicates_df']['extracted_number'].replace('None', np.nan)
+    var['predicates_df']['number_add'] = var['predicates_df']['number_add'].replace('None', np.nan)
+    var['predicates_df']['extracted_number_add'] = var['predicates_df']['extracted_number_add'].replace('None', np.nan)
   
     # Outliers naar dataframe omzetten obv index van predicates
-    outliers_df = pd.DataFrame(index=kwrgs['predicates_df'].index)
+    outliers_df = pd.DataFrame(index=var['predicates_df'].index)
 
     # Uuid overnemen van predicates
-    outliers_df['uuid'] = kwrgs['predicates_df']['uuid']
+    outliers_df['uuid'] = var['predicates_df']['uuid']
 
     # huisnummers en toevoegingen vullen waar leeg en naar df schrijven indien afwijkend
     street_map = {
@@ -305,29 +309,29 @@ def match_data(**kwrgs):
 
         # masker voor vullen velden indien leeg 
         mask_fill = (
-            kwrgs['predicates_df'][target].isna() &
-            kwrgs['predicates_df'][source].notna()
+            var['predicates_df'][target].isna() &
+            var['predicates_df'][source].notna()
         )
-        kwrgs['predicates_df'].loc[mask_fill, target] = kwrgs['predicates_df'].loc[mask_fill, source]
+        var['predicates_df'].loc[mask_fill, target] = var['predicates_df'].loc[mask_fill, source]
 
         # Wegschrijven naar outliers indien data reeds bestaat en afwijkt
         mask_to_csv = (
-            kwrgs['predicates_df'][target].notna() &
-            kwrgs['predicates_df'][source].notna() &
-            (kwrgs['predicates_df'][target] != kwrgs['predicates_df'][source])
+            var['predicates_df'][target].notna() &
+            var['predicates_df'][source].notna() &
+            (var['predicates_df'][target] != var['predicates_df'][source])
         )
-        outliers_df.loc[mask_to_csv, target] = kwrgs['predicates_df'].loc[mask_to_csv, source]
+        outliers_df.loc[mask_to_csv, target] = var['predicates_df'].loc[mask_to_csv, source]
  
     # Dataframe maken van concepten
-    concept_df = pd.DataFrame(kwrgs['concept_list'], index=range(len(kwrgs['concept_list'])))
+    concept_df = pd.DataFrame(var['concept_list'], index=range(len(var['concept_list'])))
         
     # concept uuid en adamlink toevoegen aan predicates dataframe obv 'straat' met behulp van een merge         
-    merge_concepts = kwrgs['predicates_df'].merge(concept_df[['streetTextualValue', 'concept_uuid', 'adamlink']], on = 'streetTextualValue', how='left' )
-    kwrgs['predicates_df'] = merge_concepts
+    merge_concepts = var['predicates_df'].merge(concept_df[['streetTextualValue', 'concept_uuid', 'adamlink']], on = 'streetTextualValue', how='left' )
+    var['predicates_df'] = merge_concepts
 
     # nummer van adamlink afhalen van alternatieve lijst en toevoegen aan kolom altlabel in twee dataframes separaat
-    kwrgs['predicates_df']['altlabel'] = kwrgs['predicates_df']['adamlink'].str.extract(r'(\d+)')
-    kwrgs['df_external_data']['number_altlabel'] = kwrgs['df_external_data']['straat-label-altlabel'].str.extract(r'(\d+)')
+    var['predicates_df']['altlabel'] = var['predicates_df']['adamlink'].str.extract(r'(\d+)')
+    var['df_external_data']['number_altlabel'] = var['df_external_data']['straat-label-altlabel'].str.extract(r'(\d+)')
     
     # Nummer altlabel tussen dataframes vergelijken en toevoegen aan een lijst
     def find_alternatives(row, df_external_data):    
@@ -342,28 +346,28 @@ def match_data(**kwrgs):
         return []
 
     # Lijst alternative schrijfwijzen toevoegen aan predicates dataframe
-    df_external_data = kwrgs['df_external_data']
-    predicates_df = kwrgs['predicates_df']
+    df_external_data = var['df_external_data']
+    predicates_df = var['predicates_df']
     predicates_df['alternative_names'] = predicates_df.apply(find_alternatives, axis=1, args=[df_external_data])
     
     # List alternatieve schrijfwijzen overnemen in outliers obv 'uuid'
-    merge_concepts = outliers_df.merge(kwrgs['predicates_df'][['uuid', 'alternative_names']], on = 'uuid', how='left' )
-    kwrgs['outliers_df'] = merge_concepts
-    kwrgs['predicates_df'] = predicates_df
-    kwrgs['result'] = True
+    merge_concepts = outliers_df.merge(var['predicates_df'][['uuid', 'alternative_names']], on = 'uuid', how='left' )
+    var['outliers_df'] = merge_concepts
+    var['predicates_df'] = predicates_df
+    var['result'] = True
                
-    return kwrgs['predicates_df'], kwrgs['outliers_df'], kwrgs['result'] 
+    return var['predicates_df'], var['outliers_df'], var['result'] 
 
 
-def upload_data(**kwrgs):
+def upload_data(**var):
 
-    kwrgs['result'] = False
+    var['result'] = False
     g = Graph()
-    g.parse(kwrgs['records'], format='turtle') 
+    g.parse(var['records'], format='turtle') 
     turtle_changed = False
         
-    for index, row in kwrgs['predicates_df'].iterrows():
-        print(kwrgs['predicates_df']["uuid"].tolist())    
+    for index, row in var['predicates_df'].iterrows():
+        print(var['predicates_df']["uuid"].tolist())    
         log.info(f"START {row.uuid}")
         log.info(f"Fill concept for street {row.streetTextualValue} and uuid {row.uuid} with concept uuid {row.concept_uuid}")
 
@@ -384,7 +388,7 @@ def upload_data(**kwrgs):
         ))
 
         # Data wanneer leeg, toevoegen aan turtle
-
+       #if row.street
 
         #if ((record_uri, SAA.hasOrHadSubjectLocation,None) not in g):
         #    g.add((record_uri, SAA.hasOrHadSubjectLocation, adamlink))
@@ -392,7 +396,7 @@ def upload_data(**kwrgs):
         #else: 
         #    log.info(f'Adamlink already filled for uuid: {record_uri}')  
 
-        if ((record_uri, SAA.hasOrHadSubjectLocation,None) not in g):
+        '''if ((record_uri, SAA.hasOrHadSubjectLocation,None) not in g):
             g.add((address, SAA.street, concept_uri))
             turtle_changed = True
         else: 
@@ -408,16 +412,17 @@ def upload_data(**kwrgs):
             g.add((address, SAA.houseNumberAddition, Literal(row.number_add)))
             turtle_changed = True
         else: 
-            log.info(f'Housenumber Addition not changed for uuid: {record_uri}')
+            log.info(f'Housenumber Addition not changed for uuid: {record_uri}')'''
 
+        print(var['predicates_df'])
 
         for t in g.triples((address, None, None)):
             print(t)
 
-        for t in g.triples((record_uri, SAA.hasOrHadSubjectLocation, None)):
-            print(t)
+        #for t in g.triples((record_uri, SAA.hasOrHadSubjectLocation, None)):
+        #    print(t)
 
-        for index, row in kwrgs['records'].iterrows():
+        for index, row in var['records'].iterrows():
 
             if turtle_changed:
                 logging.info("Correct")
@@ -426,16 +431,16 @@ def upload_data(**kwrgs):
                 print(turtle)
                 #if response.status_code == 200:            
                 #    logging.info(f"SUCCEED {row.uuid}")     
-                #    kwrgs['result'] = True   
+                #    var['result'] = True   
 #
                 #else:            
                 #    logging.error(f"FAIL {row.uuid}")
                 #    logging.error(response.text)
 
-    return kwrgs['result']
+    return var['result']
 
 # Step 6 function
-def main(**kwrgs):
+def main(**var):
 
     print('----------------------------------------------------------------------------\n\n' +
     f"\t\t\"OMGEVING:\n\n\t\t\t'{env}'\"\n" )
@@ -446,71 +451,71 @@ def main(**kwrgs):
         print("\n\tSTEP 1: DOWNLOADEN VAN DE DE TURTLE CONCEPT VOCABULAIR")
         # Retrieve a turtle with all concepts based on vocabulair    
 
-        kwrgs['concept_list'], kwrgs['total_concept_uuids'], kwrgs['result'] = retrieve_concept_turtle_from_memorix(**kwrgs) 
+        var['concept_list'], var['total_concept_uuids'], var['result'] = retrieve_concept_turtle_from_memorix(**var) 
             
-        if kwrgs['result']:  #response.status_code == 200:          
+        if var['result']:  #response.status_code == 200:          
             print('\n----------------------------------------------------------------------------\n\n' +
-              f"\tGereed. Er zijn {len(kwrgs['concept_list'])} concepten naar een lijst geschreven\'\'\n" +
-              f'\tWe hebben \'{len(kwrgs['total_concept_uuids'])}\' concepten uit memorix gehaald. \'\'\n' +
-              f'\tEr zijn {len(kwrgs['concept_list']) - len(kwrgs['total_concept_uuids'])} concepten verloren gegaan bij het uitlezen van de data\'\'\n' +
+              f"\tGereed. Er zijn {len(var['concept_list'])} concepten naar een lijst geschreven\'\'\n" +
+              f'\tWe hebben \'{len(var['total_concept_uuids'])}\' concepten uit memorix gehaald. \'\'\n' +
+              f'\tEr zijn {len(var['concept_list']) - len(var['total_concept_uuids'])} concepten verloren gegaan bij het uitlezen van de data\'\'\n' +
               '\n----------------------------------------------------------------------------\n\n', 
             )
             input('\t\"Verder met downloaden record UUIDS?\": (Y/N) \n' +
                   '\n----------------------------------------------------------------------------\n\n')
-            log.info(f'Concept turtle downloaded from Memorix and put in list at : {kwrgs['total_concept_uuids']} with a total of {kwrgs['total_concept_uuids']} concepts')
+            log.info(f'Concept turtle downloaded from Memorix and put in list at : {var['total_concept_uuids']} with a total of {var['total_concept_uuids']} concepts')
         
         else:            
-            log.error(f"FAIL {kwrgs['concept_list']['uuid']}")
+            log.error(f"FAIL {var['concept_list']['uuid']}")
 
     except:
-        if kwrgs['concept_turtle']:
-            log.error(f'There was an issue while creating the vocabulair:{kwrgs['vocabulair']}' +
+        if var['concept_turtle']:
+            log.error(f'There was an issue while creating the vocabulair:{var['vocabulair']}' +
                       f'from entrypoint: {env}.' +
                       f'It appears a concept_turtle was created. You should check the file for accuracy.')
         else: 
-            log.error(f'The concept_turtle : {kwrgs['concept_turtle']} had issues being created at accespoint {env},')
-            errors.append({'fn: retrieve_concept_turtle_from_memorix': [kwrgs['vocabulair'], kwrgs['concept_turtle'], kwrgs['response']]})
+            log.error(f'The concept_turtle : {var['concept_turtle']} had issues being created at accespoint {env},')
+            errors.append({'fn: retrieve_concept_turtle_from_memorix': [var['vocabulair'], var['concept_turtle'], var['response']]})
 
 
     try:
         print("\n\tSTEP 2: DOWNLOADING RECORD UUIDS")
 
-        kwrgs['df_record_uuids'], kwrgs['result'] = retrieve_uuid_from_memorix(**kwrgs)
+        var['df_record_uuids'], var['result'] = retrieve_uuid_from_memorix(**var)
 
-        if kwrgs['result']: 
-            log.info(f'Recorded uuid\'s downloaded from Memorix at {kwrgs['df_record_uuids']} and put in dataframet with a total of {len(kwrgs['df_record_uuids'])} records')
+        if var['result']: 
+            log.info(f'Recorded uuid\'s downloaded from Memorix at {var['df_record_uuids']} and put in dataframet with a total of {len(var['df_record_uuids'])} records')
             print( 
             '\n----------------------------------------------------------------------------\n\n' +
-            f"\tGereed. Er zijn {len(kwrgs['df_record_uuids']['uuid'])} record UUIDs opgehaald uit Memorix.\n" + 
-            f"\tDeze zijn opgeslagen op locatie: {kwrgs['record_uuids']}.\n" +
+            f"\tGereed. Er zijn {len(var['df_record_uuids']['uuid'])} record UUIDs opgehaald uit Memorix.\n" + 
+            f"\tDeze zijn opgeslagen op locatie: {var['record_uuids']}.\n" +
             '\n----------------------------------------------------------------------------\n\n',   
             )
             input('\t\"Verder met uitlezen externe csv file?\": (Y/N) \n' +
                   '\n----------------------------------------------------------------------------\n\n')
         else:            
-            log.error(f"FAIL {kwrgs['df_record_uuids']['uuid']}")
+            log.error(f"FAIL {var['df_record_uuids']['uuid']}")
  
     except:
-        log.error(f'''The uuid's : {kwrgs['record_uuids']} had an issue at accespoint {env}.''')
-        errors.append({'fn: retrieve_uuid_from_memorix': [env, kwrgs['record_uuids'], kwrgs['df_record_uuids'], HOME_REPO]})
+        log.error(f'''The uuid's : {var['record_uuids']} had an issue at accespoint {env}.''')
+        errors.append({'fn: retrieve_uuid_from_memorix': [env, var['record_uuids'], var['df_record_uuids'], HOME_REPO]})
       
 
     try:    
         print("\n\tSTEP 3: EXTERNE DATA UITLEZEN EN DATA NAAR DATAFRAME VERPLAATSEN")
 
         # Add the provided external data to a dataframe
-        kwrgs['df_external_data'], kwrgs['result'] = read_external_data_with_panda(data, **kwrgs)
+        var['df_external_data'], var['result'] = read_external_data_with_panda(data, **var)
 
-        print(kwrgs['df_external_data'])
+        print(var['df_external_data'])
 
-        if kwrgs['result']:
+        if var['result']:
             print('\n----------------------------------------------------------------------------\n\n' +
-            f"\tGereed. Er zijn {len(kwrgs['df_external_data'])} rijen opgehaald uit de externe datasheet {data}.\n" +
+            f"\tGereed. Er zijn {len(var['df_external_data'])} rijen opgehaald uit de externe datasheet {data}.\n" +
             '\n----------------------------------------------------------------------------\n\n',
             )
             input('\t\"Verder met uitlezen turtle?\": (Y/N) \n' +
                   '\n----------------------------------------------------------------------------\n\n')
-            log.info(f'The external data is transferred to a dataframe at {kwrgs['df_external_data']}')
+            log.info(f'The external data is transferred to a dataframe at {var['df_external_data']}')
 
     except: 
         log.error(f'There was an issue reading the externally added data : {data},\n' +
@@ -521,26 +526,26 @@ def main(**kwrgs):
         print("\n\tSTEP 4: RECORD TURTLE UITLEZEN EN DATA NAAR DATAFRAME VERPLAATSEN")
         
         # Get all records in a turtle, based on UUIDS retrieved in step 2
-        kwrgs['predicates'], kwrgs['total_predicates'], kwrgs['result'] = get_turtle_for_record_with_uuid( **kwrgs )
+        var['predicates'], var['total_predicates'], var['result'] = get_turtle_for_record_with_uuid( **var )
         
-        if kwrgs['result']: 
-            log.info(f"\t\t, Predicaten uitgelezen : \n\n {kwrgs['predicates']} \n\n {kwrgs['df_record_uuids']} \n\n {kwrgs['records']}")
+        if var['result']: 
+            log.info(f"\t\t, Predicaten uitgelezen : \n\n {var['predicates']} \n\n {var['df_record_uuids']} \n\n {var['records']}")
             print('\n----------------------------------------------------------------------------\n\n' +
-                  f"\tGereed. Er zijn '{len(kwrgs['predicates'])}' records uit de turtle gehaald," +
-                  f'\ten er zijn \'{len(kwrgs['df_record_uuids'])} uuids uit Memorix gehaald\'\n' +
-                  f'\tEr wordt getest met {kwrgs['test_amount']} uuids\n' +
-                  f'\tEr zijn {(kwrgs['test_amount'] if kwrgs['test_amount'] >= 0 else len(kwrgs['df_record_uuids'])) - len(kwrgs['predicates'])} rec ords verloren gegaan bij het uitlezen van de data.',
+                  f"\tGereed. Er zijn '{len(var['predicates'])}' records uit de turtle gehaald," +
+                  f'\ten er zijn \'{len(var['df_record_uuids'])} uuids uit Memorix gehaald\'\n' +
+                  f'\tEr wordt getest met {var['test_amount']} uuids\n' +
+                  f'\tEr zijn {(var['test_amount'] if var['test_amount'] >= 0 else len(var['df_record_uuids'])) - len(var['predicates'])} rec ords verloren gegaan bij het uitlezen van de data.',
                   '\n----------------------------------------------------------------------------\n\n',
             ) 
             input('\t\"Verder met matchen van de data?\": (Y/N) \n' +
                   '\n----------------------------------------------------------------------------\n\n')
                  
         else:            
-            log.error(f"FAIL {kwrgs['df_record_uuids']['uuid']}")
+            log.error(f"FAIL {var['df_record_uuids']['uuid']}")
     
     except:
-        log.error(f'There was an issue retrieving the turtle for id: {kwrgs['df_record_uuids']['uuid']},\n')               
-        errors.append({'fn: get_turtle_for_record_with_uuid': [kwrgs['records'], kwrgs['df_record_uuids'], kwrgs['predicates']]})
+        log.error(f'There was an issue retrieving the turtle for id: {var['df_record_uuids']['uuid']},\n')               
+        errors.append({'fn: get_turtle_for_record_with_uuid': [var['records'], var['df_record_uuids'], var['predicates']]})
         
         
     try:
@@ -550,30 +555,30 @@ def main(**kwrgs):
         het migratie adresveld al op 7.703.851 locaties_met_adam records is gevuld [ aldus Memorix ] dus deze wil je 
         filteren en niet meenemen in je wijziging'''
 
-        kwrgs['predicates_df'], kwrgs['outliers_df'], kwrgs['result'] = match_data(**kwrgs)
+        var['predicates_df'], var['outliers_df'], var['result'] = match_data(**var)
 
-        if kwrgs['result']:
+        if var['result']:
             print(
               '\n----------------------------------------------------------------------------\n\n' +
-              f"\tGereed. Er zijn {len(kwrgs['predicates_df'])} rijen verwerkt in het predicates dataframe" +
-              f'\tEr wordt gewerkt met {(kwrgs['test_amount'] if kwrgs['test_amount'] >= 0 else len(kwrgs['total_predicates']) - len())} records\'\n' +
-              f'\tEr wordt getest met {kwrgs['test_amount']} uuids\n' +
-              f'\tEr zijn {(kwrgs['test_amount'] if kwrgs['test_amount'] >= 0 else len(kwrgs['df_record_uuids'])) - len(kwrgs['predicates'])} records verloren gegaan bij het uitlezen van de data.'
+              f"\tGereed. Er zijn {len(var['predicates_df'])} rijen verwerkt in het predicates dataframe" +
+              f'\tEr wordt gewerkt met {(var['test_amount'] if var['test_amount'] >= 0 else len(var['total_predicates']) - len())} records\'\n' +
+              f'\tEr wordt getest met {var['test_amount']} uuids\n' +
+              f'\tEr zijn {(var['test_amount'] if var['test_amount'] >= 0 else len(var['df_record_uuids'])) - len(var['predicates'])} records verloren gegaan bij het uitlezen van de data.'
               '\t\"Do you want to continue matching the extracted pattern with the concepts?\"\n' +
               '\n----------------------------------------------------------------------------\n\n',
         )
 
     except:
-        log.error(f'There was an issue extracting the pattern from the predicates : {kwrgs['predicates']},\n')               
-        errors.append({'fn: match_data': [kwrgs['predicates']]})
+        log.error(f'There was an issue extracting the pattern from the predicates : {var['predicates']},\n')               
+        errors.append({'fn: match_data': [var['predicates']]})
         
     try:
         # STEP 6
         print("\n\tSTEP 6: DATA TERUGZETTEN IN TURTLE EN UPLOADEN")
 
-        kwrgs['result'] = upload_data(**kwrgs)
+        var['result'] = upload_data(**var)
 
-        if kwrgs['result']:
+        if var['result']:
             print(        
                 '\n----------------------------------------------------------------------------\n\n' +
                 '\t\"We hebben de data gevuld en geupload naar Memorix.\" \n' +
@@ -582,11 +587,11 @@ def main(**kwrgs):
                 )  
             print("\n\tALL STEPS DONE!")
 
-        return kwrgs
+        return var
 
     except:
-        log.error(f'Something went wrong with matching the data { kwrgs['records'], kwrgs['predicates_df']}')
-        errors.append({'fn: upload_data': [kwrgs['records'], kwrgs['predicates_df']]})
+        log.error(f'Something went wrong with matching the data { var['records'], var['predicates_df']}')
+        errors.append({'fn: upload_data': [var['records'], var['predicates_df']]})
 
 
    
@@ -618,8 +623,8 @@ def main(**kwrgs):
     
 
 
-'''    kwrgs['records'] = fill_data(
-        kwrgs
+'''    var['records'] = fill_data(
+        var
         )'''
     
 
@@ -683,4 +688,4 @@ for index, row in tqdm(data.iterrows(), total=data.shape[0]):
 '''
 
 if __name__ == '__main__':
-    main(**kwrgs)
+    main(**var)
