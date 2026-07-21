@@ -2,7 +2,7 @@
 import os 
 import sys
 import tracemalloc
-import Levenshtein
+import click
 import simplejson as json
 from datetime import time, datetime
 from tqdm import tqdm
@@ -124,6 +124,7 @@ SKOS = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
 # FUNCTIONS
 # -----------------------------------
 
+# Step 1 fucntie
 def read_concept_turtle(s, g, s_str):
     
     match = re.search(r'/vocabularies/concepts/([^/>]+)', s_str)
@@ -135,7 +136,7 @@ def read_concept_turtle(s, g, s_str):
 
     concept_list.append({
         'concept_uuid' : uuid,
-        'concept_street' : prefLabel,
+        'streetTextualValue' : prefLabel,
         'adamlink' : exactMatch,
         'scope' : scopeNote
     }) 
@@ -144,7 +145,8 @@ def read_concept_turtle(s, g, s_str):
     return concept_list, total_concept_uuids
     
 
-def extract_street(inst, g, uuid, predicates, total_predicates, pattern ):
+def match_street(inst, g, uuid, predicates, total_predicates, pattern ):
+ 
     
     predicates.append({
           'uuid': uuid,
@@ -167,53 +169,77 @@ def extract_street(inst, g, uuid, predicates, total_predicates, pattern ):
     extract_pattern = predicates_df['streetTextualValue'].str.extract(pattern)
 
     # Add string parts to dataframe
-    predicates_df['extracted_street'] = extract_pattern['street'].str.strip()
+    predicates_df['streetTextualValue'] = extract_pattern['street'].str.strip()
     predicates_df['extracted_number'] = extract_pattern['number'].str.strip()
-    predicates_df['extracted_add'] = extract_pattern['add'].str.strip()
+    predicates_df['extracted_number_add'] = extract_pattern['add'].str.strip()
 
     # Normalize empty fields and replace string 'None' with empty string
     predicates_df.fillna("",inplace=True)
     predicates_df['house_number'] = predicates_df['house_number'].replace('None', '')
     predicates_df['extracted_number'] = predicates_df['extracted_number'].replace('None', '')
     predicates_df['number_add'] = predicates_df['number_add'].replace('None', '')
-    predicates_df['extracted_add'] = predicates_df['extracted_add'].replace('None', '')
+    predicates_df['extracted_number_add'] = predicates_df['extracted_number_add'].replace('None', '')
     
     total_predicates += 1
 
-    return predicates_df, predicates_df.streetTextualValue, predicates_df.street, predicates_df.house_number, predicates_df.number_add
+    return predicates_df, predicates_df['streetTextualValue'], predicates_df['street'], predicates_df['house_number'], predicates_df['number_add']
 
-def normalize_street_name(street, message):
-    
-    replacement = {
-        r'\b1\b|\b1e\b|\b1ste\b': "Eerste",
-        r'\b2\b|\b2e\b|\b2de\b' : "Tweede",
-        r'\b3\b|\b3e\b|\b3de\b': "Derde",
-        r'\b4\b|\b4e\b|\b4de\b': "Vierde"
-    }
+def outliers_to_csv(predicates_df):
 
-    # Remove punctuation
-    street = re.sub(r'[^\w\s]', '', street)
-
-    # Normalize abbreviations for numbered streets 
-    for pattern, replacement in replacement.items():
-        normalized = re.sub(pattern, replacement, street) 
-
-        #print(f'This is the normalized:\n{normalized}')
-
-    # Extra whitespace removal
-    street = ' '.join(normalized.split())
-    print(f'{message}:\n{street}')
-    #input('pauze')
-    return street
-
-def outliers_to_csv(merge_dfs, df_external_data):
-
-    #print(f'Predicates: \n{predicates_df}')
+    print(f'Predicates: \n{predicates_df}')
     # Outliers to dataframe based on index predicates
-    outliers_df = pd.DataFrame( index=merge_dfs.index)
+    outliers_df = pd.DataFrame( index=predicates_df.index)
+
+    # Take uuid from predicates
+    outliers_df['uuid'] = predicates_df['uuid']
+
+    # Fill numbers etc where deviant
+    street_map = {
+                  'house_number': 'extracted_number',
+                  'number_add': 'extracted_number_add',
+                  'uuid' : 'uuid'
+    }
+        
+    for target, source in street_map.items():
+
+        # mask to fill empty fields 
+        mask_fill = (
+            predicates_df[target].isna() &
+            predicates_df[source].notna()
+        )
+        predicates_df.loc[mask_fill, target] = predicates_df.loc[mask_fill, source]
+
+        # Write to outliers if data already exists
+        mask_to_csv = (
+            predicates_df[target].notna() &
+            predicates_df[source].notna() &
+            (predicates_df[target] != predicates_df[source])
+        )
+        outliers_df.loc[mask_to_csv, target] = predicates_df.loc[mask_to_csv, source]
+ 
+    # List alternative writings to outliers based on 'uuid'
+    merge_concepts = outliers_df.merge(predicates_df[['uuid', 'alternative_names']], on = 'uuid', how='left' )
+    outliers_df = merge_concepts
+
+    #predicates_dict = predicates_df.to_dict
+    #print(f'outliers: \n{outliers_df}')
+    #input('pause')
+    #outliers.append(predicates_dict)
+    #print(predicates_df)
+    #print(outliers)
+
+    return outliers_df
+
+
+# Step 3 function 
+def match_concept(concept_df, df_external_data, predicates_df):
+             
+    # Add concept uuid and adamlink to predicates dataframe based on 'street' with a merge         
+    merge_concepts = predicates_df.merge(concept_df[['streetTextualValue', 'concept_uuid', 'adamlink']], on = 'streetTextualValue', how='left' )
+    predicates_df = merge_concepts
 
     # Remove altlabel from adammlink and add to column in two dataframes 
-    merge_dfs['altlabel'] = merge_dfs['adamlink'].str.extract(r'(\d+)')
+    predicates_df['altlabel'] = predicates_df['adamlink'].str.extract(r'(\d+)')
     df_external_data['number_altlabel'] = df_external_data['straat-label-altlabel'].str.extract(r'(\d+)')
     
     # Compare number altlabel between dataframes and add to a list
@@ -229,57 +255,7 @@ def outliers_to_csv(merge_dfs, df_external_data):
         return []
 
     # Add list alternative writings to predicates dataframe
-    merge_dfs['alternative_names'] = merge_dfs.apply(find_alternatives, axis=1, args=[df_external_data])
-    print(f'We zijn de merge_dfs aan het printen: \n{merge_dfs}')
-    input('pauze')
-    # Take uuid from merged
-    outliers_df['uuid'] = merge_dfs['uuid']
-
-    # Fill numbers etc where deviant
-    street_map = {
-                  'house_number': 'extracted_number',
-                  'number_add': 'extracted_add',
-                  'uuid' : 'uuid'
-    }
-        
-    for target, source in street_map.items():
-
-        # mask to fill empty fields 
-        mask_fill = (
-            merge_dfs[target].isna() &
-            merge_dfs[source].notna()
-        )
-        merge_dfs.loc[mask_fill, target] = merge_dfs.loc[mask_fill, source]
-
-        # Write to outliers if data already exists
-        mask_to_csv = (
-            merge_dfs[target].notna() &
-            merge_dfs[source].notna() &
-            (merge_dfs[target] != merge_dfs[source])
-        )
-        outliers_df.loc[mask_to_csv, target] = merge_dfs.loc[mask_to_csv, source]
- 
-    # List alternative writings to outliers based on 'uuid'
-    merge_concepts = outliers_df.merge(merge_dfs[['uuid', 'alternative_names']], on = 'uuid', how='left' )
-    outliers_df = merge_concepts
-    print(outliers_df)
-    #predicates_dict = predicates_df.to_dict
-    #print(f'outliers: \n{outliers_df}')
-    input('pause')
-    #outliers.append(predicates_dict)
-    #print(predicates_df)
-    #print(outliers)
-
-    return outliers_df
-
-
-# Step 3 function 
-def match_streets(concept_df, predicates_df):
-
-    
-    
-    # Add concept uuid and adamlink to predicates dataframe based on 'street' with a merge         
-    
+    predicates_df['alternative_names'] = predicates_df.apply(find_alternatives, axis=1, args=[df_external_data])
     
 
     #predicates_dict = predicates_df.to_dict
@@ -331,18 +307,14 @@ def main():
         df_record_uuids = pd.DataFrame(df_record_uuids)
         concept_df = pd.DataFrame(concept_list, index=range(len(concept_list)))
         
-        concept_message = "This is the concept street\n"
+        log.info(f'CREATED DATAFRAMES {df_record_uuids, data}')
         
-        concept_df["concept_street"].apply(
-            lambda street: normalize_street_name(street, concept_message)
-)
-
         print('\n----------------------------------------------------------------------------\n\n' + f"\tGereed. Er zijn {len(df_external_data)} rijen opgehaald uit de externe datasheet {data}.\n" + f"\tEn {len(df_record_uuids)} uuids in een dataframe gestopt.\n" '''+ '\n----------------------------------------------------------------------------\n\n',''')
         input('\t\"Starten met ophalen van de data?\": (Y/N) \n' + '\n----------------------------------------------------------------------------\n\n')
 
-    except Exception as e: 
+    except: 
         log.info(f'FAILED CREATING DATAFRAMES {df_record_uuids, data}')
-        log.error(f'Error with {e}')    
+    
         
     for index, row in tqdm(df_record_uuids.head(test_amount).iterrows(), total=df_record_uuids.shape[0]):
         log.info(f"STARTING WITH UUID: {row.uuid}")
@@ -368,31 +340,27 @@ def main():
 
             for inst in g.objects(None, SAA.isAssociatedWithModernAddress): 
 
-                predicates_df, _, _, _, _ = extract_street(inst, g, uuid, predicates, total_predicates, pattern)
+                predicates_df, _, _, _, _ = match_street(inst, g, uuid, predicates, total_predicates, pattern)
+                predicates_df, outliers_df, _, _ = match_concept(concept_df, df_external_data, predicates_df)
                 
                 # Extract SCALAR values from the (single-row) DataFrame
-                migr_street = predicates_df['extracted_street'].iloc[0]
+                street_text_val = predicates_df['streetTextualValue'].iloc[0]
                 street_val = predicates_df['street'].iloc[0]                
-                house_number = predicates_df['house_number'].notna().iloc[0]
-                number_add = predicates_df['number_add'].notna().iloc[0]
-
-                predicates_message = 'This is the predicates street \n'
-                predicates_df['normalized_street'] = normalize_street_name(migr_street, predicates_message)
-                
-                same_street = (Levenshtein.ratio(str(predicates_df['normalized_street']).lower(), str(concept_df['normalized_street']).lower()) > 0.95 or Levenshtein.distance(str(predicates_df['normalized_street']).lower(), str(concept_df['normalized_street']).lower()) <= 1 or str(predicates_df['streetTextualValue']).lower() in str(df_external_data['straat-label-altlabel']) or str(predicates_df['normalized_street']).lower() in str(df_external_data['straat-label-altlabel']))         
-                
-                merge_dfs = predicates_df.merge(concept_df[['normalized_street', 'concept_uuid', 'adamlink']], on = 'normalized_street', how='left' )
-                #predicates_df, outliers_df, _, _ = match_streets(concept_df, df_external_data, predicates_df)
-
-                # Extract SCALAR values from the (single-row) DataFrame
-                concept_uuid = concept_df['concept_uuid'].iloc[0]
+                house_number_val = predicates_df['house_number'].notna().iloc[0]
+                number_add_val = predicates_df['number_add'].notna().iloc[0]
+                concept_uuid_val = predicates_df['concept_uuid'].iloc[0]
+                adamlink_val = predicates_df['adamlink'].iloc[0]
 
                 # Determine Record and adamlink URI
                 record_uri = URIRef(f"{PREFIX}/resources/records/{row.uuid}")
+                adamlink_uri = URIRef(adamlink_val)
 
+                address = g.objects(
+                record_uri, 
+                SAA.isAssociatedWithModernAddress
+                    )
                 #g.parse(r'data/records/' + f'record {count}.ttl', format='turtle') 
                 #turtle_changed = False
-                outliers_df = outliers_to_csv(merge_dfs, df_external_data)
                 print(outliers_df)
                 dict = outliers_df.to_dict()
                 outliers.append(dict)
@@ -403,35 +371,35 @@ def main():
                 print(row.adamlink)'''          
 
                 # Add concept URI to rrq:street if empty
-                if street_val == '' or street_val == 'None' and same_street:
-                    if pd.notna(concept_uuid) and concept_uuid != '':
-                        concept_uri = URIRef(f"{PREFIX}/resources/vocabularies/concepts/{concept_uuid}")
+                if street_val == '' or street_val == 'None':
+                    if pd.notna(concept_uuid_val) and concept_uuid_val != '':
+                        concept_uri = URIRef(f"{PREFIX}/resources/vocabularies/concepts/{concept_uuid_val}")
                         g.add((inst, SAA.street, concept_uri))
                         turtle_changed = True
-                        log.info(f"UUID: {uuid} \n Changed dMigr street: '{migr_street}' to normalized street : '{predicates_df.normalized_street}'. \nFilled concept {concept_uuid} and concept street name: {concept_df['concept_street']}")
+                        log.info(f"Filled concept for street '{street_text_val}', uuid {uuid}, concept {concept_uuid_val}")
                     else:
-                        log.warning(f"UUID: {uuid} \nNo concept match found for street '{migr_street}'")
+                        log.warning(f"No concept match found for street '{street_text_val}', uuid {uuid}")
                 else:
                     log.info(f"Street already filled for uuid {uuid}")
-                    log.error(f'Concept already filled for uuid: {concept_uuid}')  
+                    log.error(f'Concept already filled for uuid: {concept_uuid_val}')  
                 # Change street to stripped version without additions  
                  # 2. Replace streetTextualValue (always filled, always change)
                 g.remove((inst, SAA.streetTextualValue, None))
-                g.add((inst, SAA.streetTextualValue, Literal(migr_street)))
+                g.add((inst, SAA.streetTextualValue, Literal(street_text_val)))
                 turtle_changed = True   
 
                 # 3. Fill houseNumber only if empty
-                if house_number == '' or house_number == 'None':
-                    extracted_number = predicates_df['extracted_number'].iloc[0]
-                    if extracted_number and extracted_number != '':
-                        g.add((inst, SAA.houseNumber, Literal(extracted_number)))
+                if house_number_val == '' or house_number_val == 'None':
+                    extracted_num = predicates_df['extracted_number'].iloc[0]
+                    if extracted_num and extracted_num != '':
+                        g.add((inst, SAA.houseNumber, Literal(extracted_num)))
                         turtle_changed = True
                 else:
                     log.info(f"HouseNumber not changed for uuid {uuid}")    
 
                 # 4. Fill houseNumberAddition only if empty
-                if number_add == '' or number_add == 'None':
-                    extracted_add = predicates_df['extracted_add'].iloc[0]
+                if number_add_val == '' or number_add_val == 'None':
+                    extracted_add = predicates_df['extracted_number_add'].iloc[0]
                     if extracted_add and extracted_add != '':
                         g.add((inst, SAA.houseNumberAddition, Literal(extracted_add)))
                         turtle_changed = True
@@ -448,7 +416,7 @@ def main():
             logging.error(f"FAILED TRANSFORMATION {predicates_df} error = {e}")
             errors.append(("ERROR Main fn", [row, e]))
             log.info(f"DEBUG streetTextualValue: {repr(predicates_df['streetTextualValue'].iloc[0])}")
-            #log.info(f"DEBUG location_link before extract: {merge_dfs['adamlink'].iloc[0]}")
+            log.info(f"DEBUG location_link before extract: {predicates_df['adamlink'].iloc[0]}")
 
     try: 
         out_df = pd.DataFrame(outliers) 

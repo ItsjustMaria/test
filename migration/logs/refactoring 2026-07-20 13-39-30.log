@@ -1,0 +1,21 @@
+2026-07-20 13:39:30,390 [INFO] Mode: MOVE
+2026-07-20 13:39:30,390 [INFO] Source: /opt/lampp/htdocs/test/migration/dam_supp
+2026-07-20 13:39:30,390 [INFO] Destination: /opt/lampp/htdocs/test/migration/test
+2026-07-20 13:39:30,390 [INFO] Reading Excel file: /opt/lampp/htdocs/test/migration/dam_supp.xlsx
+2026-07-20 13:39:30,450 [INFO] Using columns -> uuid: 'UUID', toegangsnummer: 'TOEGANGSNUMMER', bestandsnaam: 'BESTANDSNAAM'
+2026-07-20 13:39:30,452 [WARNING] Found 13 exact duplicate row(s) in the sheet; keeping the first occurrence of each.
+2026-07-20 13:39:30,453 [INFO] Loaded 42 usable row(s) covering 14 unique uuid(s) and 3 unique toegangsnummer(s).
+2026-07-20 13:39:30,453 [INFO] Scanning /opt/lampp/htdocs/test/migration/dam_supp for uuid folders (this can take a while on large drives)...
+2026-07-20 13:39:30,453 [INFO] Found 4 uuid folder(s) on the drive (0 duplicate name conflict(s)).
+2026-07-20 13:39:30,453 [WARNING] 14 uuid(s) from the sheet were not found as folders on the drive at all.
+2026-07-20 13:39:30,453 [INFO] Processed 42/42 rows (0 moved, 41 errors so far)...
+2026-07-20 13:39:30,453 [INFO] ======================================================================
+2026-07-20 13:39:30,453 [INFO] RUN SUMMARY
+2026-07-20 13:39:30,453 [INFO]   Total rows in sheet processed : 42
+2026-07-20 13:39:30,453 [INFO]   Successfully moved/copied     : 0
+2026-07-20 13:39:30,453 [INFO]   Errors / missing files        : 42
+2026-07-20 13:39:30,453 [INFO]   Archive folders touched       : 0
+2026-07-20 13:39:30,453 [INFO]   Success log (CSV)             : ./logs/success_log.csv
+2026-07-20 13:39:30,454 [INFO]   Error log (CSV)               : ./logs/error_log.csv
+2026-07-20 13:39:30,454 [INFO]   Full run log                  : logs/refactoring 2026-07-20 13-39-30.log
+2026-07-20 13:39:30,454 [INFO] ======================================================================

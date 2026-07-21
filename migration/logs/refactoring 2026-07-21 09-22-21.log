@@ -1,0 +1,24 @@
+2026-07-21 09:22:21,973 [INFO] Mode: MOVE  (DRY RUN - no files will be touched)
+2026-07-21 09:22:21,973 [INFO] Source: /opt/lampp/htdocs/test/migration/dam_supp
+2026-07-21 09:22:21,973 [INFO] Destination: /opt/lampp/htdocs/test/migration/test
+2026-07-21 09:22:21,973 [INFO] Reading Excel file: /opt/lampp/htdocs/test/migration/dam_supp.xlsx
+2026-07-21 09:22:22,088 [INFO] Using columns -> uuid: 'UUID', toegangsnummer: 'TOEGANGSNUMMER', bestandsnaam: 'BESTANDSNAAM'
+2026-07-21 09:22:22,097 [WARNING] Found 13 exact duplicate row(s) in the sheet; keeping the first occurrence of each.
+2026-07-21 09:22:22,098 [INFO] Loaded 42 usable row(s) covering 14 unique uuid(s) and 3 unique toegangsnummer(s).
+2026-07-21 09:22:22,098 [INFO] Scanning /opt/lampp/htdocs/test/migration/dam_supp for archive folders (this can take a while on large drives)...
+2026-07-21 09:22:22,098 [INFO] Found 4 matching folder(s) on the drive, covering 3 distinct archive number(s).
+2026-07-21 09:22:22,098 [INFO] Indexed files for 3/3 needed archive folders...
+2026-07-21 09:22:22,099 [INFO] Processed 42/42 rows (6 moved, 35 errors so far)...
+2026-07-21 09:22:22,099 [INFO] ======================================================================
+2026-07-21 09:22:22,099 [INFO] RUN SUMMARY
+2026-07-21 09:22:22,099 [INFO]   Total rows in sheet processed : 42
+2026-07-21 09:22:22,099 [INFO]   Successfully moved/copied     : 6
+2026-07-21 09:22:22,099 [INFO]   Of which same-name duplicates : 0  (see duplicates_log.csv)
+2026-07-21 09:22:22,099 [INFO]   Errors / missing files        : 36
+2026-07-21 09:22:22,099 [INFO]   Archive folders touched       : 1
+2026-07-21 09:22:22,099 [INFO]   Success log (CSV)             : ./logs/success_log.csv
+2026-07-21 09:22:22,099 [INFO]   Duplicates log (CSV)          : ./logs/duplicates_log.csv
+2026-07-21 09:22:22,099 [INFO]   Error log (CSV)               : ./logs/error_log.csv
+2026-07-21 09:22:22,099 [INFO]   Full run log                  : logs/refactoring 2026-07-21 09-22-21.log
+2026-07-21 09:22:22,099 [INFO] ======================================================================
+2026-07-21 09:22:22,099 [INFO] This was a DRY RUN. No files were moved or copied. Review the logs, then re-run without --dry-run when you're confident.

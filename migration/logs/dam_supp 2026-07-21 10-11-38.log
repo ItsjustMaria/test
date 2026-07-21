@@ -1,0 +1,78 @@
+2026-07-21 10:11:38,496 [INFO] Mode: MOVE  (DRY RUN - no files will be touched)
+2026-07-21 10:11:38,496 [INFO] Source: /opt/lampp/htdocs/test/migration/dam_supp
+2026-07-21 10:11:38,496 [INFO] Destination: /opt/lampp/htdocs/test/migration/test
+2026-07-21 10:11:38,496 [INFO] Reading Excel file: /opt/lampp/htdocs/test/migration/dam_supp.xlsx
+2026-07-21 10:11:38,556 [INFO] Using columns -> uuid: 'UUID', toegangsnummer: 'TOEGANGSNUMMER', bestandsnaam: 'BESTANDSNAAM'
+2026-07-21 10:11:38,560 [INFO] Loaded 55 row(s) covering 0     1d975909-26f7-f2d2-425f-3c61951d3f33
+1     1d975909-26f7-f2d2-425f-3c61951d3f33
+2     1d975909-26f7-f2d2-425f-3c61951d3f33
+3     1d975909-26f7-f2d2-425f-3c61951d3f33
+4     1d975909-26f7-f2d2-425f-3c61951d3f33
+5     1d975909-26f7-f2d2-425f-3c61951d3f33
+6     1d975909-26f7-f2d2-425f-3c61951d3f33
+7     1d975909-26f7-f2d2-425f-3c61951d3f33
+8     1d975909-26f7-f2d2-425f-3c61951d3f33
+9     1d975909-26f7-f2d2-425f-3c61951d3f33
+10    1d975909-26f7-f2d2-425f-3c61951d3f33
+11    1d975909-26f7-f2d2-425f-3c61951d3f33
+12    1d975909-26f7-f2d2-425f-3c61951d3f33
+13    80ae8644-0145-40ae-e053-b784100ad8d3
+14    80ae8644-0145-40ae-e053-b784100ad8d3
+15    80ae8644-014e-40ae-e053-b784100ad8d3
+16    80ae8644-014e-40ae-e053-b784100ad8d3
+17    80ae8644-0150-40ae-e053-b784100ad8d3
+18    80ae8644-0150-40ae-e053-b784100ad8d3
+19    80ae8644-013f-40ae-e053-b784100ad8d3
+20    80ae8644-013f-40ae-e053-b784100ad8d3
+21    80ae8644-0143-40ae-e053-b784100ad8d3
+22    80ae8644-0143-40ae-e053-b784100ad8d3
+23    80ae8644-015e-40ae-e053-b784100ad8d3
+24    80ae8644-015e-40ae-e053-b784100ad8d3
+25    80ae8644-014f-40ae-e053-b784100ad8d3
+26    80ae8644-014f-40ae-e053-b784100ad8d3
+27    80ae8644-0153-40ae-e053-b784100ad8d3
+28    80ae8644-0153-40ae-e053-b784100ad8d3
+29    80ae8644-0161-40ae-e053-b784100ad8d3
+30    80ae8644-0161-40ae-e053-b784100ad8d3
+31    80ae8644-0177-40ae-e053-b784100ad8d3
+32    80ae8644-0177-40ae-e053-b784100ad8d3
+33    80ae8644-015c-40ae-e053-b784100ad8d3
+34    80ae8644-015c-40ae-e053-b784100ad8d3
+35    80ae8644-015d-40ae-e053-b784100ad8d3
+36    80ae8644-015d-40ae-e053-b784100ad8d3
+37    80ae8644-015d-40ae-e053-b784100ad8d3
+38    80ae8644-015d-40ae-e053-b784100ad8d3
+39    222b0cae-71f1-aecc-307e-5b16a53225ca
+40    222b0cae-71f1-aecc-307e-5b16a53225ca
+41    222b0cae-71f1-aecc-307e-5b16a53225ca
+42    222b0cae-71f1-aecc-307e-5b16a53225ca
+43    222b0cae-71f1-aecc-307e-5b16a53225ca
+44    222b0cae-71f1-aecc-307e-5b16a53225ca
+45    222b0cae-71f1-aecc-307e-5b16a53225ca
+46    222b0cae-71f1-aecc-307e-5b16a53225ca
+47    222b0cae-71f1-aecc-307e-5b16a53225ca
+48    222b0cae-71f1-aecc-307e-5b16a53225ca
+49    222b0cae-71f1-aecc-307e-5b16a53225ca
+50    222b0cae-71f1-aecc-307e-5b16a53225ca
+51    222b0cae-71f1-aecc-307e-5b16a53225ca
+52    222b0cae-71f1-aecc-307e-5b16a53225ca
+53    222b0cae-71f1-aecc-307e-5b16a53225ca
+54    222b0cae-71f1-aecc-307e-5b16a53225ca
+Name: uuid, dtype: str unique uuid(s) and 3 unique toegangsnummer(s).
+2026-07-21 10:11:38,560 [INFO] Scanning /opt/lampp/htdocs/test/migration/dam_supp for archive folders (this can take a while on large drives)...
+2026-07-21 10:11:38,561 [INFO] Found 4 matching folder(s) on the drive, covering 3 distinct archive number(s).
+2026-07-21 10:11:38,561 [INFO] Indexed files for 3/3 needed archive folders...
+2026-07-21 10:11:38,561 [INFO] Processed 55/55 rows (12 moved, 42 errors so far)...
+2026-07-21 10:11:38,562 [INFO] ======================================================================
+2026-07-21 10:11:38,562 [INFO] RUN SUMMARY
+2026-07-21 10:11:38,562 [INFO]   Total rows in sheet processed : 55
+2026-07-21 10:11:38,562 [INFO]   Successfully moved/copied     : 12
+2026-07-21 10:11:38,562 [INFO]   Of which same-name duplicates : 0  (see duplicates_log.csv)
+2026-07-21 10:11:38,562 [INFO]   Errors / missing files        : 43
+2026-07-21 10:11:38,562 [INFO]   Archive folders touched       : 1
+2026-07-21 10:11:38,562 [INFO]   Success log (CSV)             : ./logs/success_log.csv
+2026-07-21 10:11:38,562 [INFO]   Duplicates log (CSV)          : ./logs/duplicates_log.csv
+2026-07-21 10:11:38,562 [INFO]   Error log (CSV)               : ./logs/error_log.csv
+2026-07-21 10:11:38,562 [INFO]   Full run log                  : logs/dam_supp 2026-07-21 10-11-38.log
+2026-07-21 10:11:38,562 [INFO] ======================================================================
+2026-07-21 10:11:38,562 [INFO] This was a DRY RUN. No files were moved or copied. Review the logs, then re-run without --dry-run when you're confident.

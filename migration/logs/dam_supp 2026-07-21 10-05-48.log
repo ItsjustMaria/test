@@ -1,0 +1,5 @@
+2026-07-21 10:05:48,235 [INFO] Mode: MOVE  (DRY RUN - no files will be touched)
+2026-07-21 10:05:48,235 [INFO] Source: /opt/lampp/htdocs/test/migration/dam_supp
+2026-07-21 10:05:48,235 [INFO] Destination: /opt/lampp/htdocs/test/migration/test
+2026-07-21 10:05:48,235 [INFO] Reading Excel file: /opt/lampp/htdocs/test/migration/dam_supp.xlsx
+2026-07-21 10:05:48,302 [INFO] Using columns -> uuid: 'UUID', toegangsnummer: 'TOEGANGSNUMMER', bestandsnaam: 'BESTANDSNAAM'
