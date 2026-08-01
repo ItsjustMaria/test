@@ -1,0 +1,88 @@
+PREFIX dash:         <http://datashapes.org/dash#>
+PREFIX dc:           <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms:      <http://purl.org/dc/terms/>
+PREFIX deed:         <https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/Deed#>
+PREFIX file:         <https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/File#>
+PREFIX html:         <http://www.w3.org/1999/xhtml/>
+PREFIX memorix:      <http://memorix.io/ontology#>
+PREFIX owl:          <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ric-dft:      <https://www.ica.org/standards/RiC/vocabularies/documentaryFormTypes#>
+PREFIX ric-rst:      <https://www.ica.org/standards/RiC/vocabularies/recordSetTypes#>
+PREFIX rico:         <https://www.ica.org/standards/RiC/ontology#>
+PREFIX rt:           <https://stadsarchiefamsterdam.memorix.io/resources/recordtypes/>
+PREFIX saa:          <https://data.archief.amsterdam/ontology#>
+PREFIX schema:       <http://schema.org/>
+PREFIX sh:           <http://www.w3.org/ns/shacl#>
+PREFIX skos:         <http://www.w3.org/2004/02/skos/core#>
+PREFIX vocabularies: <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/conceptschemes/>
+PREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>
+
+<https://stadsarchiefamsterdam.memorix.io/resources/records/80ae8641-a16e-40ae-e053-b784100ad8d3/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://stadsarchiefamsterdam.memorix.io/resources/records/80ae8641-a16e-40ae-e053-b784100ad8d3>;
+        dcterms:title      "5044, Archief van de Thesaurieren Extraordinaris" .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/records/e836f9dc-a1a4-fc06-154f-433959dcb591>
+        rdf:type  rt:File .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/7ade2bf7-7fee-46e9-a639-33eeb66188ec>
+        rdf:type        skos:Concept;
+        skos:prefLabel  "Verpondingskohieren 1802-1805" .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/records/d85eb8ef-61ce-4494-bfac-3e8b3387264e/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://stadsarchiefamsterdam.memorix.io/resources/records/d85eb8ef-61ce-4494-bfac-3e8b3387264e>;
+        dcterms:title      "Radink" .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/23fc9bfc-8c19-4d60-b174-06c525eaa053>
+        rdf:type        skos:Concept;
+        skos:prefLabel  "huurwaarde" .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/records/80ae8641-a16e-40ae-e053-b784100ad8d3>
+        rdf:type  rt:Fonds .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/records/e94c8ecd-9f41-4bc0-8c48-59e40b748261>
+        rdf:type                     rt:Deed , memorix:Record;
+        saa:addressDescription       "Wijk 25, Verpondingsnr 3290";
+        saa:hasOrHadSubjectLocation  <https://adamlink.nl/geo/address/A231466>;
+        saa:hasSpecification         [ rdf:type                       saa:Specification;
+                                       saa:specificationTextualValue  "18 guldens, 7 stuivers";
+                                       saa:specificationType          <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/23fc9bfc-8c19-4d60-b174-06c525eaa053>
+                                     ];
+        saa:hasSpecification         [ rdf:type                       saa:Specification;
+                                       saa:specificationTextualValue  "Oude eigenaar/eigenaren zijn doorgestreept";
+                                       saa:specificationType          <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/e8a92b13-efef-4b2e-e053-b784100a3466>
+                                     ];
+        saa:isOrWasAlsoIncludedIn    <https://stadsarchiefamsterdam.memorix.io/resources/records/80ae8641-a16e-40ae-e053-b784100ad8d3>;
+        rico:hasDocumentaryFormType  <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/08b23b52-d879-2a46-e063-894acd0a5aaa>;
+        rico:hasOrHadCategory        <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/7ade2bf7-7fee-46e9-a639-33eeb66188ec>;
+        rico:hasOrHadSubject         [ rdf:type                      saa:LinkedPersonObservation;
+                                       memorix:order                 0;
+                                       saa:relatedPersonObservation  <https://stadsarchiefamsterdam.memorix.io/resources/records/d85eb8ef-61ce-4494-bfac-3e8b3387264e>;
+                                       saa:relatedPersonObservationRole
+                                               <https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/e8a92b13-f000-4b2e-e053-b784100a3466>
+                                     ];
+        rico:isOrWasIncludedIn       <https://stadsarchiefamsterdam.memorix.io/resources/records/e836f9dc-a1a4-fc06-154f-433959dcb591>;
+        rico:title                   "Verponding, Wijk 25, Verpondingsnr 3290" .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/records/d85eb8ef-61ce-4494-bfac-3e8b3387264e>
+        rdf:type  rt:PersonObservation .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/records/e836f9dc-a1a4-fc06-154f-433959dcb591/context>
+        rdf:type           memorix:Context;
+        memorix:hasRecord  <https://stadsarchiefamsterdam.memorix.io/resources/records/e836f9dc-a1a4-fc06-154f-433959dcb591>;
+        dcterms:title      "395, P. 1802-1805\nWijk 16-25." .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/08b23b52-d879-2a46-e063-894acd0a5aaa>
+        rdf:type        skos:Concept;
+        skos:prefLabel  "verponding" .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/e8a92b13-efef-4b2e-e053-b784100a3466>
+        rdf:type        skos:Concept;
+        skos:prefLabel  "relatie informatie" .
+
+<https://stadsarchiefamsterdam.memorix.io/resources/vocabularies/concepts/e8a92b13-f000-4b2e-e053-b784100a3466>
+        rdf:type        skos:Concept;
+        skos:prefLabel  "geregistreerde" .

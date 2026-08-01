@@ -113,7 +113,7 @@ BESTANDSNAAM_COL_CANDIDATES = [
 
 
 LEADING_TOKEN_RE = re.compile(r"^([A-Za-z0-9]+)")
-
+unique_paths = set()
 
 # --------------------------------------------------------------------------
 # helpers
@@ -256,6 +256,7 @@ def find_archive_folders(source_root, archive_numbers, logger):
 
     archive_set = set(archive_numbers)
     normalized_lookup = defaultdict(list)
+    # 287 matches 287 not 2870. 2870 matches 2870 not 28700 etc.
     for a in archive_set:
         normalized_lookup[a.lstrip("0") or "0"].append(a)
 
@@ -288,6 +289,7 @@ def find_archive_folders(source_root, archive_numbers, logger):
 
     logger.info(f"Found {matched_dirs} matching folder(s) on the drive, covering {len(archive_folders)} "
                 f"distinct archive number(s).")
+    
     return archive_folders
 
 
@@ -299,11 +301,12 @@ def index_files_for_archive(archive_roots, logger):
     by_stem = defaultdict(list)
     for root in archive_roots:
         for dirpath, _dirnames, bestandsnamen in os.walk(root):
-            for f in bestandsnamen:
-                full = os.path.join(dirpath, f)
-                by_name[f.lower()].append(full)
-                stem = os.path.splitext(f)[0].lower()
+            for file in bestandsnamen:
+                full = os.path.join(dirpath, file)
+                stem = os.path.splitext(file)[0].lower()
+                by_name[file].append(full)               
                 by_stem[stem].append(full)
+                
     return by_name, by_stem
 
 
@@ -327,12 +330,17 @@ def resolve_file(bestandsnaam, by_name, by_stem):
     Every other file physically present that is NOT listed in the sheet is
     never touched, matched, or considered.
     """
-    key = bestandsnaam.lower()
+    key = bestandsnaam
     if key in by_name:
         candidates = by_name[key]
-        if len(candidates) > 1:
-            return candidates, "exact_duplicate"
-        return candidates, "exact"
+        # find the first unused candidate
+        for path in candidates:
+            if path not in unique_paths:
+                unique_paths.add(path)
+                return [path], "exact"
+        return candidates, "exact_duplicate"
+
+
 
     stem_key = os.path.splitext(bestandsnaam)[0].lower()
     if stem_key in by_stem:
@@ -409,10 +417,15 @@ def process(df, source_root, dest_root, mode, dry_run, logger):
     needed_archives = sorted(df["toegangsnummer"].unique())
     archive_folders = find_archive_folders(source_root, needed_archives, logger)
 
+    missing_toegangsnummer = []
     file_indexes = {}  # toegangsnummer -> (by_name, by_stem)
+    # Loop through excel to find toegangsnummers 
     for i, toegangsnummer in enumerate(needed_archives, 1):
+        # Loop through folders to find toegangsnummers
         if toegangsnummer not in archive_folders:
+            missing_toegangsnummer.append(toegangsnummer)            
             continue
+        # Log progress every 200 toegangsnummers
         if i % 200 == 0 or i == len(needed_archives):
             logger.info(f"Indexed files for {i}/{len(needed_archives)} needed archive folders...")
         file_indexes[toegangsnummer] = index_files_for_archive(archive_folders[toegangsnummer], logger)
@@ -420,12 +433,14 @@ def process(df, source_root, dest_root, mode, dry_run, logger):
     missing_archive_folders = set(needed_archives) - set(archive_folders.keys())
     if missing_archive_folders:
         logger.warning(f"{len(missing_archive_folders)} archive number(s) from the sheet were not found "
-                        f"as folders on the drive at all.")
+                        f"as folders on the drive at all."
+                        f"These are: {missing_toegangsnummer}")
 
     total = len(df)
     for n, row in enumerate(df.itertuples(index=False), 1):
         uuid, toegangsnummer, bestandsnaam = row.uuid, row.toegangsnummer, row.bestandsnaam
-
+        
+        # Log progress every 5000 rows
         if n % 5000 == 0 or n == total:
             logger.info(f"Processed {n}/{total} rows "
                         f"({len(successes)} moved, {len(errors)} errors so far)...")
@@ -439,7 +454,6 @@ def process(df, source_root, dest_root, mode, dry_run, logger):
 
         by_name, by_stem = file_indexes[toegangsnummer]
         candidates, match_type = resolve_file(bestandsnaam, by_name, by_stem)
-
         if match_type == "none":
             errors.append({
                 "toegangsnummer": toegangsnummer, "uuid": uuid, "bestandsnaam": bestandsnaam,
@@ -452,6 +466,14 @@ def process(df, source_root, dest_root, mode, dry_run, logger):
                 "toegangsnummer": toegangsnummer, "uuid": uuid, "bestandsnaam": bestandsnaam,
                 "reason": f"ambiguous match - {len(candidates)} files with different extensions found "
                           f"matching '{bestandsnaam}' ({', '.join(candidates)}) - skipped, needs manual review",
+            })
+            continue
+
+        if match_type == "exact_duplicate":
+            errors.append({
+                "toegangsnummer": toegangsnummer, "uuid": uuid, "bestandsnaam": bestandsnaam,
+                "reason": f"duplicate match - {len(candidates)} duplicate files found "
+                          f"matching '{bestandsnaam}' ({', '.join(candidates)}) - needs manual review",
             })
             continue
 
@@ -485,33 +507,44 @@ def process(df, source_root, dest_root, mode, dry_run, logger):
 
     return successes, errors
 
+def safe_str(value):
+    return "" if pd.isna(value) else str(value)
 
-def write_success_log(successes, path):
-    successes_sorted = sorted(successes, key=lambda r: (str(r["toegangsnummer"]), r["uuid"], r["bestandsnaam_expected"]))
-    with open(path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=[
-            "toegangsnummer", "uuid", "bestandsnaam_expected", "file_found",
+def write_success_log(successes, path): 
+    print("write_success_log called")
+    successes_sorted = sorted(
+    successes,
+    key=lambda r: (
+        safe_str(r["uuid"]),
+        safe_str(r["toegangsnummer"]),
+        safe_str(r["bestandsnaam_expected"])))
+    fieldnames= [
+            "uuid", "toegangsnummer","bestandsnaam_expected", "file_found",
             "source_path", "dest_path", "status", "match_type", "duplicate_group_size",
-        ])
+        ]
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=";" )
+        #print("Delimiter:", repr(writer.dialect.delimiter))
         writer.writeheader()
         writer.writerows(successes_sorted)
 
 
 def write_duplicates_log(successes, path):
     dup_rows = [r for r in successes if r["duplicate_group_size"] > 1]
-    dup_rows_sorted = sorted(dup_rows, key=lambda r: (str(r["toegangsnummer"]), r["bestandsnaam_expected"], r["dest_path"]))
+    dup_rows_sorted = sorted(dup_rows, key=lambda r: (safe_str(r["uuid"]), safe_str(r["toegangsnummer"]), safe_str(r["bestandsnaam_expected"]), r["dest_path"]))
     fieldnames = ["toegangsnummer", "uuid", "bestandsnaam_expected", "file_found", "source_path", "dest_path", "duplicate_group_size"]
-    with open(path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=";")
         writer.writeheader()
         writer.writerows({k: r[k] for k in fieldnames} for r in dup_rows_sorted)
     return len(dup_rows_sorted)
 
 
 def write_error_log(errors, path):
-    errors_sorted = sorted(errors, key=lambda r: (str(r["toegangsnummer"]), r["uuid"], r["bestandsnaam"]))
-    with open(path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["toegangsnummer", "uuid", "bestandsnaam", "reason"])
+    errors_sorted = sorted(errors, key=lambda r: (safe_str(r["uuid"]), safe_str(r["toegangsnummer"]), safe_str(r["bestandsnaam"])))
+    fieldnames=["toegangsnummer", "uuid", "bestandsnaam", "reason"]
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=";")
         writer.writeheader()
         writer.writerows(errors_sorted)
 
@@ -532,9 +565,17 @@ def main():
     parser.add_argument("--copy", action="store_true", help="Copy instead of move")
     parser.add_argument("--dry-run", action="store_true", help="Simulate only, no files are touched")
     parser.add_argument("--log-dir", default="./logs", help="Directory for log/CSV output (default: ./logs)")
+    parser.add_argument("--export-dir", default="./export", help="Directory for log/CSV output (default: ./export)")
     args = parser.parse_args()
 
     logger, log_file = setup_logging(args.log_dir)
+    # Check if file already exists and delete based on env
+    if not os.path.exists("./logs"):     
+       os.makedirs("./logs")
+       logger.info(f'Log directory did not exist. Logs directory created') 
+    if not os.path.exists("./export"):     
+       os.makedirs("./export")
+       logger.info(f'Export directory did not exist. Export directory created') 
     mode = "copy" if args.copy else "move"
 
     logger.info(f"Mode: {mode.upper()}{'  (DRY RUN - no files will be touched)' if args.dry_run else ''}")
@@ -550,9 +591,10 @@ def main():
 
     successes, errors = process(df, args.source, args.dest, mode, args.dry_run, logger)
 
-    success_csv = os.path.join(args.log_dir, "success_log.csv")
-    error_csv = os.path.join(args.log_dir, "error_log.csv")
-    duplicates_csv = os.path.join(args.log_dir, "duplicates_log.csv")
+    current_datetime = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
+    success_csv = os.path.join(args.export_dir, f"success_log{str(current_datetime)}.csv")
+    error_csv = os.path.join(args.export_dir, f"error_log{str(current_datetime)}.csv")
+    duplicates_csv = os.path.join(args.export_dir, f"duplicates_log{str(current_datetime)}.csv")
     write_success_log(successes, success_csv)
     write_error_log(errors, error_csv)
     dup_count = write_duplicates_log(successes, duplicates_csv)

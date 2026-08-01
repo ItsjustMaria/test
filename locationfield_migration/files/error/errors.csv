@@ -1,0 +1,2673 @@
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'turtle_changed' where it is not associated with a value""), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Verponding, Wijk 17, Verpondingsnr 11...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Verponding, Wijk 17, Verpondingsnr 11...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Verponding, Oosterse Kaaij, Wijk 16, ...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Verponding, Wijk 17, Verpondingsnr 11...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Verponding, Oosterse Kaaij, Wijk 16, ...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Verponding, Kromme Tuijnstraat, Wijk ...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Verponding, Wijk 17, Verpondingsnr 11...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Verponding, Oosterse Kaaij, Wijk 16, ...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Verponding, Kromme Tuijnstraat, Wijk ...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 000f3ced-027d-4e5d-9896-cac6f35f4081
+locationTextualValue    0        Verponding, Vijgendam hoek Vispoort n...
+Name: 3, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Verponding, Wijk 17, Verpondingsnr 11...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Verponding, Oosterse Kaaij, Wijk 16, ...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Verponding, Kromme Tuijnstraat, Wijk ...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 000f3ced-027d-4e5d-9896-cac6f35f4081
+locationTextualValue    0        Verponding, Vijgendam hoek Vispoort n...
+Name: 3, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().'), uuid                                 00125741-1d5d-4ff9-b195-df6645fb2a83
+locationTextualValue    0        Verponding, Wijk 35, Verpondingsnr 27...
+Name: 4, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Verponding, Wijk 17, Verpondingsnr 11...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Verponding, Wijk 17, Verpondingsnr 11...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Verponding, Oosterse Kaaij, Wijk 16, ...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Verponding, Wijk 17, Verpondingsnr 11...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Verponding, Oosterse Kaaij, Wijk 16, ...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Verponding, Kromme Tuijnstraat, Wijk ...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Verponding, Wijk 17, Verpondingsnr 11...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Verponding, Oosterse Kaaij, Wijk 16, ...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Verponding, Kromme Tuijnstraat, Wijk ...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000f3ced-027d-4e5d-9896-cac6f35f4081
+locationTextualValue    0        Verponding, Vijgendam hoek Vispoort n...
+Name: 3, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Verponding, Wijk 17, Verpondingsnr 11...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Verponding, Oosterse Kaaij, Wijk 16, ...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Verponding, Kromme Tuijnstraat, Wijk ...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000f3ced-027d-4e5d-9896-cac6f35f4081
+locationTextualValue    0        Verponding, Vijgendam hoek Vispoort n...
+Name: 3, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 00125741-1d5d-4ff9-b195-df6645fb2a83
+locationTextualValue    0        Verponding, Wijk 35, Verpondingsnr 27...
+Name: 4, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Oosterse Kaaij, Wijk 16, Verpondingsn...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Oosterse Kaaij, Wijk 16, Verpondingsn...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Kromme Tuijnstraat, Wijk 48, Verpondi...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Oosterse Kaaij, Wijk 16, Verpondingsn...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Kromme Tuijnstraat, Wijk 48, Verpondi...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000f3ced-027d-4e5d-9896-cac6f35f4081
+locationTextualValue    0        Vijgendam hoek Vispoort naar de Warmo...
+Name: 3, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Oosterse Kaaij, Wijk 16, Verpondingsn...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Kromme Tuijnstraat, Wijk 48, Verpondi...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 000f3ced-027d-4e5d-9896-cac6f35f4081
+locationTextualValue    0        Vijgendam hoek Vispoort naar de Warmo...
+Name: 3, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid                                 00125741-1d5d-4ff9-b195-df6645fb2a83
+locationTextualValue    0        Wijk 35, Verpondingsnr 271
+1        W...
+Name: 4, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Oosterse Kaaij, Wijk 16, Verpondingsn...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Oosterse Kaaij, Wijk 16, Verpondingsn...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Kromme Tuijnstraat, Wijk 48, Verpondi...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Oosterse Kaaij, Wijk 16, Verpondingsn...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Kromme Tuijnstraat, Wijk 48, Verpondi...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000f3ced-027d-4e5d-9896-cac6f35f4081
+locationTextualValue    0        Vijgendam hoek Vispoort naar de Warmo...
+Name: 3, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Oosterse Kaaij, Wijk 16, Verpondingsn...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Kromme Tuijnstraat, Wijk 48, Verpondi...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000f3ced-027d-4e5d-9896-cac6f35f4081
+locationTextualValue    0        Vijgendam hoek Vispoort naar de Warmo...
+Name: 3, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 00125741-1d5d-4ff9-b195-df6645fb2a83
+locationTextualValue    0        Wijk 35, Verpondingsnr 271
+1        W...
+Name: 4, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Oosterse Kaaij, Wijk 16, Verpondingsn...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Oosterse Kaaij, Wijk 16, Verpondingsn...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Kromme Tuijnstraat, Wijk 48, Verpondi...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Oosterse Kaaij, Wijk 16, Verpondingsn...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Kromme Tuijnstraat, Wijk 48, Verpondi...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000f3ced-027d-4e5d-9896-cac6f35f4081
+locationTextualValue    0        Vijgendam hoek Vispoort naar de Warmo...
+Name: 3, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 0000ef37-4dc5-495d-9157-b443ec2ecb27
+locationTextualValue    0        Wijk 17, Verpondingsnr 1111
+1        ...
+Name: 0, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000271b8-3e0d-4823-8fbb-a297429002c6
+locationTextualValue    0        Oosterse Kaaij, Wijk 16, Verpondingsn...
+Name: 1, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000ed8ce-9474-4f4d-92d0-4ec2c2294158
+locationTextualValue    0        Kromme Tuijnstraat, Wijk 48, Verpondi...
+Name: 2, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 000f3ced-027d-4e5d-9896-cac6f35f4081
+locationTextualValue    0        Vijgendam hoek Vispoort naar de Warmo...
+Name: 3, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid                                 00125741-1d5d-4ff9-b195-df6645fb2a83
+locationTextualValue    0        Wijk 35, Verpondingsnr 271
+1        W...
+Name: 4, dtype: object]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[UnboundLocalError(""cannot access local variable 'description' where it is not associated with a value""), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str"
+0
+Migration of location description failed
+"uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str"
+0
+Migration of location description failed
+"uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str"
+0
+Migration of location description failed
+"uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str"
+0
+Migration of location description failed
+"uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str"
+0
+Migration of location description failed
+"uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str"
+0
+Migration of location description failed
+"uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str"
+0
+Migration of location description failed
+"uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str"
+0
+Migration of location description failed
+"uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str"
+0
+Migration of location description failed
+"uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str"
+0
+Migration of location description failed
+"uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str"
+0
+Migration of location description failed
+"uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str"
+0
+Migration of location description failed
+"uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[KeyError('description'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 1)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError(""Graph.triples() missing 1 required positional argument: 'triple'""), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 3 were given'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[TypeError('Graph.triples() takes 2 positional arguments but 4 were given'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('too many values to unpack (expected 3)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[NameError(""name 'loc_value' is not defined""), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str]"
+0
+"ERROR Main fn, failing tranformation or upload"
+"[ValueError('not enough values to unpack (expected 3, got 2)'), uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str]"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str"
+0
+Migration of location description failed
+"uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str"
+0
+Migration of location description failed
+"uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str"
+0
+Migration of location description failed
+"uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str"
+0
+Migration of location description failed
+"uuid    0000ef37-4dc5-495d-9157-b443ec2ecb27
+Name: 0, dtype: str"
+0
+Migration of location description failed
+"uuid    000271b8-3e0d-4823-8fbb-a297429002c6
+Name: 1, dtype: str"
+0
+Migration of location description failed
+"uuid    000ed8ce-9474-4f4d-92d0-4ec2c2294158
+Name: 2, dtype: str"
+0
+Migration of location description failed
+"uuid    000f3ced-027d-4e5d-9896-cac6f35f4081
+Name: 3, dtype: str"
+0
+Migration of location description failed
+"uuid    00125741-1d5d-4ff9-b195-df6645fb2a83
+Name: 4, dtype: str"
